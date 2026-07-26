@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industry Tracker — Industry Intelligence</title>
+  <meta name="description" content="Industry Tracker is a sophisticated industry intelligence platform for analysts and investors, offering real-time insights into Indian markets across sectors." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <span class="logo-icon">I</span>
+      </div>
+      <div class="sidebar-brand">
+        <span class="brand-name">INDUSTRY TRACKER</span>
+        <span class="brand-section">INTELLIGENCE</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section-label">INTELLIGENCE</div>
+
+    <nav class="sidebar-nav" id="sidebarNav">
+      <a href="#" class="nav-item active" data-page="dashboard" id="nav-dashboard">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+        Dashboard
+      </a>
+      <a href="#" class="nav-item" data-page="explorer" id="nav-explorer">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        Explorer
+      </a>
+      <a href="#" class="nav-item" data-page="compare" id="nav-compare">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="18" y1="20" x2="18" y2="10"/>
+          <line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        Compare
+      </a>
+      <a href="#" class="nav-item" data-page="upload" id="nav-upload">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        Upload Data
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="reset-data-btn" id="sidebarResetBtn" title="Reset all custom uploads and restore original baseline dataset">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
+        Reset System Data
+      </button>
+      <div class="footer-status">
+        <span class="status-dot"></span>
+        <span class="status-text">v1.0.4 · Online</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Top Focus Control Header Bar -->
+    <header class="top-focus-bar">
+      <div class="focus-bar-left">
+        <span class="focus-label">DATASET FOCUS:</span>
+        <div class="focus-tabs" id="focusTabs">
+          <button class="focus-tab active" data-scope="all" id="tab-scope-all">🌐 All Ingested Data</button>
+          <button class="focus-tab" data-scope="latest" id="tab-scope-latest">
+            ⚡ Focus on Last Update
+            <span class="focus-badge-dot"></span>
+          </button>
+        </div>
+      </div>
+      <div class="focus-bar-right">
+        <select class="doc-filter-select" id="docFilterSelect" title="Select specific source document">
+          <option value="all">Source: All Documents</option>
+        </select>
+        <button class="btn-secondary-sm" id="topResetBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+          Reset Uploads
+        </button>
+      </div>
+    </header>
+
+    <!-- Active Dataset Scope Banner -->
+    <div class="active-scope-banner hidden" id="activeScopeBanner">
+      <div class="banner-content">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" width="18" height="18">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <span id="bannerText">Currently focused on the <strong>Last Uploaded Batch</strong></span>
+      </div>
+      <button class="banner-btn" id="bannerShowAllBtn">Show All Data</button>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div class="page active" id="page-dashboard">
+      <div class="page-header">
+        <h1 class="page-title">Command Center</h1>
+        <p class="page-subtitle">System Overview &amp; Intelligence Metrics</p>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card" id="kpi-docs">
+          <div class="kpi-label">PROCESSED DOCUMENTS</div>
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div class="kpi-value" data-target="2" id="kpiDocsValue">0</div>
+        </div>
+        <div class="kpi-card" id="kpi-industries">
+          <div class="kpi-label">TOTAL INDUSTRIES</div>
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="kpi-value" data-target="40" id="kpiIndustriesValue">0</div>
+        </div>
+        <div class="kpi-card" id="kpi-sectors">
+          <div class="kpi-label">TRACKED SECTORS</div>
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="kpi-value" data-target="10" id="kpiSectorsValue">0</div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Sector Distribution</div>
+              <div class="chart-subtitle">Industries allocated by macro sector</div>
+            </div>
+          </div>
+          <div class="chart-body doughnut-container">
+            <canvas id="sectorChart"></canvas>
+            <div class="doughnut-legend" id="sectorLegend"></div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <div class="chart-title">Industry Growth (CAGR) Leaderboard</div>
+              <div class="chart-subtitle">Top growing sectors ingested from reports</div>
+            </div>
+          </div>
+          <div class="chart-body">
+            <canvas id="cagrLeaderboardChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Global Forces Heatmap -->
+      <div class="table-card">
+        <div class="table-header">
+          <div class="table-title-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" width="18" height="18">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+            <span class="table-title">Global Forces Heatmap</span>
+          </div>
+          <p class="table-subtitle">System-wide Porter's Five Forces intensity matrix</p>
+        </div>
+        <div class="table-wrapper">
+          <table class="forces-table" id="heatmapTable">
+            <thead>
+              <tr>
+                <th>INDUSTRY</th>
+                <th>NEW ENTRANTS</th>
+                <th>BUYER POWER</th>
+                <th>SUPPLIER POWER</th>
+                <th>SUBSTITUTES</th>
+                <th>RIVALRY</th>
+                <th>DOCUMENT SOURCE</th>
+              </tr>
+            </thead>
+            <tbody id="heatmapBody"></tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <a href="#" class="table-footer-link" data-page="compare">View all in Compare module →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explorer Page -->
+    <div class="page" id="page-explorer">
+      <div class="page-header explorer-header">
+        <div>
+          <h1 class="page-title">Industry Explorer</h1>
+          <p class="page-subtitle">Browse, filter, and analyze extracted PDF intelligence &amp; charts</p>
+        </div>
+        <div class="explorer-controls">
+          <div class="search-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input type="text" class="search-input" id="industrySearch" placeholder="Search industries..." />
+          </div>
+          <div class="filter-wrap">
+            <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+            </svg>
+            <select class="sector-select" id="sectorFilter">
+              <option value="all">All Sectors</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="industry-grid" id="industryGrid"></div>
+      <div class="no-results hidden" id="noResults">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <p>No industries found matching your criteria.</p>
+      </div>
+    </div>
+
+    <!-- Compare Page -->
+    <div class="page" id="page-compare">
+      <div class="page-header">
+        <h1 class="page-title">Cross-Industry Comparison</h1>
+        <p class="page-subtitle">Select up to 4 industries to compare metrics and forces side-by-side</p>
+      </div>
+
+      <div class="compare-controls card">
+        <div class="compare-selector-row">
+          <div class="compare-select-wrap">
+            <select class="compare-select" id="compareSelect">
+              <option value="">Add industry to compare...</option>
+            </select>
+          </div>
+          <div class="compare-tags" id="compareTags"></div>
+          <button class="clear-btn" id="clearAllBtn">Clear All</button>
+        </div>
+      </div>
+
+      <div class="compare-results" id="compareResults">
+        <div class="compare-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+          <p>Select industries above to begin comparison</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upload Page -->
+    <div class="page" id="page-upload">
+      <div class="page-header">
+        <h1 class="page-title">Data Ingestion &amp; Reset</h1>
+        <p class="page-subtitle">Upload research reports to extract dynamic industry features or reset uploaded datasets</p>
+      </div>
+
+      <div class="upload-grid-container">
+        <!-- Main Upload Card -->
+        <div class="upload-card card">
+          <div class="upload-zone" id="uploadZone">
+            <div class="upload-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.5" width="40" height="40">
+                <polyline points="16 16 12 12 8 16"/>
+                <line x1="12" y1="12" x2="12" y2="21"/>
+                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+              </svg>
+            </div>
+            <h2 class="upload-title">Drag &amp; Drop PDF Document</h2>
+            <p class="upload-desc">Drop your PDF research report here to extract industry intelligence.<br/>Max size: 50MB.</p>
+            <label class="upload-btn" for="fileInput">SELECT FILE</label>
+            <input type="file" id="fileInput" accept=".pdf" hidden />
+          </div>
+
+          <!-- Quick Sample Ingestion Packs -->
+          <div class="preset-packs-section">
+            <div class="preset-title">Or Test Instant Sample Extraction Reports:</div>
+            <div class="preset-buttons" id="presetButtons">
+              <button class="preset-btn" data-index="0">⚡ Tech &amp; AI Frontier Report (3 Industries)</button>
+              <button class="preset-btn" data-index="1">🌱 Green Energy &amp; CleanTech (2 Industries)</button>
+              <button class="preset-btn" data-index="2">🛍️ D2C &amp; Digital Commerce (1 Industry)</button>
+            </div>
+          </div>
+
+          <div class="upload-info">
+            <div class="upload-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="1.5" width="16" height="16">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              PDF format supported
+            </div>
+            <div class="upload-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="1.5" width="16" height="16">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Auto-extracts industry intelligence
+            </div>
+            <div class="upload-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="1.5" width="16" height="16">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Auto-focuses on last uploaded data
+            </div>
+          </div>
+        </div>
+
+        <!-- Management & Reset Panel -->
+        <div class="upload-side-panel card">
+          <div class="side-panel-header">
+            <h3 class="side-panel-title">Dataset Management</h3>
+            <button class="btn-danger-sm" id="resetDataBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+              Reset Uploaded Data
+            </button>
+          </div>
+          <p class="side-panel-desc">Resetting clears custom uploaded files and restores the system to the initial baseline 40 industries dataset.</p>
+
+          <div class="upload-history">
+            <div class="upload-history-title">Uploaded Reports History</div>
+            <div class="upload-history-list" id="uploadHistoryList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Industry Detail & Feature Edit Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="industryModal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-sector" id="modalSector"></div>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <button class="modal-close" id="modalClose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Reset Confirmation Modal -->
+  <div class="modal-overlay" id="resetModalOverlay">
+    <div class="modal reset-modal">
+      <div class="modal-header">
+        <h2 class="modal-title" style="color:var(--critical-red);">Reset System Data?</h2>
+        <button class="modal-close" id="resetModalClose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">This action will <strong>clear all custom uploaded document datasets</strong> and restore the platform to the initial baseline data (40 default industries).</p>
+        <div class="reset-modal-actions">
+          <button class="btn-secondary" id="resetModalCancel">Cancel</button>
+          <button class="btn-danger" id="resetModalConfirm">Yes, Reset All Uploaded Data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
