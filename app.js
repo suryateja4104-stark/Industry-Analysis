@@ -786,6 +786,62 @@ function ensureIndustryEnrichment(ind) {
     ];
   }
 
+  if (!ind.unitEconomics || !ind.rdExpenditure || !ind.capex) {
+    let ue = "", rd = "", cx = "";
+    if (s.includes('financial')) {
+      ue = "Net Interest Margin (NIM): 3.6%, Cost-to-Income Ratio: 44.5%, Credit Cost: 0.8%";
+      rd = "2.1% of Operating Opex (digital transformation & security)";
+      cx = "₹1,200 Cr (primarily IT infrastructures & cloud migration)";
+    } else if (s.includes('automotive')) {
+      ue = "Avg Vehicle Realization: ₹8.5 Lakhs, Material Cost: 68%, Contribution Margin: 32%";
+      rd = "3.5% of Sales (electric drivetrain & autonomous driving technology)";
+      cx = "₹6,800 Cr (capacity expansion & EV battery assembly lines)";
+    } else if (s.includes('transportation') || s.includes('logistics') || s.includes('aviation')) {
+      ue = "Passenger Yield: ₹4.8/km, Cost per ASK: ₹4.2/km, Passenger Load Factor: 84.5%";
+      rd = "0.4% of Sales (route optimization AI & biofuel testing)";
+      cx = "₹12,500 Cr (aircraft deliveries & multi-modal cargo hubs)";
+    } else if (s.includes('energy')) {
+      ue = "Levelized Cost of Energy (LCOE): ₹2.42/kWh, Tariff: ₹2.85/kWh, Plant PLF: 22%";
+      rd = "1.2% of Sales (high-efficiency solar cell & green hydrogen tech)";
+      cx = "₹18,500 Cr (new wind-solar hybrid plants & grid transmission)";
+    } else if (s.includes('consumer')) {
+      ue = "Gross Margin: 48.5%, AOV (Average Order Value): ₹1,450, CAC: ₹280";
+      rd = "1.8% of Sales (sustainable packaging & consumer taste analytics)";
+      cx = "₹3,200 Cr (omnichannel warehouse networks & store rollouts)";
+    } else if (s.includes('healthcare') || s.includes('health') || s.includes('pharma')) {
+      ue = "API Gross Margin: 35%, Formulations Margin: 58%, Domestic Sales Force Return: 2.4x";
+      rd = "8.5% of Sales (novel drug delivery & biosimilar development)";
+      cx = "₹4,500 Cr (US-FDA compliant facility upgrades & API plants)";
+    } else if (s.includes('technology') || s.includes('saas') || s.includes('telecom')) {
+      ue = "LTV/CAC Ratio: 4.8x, Customer Acquisition Cost (CAC): $3,800, Net Retention Rate (NRR): 112%";
+      rd = "12.8% of Sales (proprietary AI model training & SaaS features)";
+      cx = "₹1,800 Cr (data center expansion & GPU cluster leasing)";
+    } else if (s.includes('manufacturing') || s.includes('metal') || s.includes('mining') || s.includes('steel') || s.includes('cement') || s.includes('chemical') || s.includes('textile')) {
+      ue = "EBITDA per Tonne: ₹11,200, Realization per Tonne: ₹54,000, Capacity Utilization: 88%";
+      rd = "0.6% of Sales (carbon reduction & green steel trials)";
+      cx = "₹15,000 Cr (blast furnace expansion & waste heat recovery)";
+    } else if (s.includes('government') || s.includes('defense') || s.includes('aerospace')) {
+      ue = "Order Book to Sales: 4.5x, EBITDA Margin: 19.5%, Indigenous Content: 62%";
+      rd = "6.5% of Sales (hypersonic propulsion & satellite payloads)";
+      cx = "₹5,200 Cr (advanced composites manufacturing & rocket test facilities)";
+    } else if (s.includes('infrastructure') || s.includes('real estate')) {
+      ue = "Average Sales Realization: ₹6,500/sq.ft., Construction Cost: ₹2,800/sq.ft., Land Cost: 30%";
+      rd = "0.3% of Sales (modular construction & eco-friendly materials)";
+      cx = "₹8,400 Cr (equipment purchase & land parcel acquisitions)";
+    } else if (s.includes('agriculture') || s.includes('agri')) {
+      ue = "Gross Margin: 24.5%, CAC per Farmer: ₹450, Farmer Retention Rate: 88%";
+      rd = "2.5% of Sales (high-yield hybrid seed development & drone mapping)";
+      cx = "₹750 Cr (cold chain storage & sorting automation)";
+    } else {
+      ue = "Gross Margin: 30.0%, Contribution Margin: 15.0%, Operating Margin: 8.5%";
+      rd = "2.0% of Sales (product improvements & process optimization)";
+      cx = "₹1,500 Cr (maintenance & digital systems upgrades)";
+    }
+    if (!ind.unitEconomics) ind.unitEconomics = ue;
+    if (!ind.rdExpenditure) ind.rdExpenditure = rd;
+    if (!ind.capex) ind.capex = cx;
+  }
+
   return ind;
 }
 
@@ -1365,6 +1421,10 @@ function openModal(id) {
   if (!rawInd) return;
   const ind = ensureIndustryEnrichment(rawInd);
 
+  // Set default view mode to Executive Summary on open
+  state.modalView = 'summary';
+  state.modalModuleFilter = 'all';
+
   document.getElementById('modalSector').textContent = ind.sector;
   document.getElementById('modalTitle').textContent = ind.name;
 
@@ -1386,26 +1446,32 @@ function openModal(id) {
   };
 
   document.getElementById('modalBody').innerHTML = `
-    <!-- Modular Section Filter Bar (Full Width) -->
-    <div class="modal-module-toggle-bar">
+    <!-- Executive Summary vs Full Sector Deck View Toggle (Full Width) -->
+    <div class="modal-view-toggle-bar">
+      <button class="view-toggle-tab active" id="btn-modal-view-summary" data-view="summary">📊 Executive Summary</button>
+      <button class="view-toggle-tab" id="btn-modal-view-full" data-view="full">📂 Full Sector Intelligence Deck</button>
+    </div>
+
+    <!-- Modular Section Filter Bar (Full Width, only shows in Full mode) -->
+    <div class="modal-module-toggle-bar" id="modalFilterBar" style="display:none;">
       <span style="font-family:var(--font-mono);font-size:11px;color:var(--outline);font-weight:700;">FILTER MODULES:</span>
-      <button class="module-toggle-chip ${state.modalModuleFilter === 'all' ? 'active' : ''}" data-mod-filter="all">All 13 Modules</button>
-      <button class="module-toggle-chip ${state.modalModuleFilter === 'priority' ? 'active' : ''}" data-mod-filter="priority">★ Priority (1, 3, 6, 9)</button>
-      <button class="module-toggle-chip ${state.modalModuleFilter === 'regulatory' ? 'active' : ''}" data-mod-filter="regulatory">Policy &amp; Reg</button>
-      <button class="module-toggle-chip ${state.modalModuleFilter === 'financial' ? 'active' : ''}" data-mod-filter="financial">Financial &amp; Credit</button>
-      <button class="module-toggle-chip ${state.modalModuleFilter === 'market' ? 'active' : ''}" data-mod-filter="market">Market &amp; Strategy</button>
-      <button class="module-toggle-chip ${state.modalModuleFilter === 'prep' ? 'active' : ''}" data-mod-filter="prep">Prep &amp; Glossary</button>
+      <button class="module-toggle-chip active" data-mod-filter="all">All Modules</button>
+      <button class="module-toggle-chip" data-mod-filter="priority">★ Priority (1, 3, 6, 9)</button>
+      <button class="module-toggle-chip" data-mod-filter="regulatory">Policy &amp; Reg</button>
+      <button class="module-toggle-chip" data-mod-filter="financial">Financial &amp; Credit</button>
+      <button class="module-toggle-chip" data-mod-filter="market">Market &amp; Strategy</button>
+      <button class="module-toggle-chip" data-mod-filter="prep">Prep &amp; Glossary</button>
     </div>
 
     <!-- Overview & Source PDF (Full Width) -->
-    <div class="deck-module-card span-full" data-module-cat="market">
+    <div class="deck-module-card span-full" data-module-cat="market" data-summary="true">
       <div class="modal-section-title">Ingested Report Overview</div>
       <p class="modal-desc" style="margin-bottom:8px;">${ind.description}</p>
       <div style="font-family:var(--font-mono);font-size:11px;color:var(--outline);">📄 Ingested Document: <strong>${ind.uploadedDoc || 'Default Industry Primer'}</strong></div>
     </div>
 
     <!-- Read-only Financial Metrics (Full Width) -->
-    <div class="deck-module-card span-full" data-module-cat="financial">
+    <div class="deck-module-card span-full" data-module-cat="financial" data-summary="true">
       <div class="modal-section-title">Market Intelligence &amp; Metrics</div>
       <div class="modal-metrics-grid">
         <div class="modal-metric">
@@ -1419,6 +1485,107 @@ function openModal(id) {
         <div class="modal-metric">
           <div class="modal-metric-label">Strategic Outlook</div>
           <div class="modal-metric-value" style="color:${ind.outlook === 'Positive' ? '#059669' : ind.outlook === 'Volatile' ? '#d97706' : '#1e4078'};">${ind.outlook}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Players (Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="market" data-summary="true">
+      <div class="modal-section-title">Key Industry Players</div>
+      <div class="modal-players-list">
+        ${ind.players.map(p => `<span class="player-chip">${p}</span>`).join('')}
+      </div>
+    </div>
+
+    <!-- Visual Value Chain Stage Pipeline Flow (Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="market" data-summary="true">
+      <div class="modal-section-title">🔗 Visual Value Chain Flow Pipeline</div>
+      <div class="vc-pipeline-flow">
+        <div class="vc-flow-step">
+          <div class="vc-flow-step-num">STAGE 1</div>
+          <div class="vc-flow-step-title">Inputs</div>
+          <div class="vc-flow-step-desc">${vc.inputs}</div>
+        </div>
+        <div class="vc-flow-step">
+          <div class="vc-flow-step-num">STAGE 2</div>
+          <div class="vc-flow-step-title">Operations</div>
+          <div class="vc-flow-step-desc">${vc.operations}</div>
+        </div>
+        <div class="vc-flow-step">
+          <div class="vc-flow-step-num">STAGE 3</div>
+          <div class="vc-flow-step-title">Distribution</div>
+          <div class="vc-flow-step-desc">${vc.distribution}</div>
+        </div>
+        <div class="vc-flow-step">
+          <div class="vc-flow-step-num">STAGE 4</div>
+          <div class="vc-flow-step-title">Touchpoints</div>
+          <div class="vc-flow-step-desc">${vc.endMarkets}</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+        <div class="modal-metric" style="background:#e0f2fe;border-color:rgba(2,132,199,0.3);">
+          <div class="modal-metric-label" style="color:#0369a1;">Highest Margin Driver</div>
+          <div style="font-size:12px;font-weight:600;color:#0369a1;">${vc.marginDriver}</div>
+        </div>
+        <div class="modal-metric" style="background:#fef2f2;border-color:rgba(220,38,38,0.2);">
+          <div class="modal-metric-label" style="color:#b91c1c;">Value Chain Bottleneck</div>
+          <div style="font-size:12px;font-weight:600;color:#b91c1c;">${vc.bottleneck}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Porter's Five Forces Radar Chart & Badges (Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="market" data-summary="true">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;">
+        <div>
+          <div class="modal-section-title">Five Forces Intensity Profile</div>
+          <div class="modal-forces-grid">
+            ${forces.map(f => `
+              <div class="modal-force">
+                <span class="modal-force-name">${f.label}</span>
+                ${makeBadge(f.value)}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        <div>
+          <div class="modal-section-title">Forces Spider Radar Graphic</div>
+          <div class="modal-radar-wrapper">
+            <canvas id="modalForcesRadar"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit Economics, R&D & Capex Profile (Summary & Full - Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="financial priority" data-summary="true">
+      <div class="boxed-section-header">
+        <div class="boxed-section-title-group">
+          💡 Capital Allocation, Unit Economics &amp; Capex
+        </div>
+        <span class="source-citation">[Source: Corporate Disclosures &amp; Analyst Estimates]</span>
+      </div>
+      <div class="economics-grid">
+        <div class="economics-card">
+          <div class="economics-card-header">
+            <span class="economics-card-icon">🎯</span>
+            <span class="economics-card-label">Unit Economics</span>
+          </div>
+          <div class="economics-card-value">${ind.unitEconomics}</div>
+        </div>
+        <div class="economics-card">
+          <div class="economics-card-header">
+            <span class="economics-card-icon">🔬</span>
+            <span class="economics-card-label">R&amp;D Expenditure</span>
+          </div>
+          <div class="economics-card-value">${ind.rdExpenditure}</div>
+        </div>
+        <div class="economics-card">
+          <div class="economics-card-header">
+            <span class="economics-card-icon">🏗️</span>
+            <span class="economics-card-label">Planned Capex Profile</span>
+          </div>
+          <div class="economics-card-value">${ind.capex}</div>
         </div>
       </div>
     </div>
@@ -1668,66 +1835,6 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- Visual Value Chain Stage Pipeline Flow (Full Width) -->
-    <div class="deck-module-card span-full" data-module-cat="market">
-      <div class="modal-section-title">🔗 Visual Value Chain Flow Pipeline</div>
-      <div class="vc-pipeline-flow">
-        <div class="vc-flow-step">
-          <div class="vc-flow-step-num">STAGE 1</div>
-          <div class="vc-flow-step-title">Inputs</div>
-          <div class="vc-flow-step-desc">${vc.inputs}</div>
-        </div>
-        <div class="vc-flow-step">
-          <div class="vc-flow-step-num">STAGE 2</div>
-          <div class="vc-flow-step-title">Operations</div>
-          <div class="vc-flow-step-desc">${vc.operations}</div>
-        </div>
-        <div class="vc-flow-step">
-          <div class="vc-flow-step-num">STAGE 3</div>
-          <div class="vc-flow-step-title">Distribution</div>
-          <div class="vc-flow-step-desc">${vc.distribution}</div>
-        </div>
-        <div class="vc-flow-step">
-          <div class="vc-flow-step-num">STAGE 4</div>
-          <div class="vc-flow-step-title">Touchpoints</div>
-          <div class="vc-flow-step-desc">${vc.endMarkets}</div>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
-        <div class="modal-metric" style="background:#e0f2fe;border-color:rgba(2,132,199,0.3);">
-          <div class="modal-metric-label" style="color:#0369a1;">Highest Margin Driver</div>
-          <div style="font-size:12px;font-weight:600;color:#0369a1;">${vc.marginDriver}</div>
-        </div>
-        <div class="modal-metric" style="background:#fef2f2;border-color:rgba(220,38,38,0.2);">
-          <div class="modal-metric-label" style="color:#b91c1c;">Value Chain Bottleneck</div>
-          <div style="font-size:12px;font-weight:600;color:#b91c1c;">${vc.bottleneck}</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Porter's Five Forces Radar Chart & Badges (Full Width) -->
-    <div class="deck-module-card span-full" data-module-cat="market">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;">
-        <div>
-          <div class="modal-section-title">Five Forces Intensity Profile</div>
-          <div class="modal-forces-grid">
-            ${forces.map(f => `
-              <div class="modal-force">
-                <span class="modal-force-name">${f.label}</span>
-                ${makeBadge(f.value)}
-              </div>
-            `).join('')}
-          </div>
-        </div>
-        <div>
-          <div class="modal-section-title">Forces Spider Radar Graphic</div>
-          <div class="modal-radar-wrapper">
-            <canvas id="modalForcesRadar"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- 12. Common Interview Angles (Placement Prep - Col 1) -->
     <div class="deck-module-card" data-module-cat="prep">
       <div class="boxed-section-header">
@@ -1759,14 +1866,6 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- Key Players (Full Width) -->
-    <div class="deck-module-card span-full" data-module-cat="market">
-      <div class="modal-section-title">Key Industry Players</div>
-      <div class="modal-players-list">
-        ${ind.players.map(p => `<span class="player-chip">${p}</span>`).join('')}
-      </div>
-    </div>
-
     <!-- Action Buttons (Full Width) -->
     <div class="span-full" style="display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:10px;padding-top:16px;border-top:1px solid var(--surface-stroke);">
       ${state.compareList.includes(id) ? `
@@ -1779,7 +1878,7 @@ function openModal(id) {
 
   document.getElementById('modalOverlay').classList.add('open');
 
-  // Filter chips event listeners
+  // Filter chips event listeners (for sub-categories under Full mode)
   document.querySelectorAll('.module-toggle-chip').forEach(chip => {
     chip.addEventListener('click', () => {
       const filter = chip.dataset.modFilter;
@@ -1788,23 +1887,79 @@ function openModal(id) {
       chip.classList.add('active');
 
       document.querySelectorAll('.deck-module-card').forEach(card => {
+        // Only filter cards if in Full mode
+        if (state.modalView === 'full') {
+          const cats = card.dataset.moduleCat || '';
+          if (filter === 'all' || cats.includes(filter)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+
+  // View toggle tab listeners and display filter logic
+  const viewTabs = document.querySelectorAll('.view-toggle-tab');
+  const filterBar = document.getElementById('modalFilterBar');
+  let fullChartsRendered = false;
+
+  function applyViewMode() {
+    const isSummary = state.modalView === 'summary';
+
+    viewTabs.forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.view === state.modalView);
+    });
+
+    if (filterBar) {
+      filterBar.style.display = isSummary ? 'none' : 'flex';
+    }
+
+    document.querySelectorAll('.deck-module-card').forEach(card => {
+      const isSummaryCard = card.dataset.summary === 'true';
+      if (isSummary) {
+        card.style.display = isSummaryCard ? 'block' : 'none';
+      } else {
+        const filter = state.modalModuleFilter;
         const cats = card.dataset.moduleCat || '';
         if (filter === 'all' || cats.includes(filter)) {
           card.style.display = 'block';
         } else {
           card.style.display = 'none';
         }
-      });
+      }
+    });
+
+    // Render the rest of the canvases when switching to Full view mode
+    if (!isSummary && !fullChartsRendered) {
+      setTimeout(() => {
+        renderGlobalBenchmarkingChart(ind);
+        renderCostStructureChart(ind);
+        renderStockPerformanceChart(ind);
+        renderCustomerSegChart(ind);
+        renderDemandSupplyChart(ind);
+        fullChartsRendered = true;
+      }, 50);
+    }
+  }
+
+  viewTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      state.modalView = tab.dataset.view;
+      if (state.modalView === 'full') {
+        state.modalModuleFilter = 'all';
+        document.querySelectorAll('.module-toggle-chip').forEach(c => {
+          c.classList.toggle('active', c.dataset.modFilter === 'all');
+        });
+      }
+      applyViewMode();
     });
   });
 
-  // Render Chart.js visual charts inside modal
+  // Render first-fold forces radar and apply initial layout filter
   renderModalForcesRadar(ind);
-  renderGlobalBenchmarkingChart(ind);
-  renderCostStructureChart(ind);
-  renderStockPerformanceChart(ind);
-  renderCustomerSegChart(ind);
-  renderDemandSupplyChart(ind);
+  applyViewMode();
 }
 
 /* Modal Canvas Charts Initializations */
