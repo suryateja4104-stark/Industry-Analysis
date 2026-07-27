@@ -1456,13 +1456,13 @@ canvas { display: block; }
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 30, 53, 0.35);
-  backdrop-filter: blur(6px);
+  background: rgba(15, 30, 53, 0.45);
+  backdrop-filter: blur(8px);
   z-index: 300;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 12px;
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition);
@@ -1477,17 +1477,23 @@ canvas { display: block; }
   background: var(--surface);
   border: 1px solid var(--surface-stroke-strong);
   border-radius: var(--r-xl);
-  width: 100%;
-  max-width: 700px;
-  max-height: 85vh;
-  overflow-y: auto;
-  transform: scale(0.96);
+  width: 98vw;
+  height: 96vh;
+  max-width: 1800px;
+  max-height: 98vh;
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.98);
   transition: transform var(--transition);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 40px rgba(15, 30, 53, 0.25);
+  overflow: hidden;
 }
 
 .reset-modal {
+  width: 100%;
   max-width: 480px;
+  height: auto;
+  max-height: max-content;
 }
 
 .modal-overlay.open .modal {
@@ -1498,12 +1504,13 @@ canvas { display: block; }
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 24px 28px 18px;
+  padding: 18px 28px;
   border-bottom: 1px solid var(--surface-stroke);
   position: sticky;
   top: 0;
   background: var(--surface);
-  z-index: 1;
+  z-index: 10;
+  flex-shrink: 0;
 }
 
 .modal-sector {
@@ -1518,14 +1525,14 @@ canvas { display: block; }
 
 .modal-title {
   font-family: var(--font-headline);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--on-surface);
 }
 
 .modal-close {
   color: var(--outline);
-  padding: 4px;
+  padding: 6px;
   border-radius: var(--r-md);
   transition: color var(--transition), background var(--transition);
   flex-shrink: 0;
@@ -1536,10 +1543,24 @@ canvas { display: block; }
 }
 
 .modal-body {
-  padding: 24px 28px 28px;
-  display: flex;
-  flex-direction: column;
+  padding: 24px 32px 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  align-items: start;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.deck-module-card.span-full,
+.modal-module-toggle-bar {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
 }
 
 .modal-section-title {

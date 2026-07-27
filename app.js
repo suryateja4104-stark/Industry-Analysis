@@ -3,8 +3,8 @@
 /* ================================================
    STATE & PERSISTENCE
    ================================================ */
-const STORAGE_KEY_INDUSTRIES = 'industry_tracker_industries_v4';
-const STORAGE_KEY_UPLOADS = 'industry_tracker_uploads_v4';
+const STORAGE_KEY_INDUSTRIES = 'industry_tracker_industries_v5';
+const STORAGE_KEY_UPLOADS = 'industry_tracker_uploads_v5';
 
 function loadInitialIndustries() {
   const saved = localStorage.getItem(STORAGE_KEY_INDUSTRIES);
@@ -648,7 +648,7 @@ function renderIndustryGrid() {
 }
 
 /* ================================================
-   INDUSTRY DETAIL MODAL WITH 13 SECTOR DASHBOARD COMPONENTS
+   INDUSTRY DETAIL FULL-PAGE DASHBOARD DECK (13 COMPONENTS)
    =============================================== */
 function openModal(id) {
   const rawInd = getIndustryById(id);
@@ -676,7 +676,7 @@ function openModal(id) {
   };
 
   document.getElementById('modalBody').innerHTML = `
-    <!-- Modular Section Filter Bar -->
+    <!-- Modular Section Filter Bar (Full Width) -->
     <div class="modal-module-toggle-bar">
       <span style="font-family:var(--font-mono);font-size:11px;color:var(--outline);font-weight:700;">FILTER MODULES:</span>
       <button class="module-toggle-chip ${state.modalModuleFilter === 'all' ? 'active' : ''}" data-mod-filter="all">All 13 Modules</button>
@@ -687,15 +687,15 @@ function openModal(id) {
       <button class="module-toggle-chip ${state.modalModuleFilter === 'prep' ? 'active' : ''}" data-mod-filter="prep">Prep &amp; Glossary</button>
     </div>
 
-    <!-- Overview & Source PDF -->
-    <div class="deck-module-card" data-module-cat="market">
+    <!-- Overview & Source PDF (Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="market">
       <div class="modal-section-title">Ingested Report Overview</div>
       <p class="modal-desc" style="margin-bottom:8px;">${ind.description}</p>
       <div style="font-family:var(--font-mono);font-size:11px;color:var(--outline);">📄 Ingested Document: <strong>${ind.uploadedDoc || 'Default Industry Primer'}</strong></div>
     </div>
 
-    <!-- Read-only Financial Metrics -->
-    <div class="deck-module-card" data-module-cat="financial">
+    <!-- Read-only Financial Metrics (Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="financial">
       <div class="modal-section-title">Market Intelligence &amp; Metrics</div>
       <div class="modal-metrics-grid">
         <div class="modal-metric">
@@ -713,8 +713,8 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- 1. Regulatory/Policy Timeline (Priority 1) -->
-    <div class="deck-module-card" data-module-cat="regulatory priority">
+    <!-- 1. Regulatory/Policy Timeline (Priority 1 - Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="regulatory priority">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
           <span class="priority-tag">PRIORITY 1</span>
@@ -733,7 +733,7 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- 2. Global Benchmarking -->
+    <!-- 2. Global Benchmarking (Col 1) -->
     <div class="deck-module-card" data-module-cat="market">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
@@ -741,26 +741,26 @@ function openModal(id) {
         </div>
         <span class="source-citation">[Source: Global Sector Benchmarks]</span>
       </div>
-      <div style="height:190px;">
+      <div style="height:220px;">
         <canvas id="globalBenchmarkingCanvas"></canvas>
       </div>
     </div>
 
-    <!-- 3. Cost Structure / Margin Bridge (Priority 3) -->
+    <!-- 3. Cost Structure / Margin Bridge Waterfall (Priority 3 - Col 2) -->
     <div class="deck-module-card" data-module-cat="financial priority">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
           <span class="priority-tag">PRIORITY 3</span>
-          📊 Cost Structure &amp; Margin Bridge (Revenue ➔ PAT)
+          📊 Cost Structure &amp; Margin Bridge (Waterfall ➔ PAT)
         </div>
-        <span class="source-citation">[Source: Corporate Financial Aggregates]</span>
+        <span class="source-citation">[Source: Financial Statement Bridge]</span>
       </div>
-      <div style="height:210px;">
+      <div style="height:220px;">
         <canvas id="costStructureCanvas"></canvas>
       </div>
     </div>
 
-    <!-- 4. Working Capital Cycle -->
+    <!-- 4. Working Capital Cycle (Col 1) -->
     <div class="deck-module-card" data-module-cat="financial">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
@@ -788,7 +788,7 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- 5. Credit Profile -->
+    <!-- 5. Credit Profile (Col 2) -->
     <div class="deck-module-card" data-module-cat="financial">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
@@ -816,7 +816,7 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- 6. Stock/Index Performance (Priority 6) -->
+    <!-- 6. Stock/Index Performance (Priority 6 - Col 1) -->
     <div class="deck-module-card" data-module-cat="financial priority">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
@@ -830,49 +830,12 @@ function openModal(id) {
         <span style="font-family:var(--font-mono);font-size:11px;background:#dcfce7;color:#15803d;padding:4px 10px;border-radius:4px;font-weight:700;">3Yr Return: ${ind.stockPerformance.return3Yr}</span>
         <span style="font-family:var(--font-mono);font-size:11px;background:#fef3c7;color:#b45309;padding:4px 10px;border-radius:4px;font-weight:700;">Beta Volatility: ${ind.stockPerformance.volatilityBeta}</span>
       </div>
-      <div style="height:200px;">
+      <div style="height:210px;">
         <canvas id="stockPerformanceCanvas"></canvas>
       </div>
     </div>
 
-    <!-- Visual Value Chain Stage Pipeline Flow -->
-    <div class="deck-module-card" data-module-cat="market">
-      <div class="modal-section-title">🔗 Visual Value Chain Flow Pipeline</div>
-      <div class="vc-pipeline-flow">
-        <div class="vc-flow-step">
-          <div class="vc-flow-step-num">STAGE 1</div>
-          <div class="vc-flow-step-title">Inputs</div>
-          <div class="vc-flow-step-desc">${vc.inputs}</div>
-        </div>
-        <div class="vc-flow-step">
-          <div class="vc-flow-step-num">STAGE 2</div>
-          <div class="vc-flow-step-title">Operations</div>
-          <div class="vc-flow-step-desc">${vc.operations}</div>
-        </div>
-        <div class="vc-flow-step">
-          <div class="vc-flow-step-num">STAGE 3</div>
-          <div class="vc-flow-step-title">Distribution</div>
-          <div class="vc-flow-step-desc">${vc.distribution}</div>
-        </div>
-        <div class="vc-flow-step">
-          <div class="vc-flow-step-num">STAGE 4</div>
-          <div class="vc-flow-step-title">Touchpoints</div>
-          <div class="vc-flow-step-desc">${vc.endMarkets}</div>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
-        <div class="modal-metric" style="background:#e0f2fe;border-color:rgba(2,132,199,0.3);">
-          <div class="modal-metric-label" style="color:#0369a1;">Highest Margin Driver</div>
-          <div style="font-size:12px;font-weight:600;color:#0369a1;">${vc.marginDriver}</div>
-        </div>
-        <div class="modal-metric" style="background:#fef2f2;border-color:rgba(220,38,38,0.2);">
-          <div class="modal-metric-label" style="color:#b91c1c;">Value Chain Bottleneck</div>
-          <div style="font-size:12px;font-weight:600;color:#b91c1c;">${vc.bottleneck}</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 7. Customer/Demand Segmentation -->
+    <!-- 7. Customer/Demand Segmentation (Col 2) -->
     <div class="deck-module-card" data-module-cat="market">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
@@ -881,7 +844,7 @@ function openModal(id) {
         <span class="source-citation">[Source: Customer Surveys]</span>
       </div>
       <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:center;">
-        <div style="height:180px;">
+        <div style="height:200px;">
           <canvas id="customerSegCanvas"></canvas>
         </div>
         <div style="background:var(--surface-low);border:1px solid var(--surface-stroke);border-radius:var(--r-md);padding:14px;">
@@ -891,7 +854,7 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- 8. Demand-Supply Gap -->
+    <!-- 8. Demand-Supply Gap (Col 1) -->
     <div class="deck-module-card" data-module-cat="market">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
@@ -903,13 +866,41 @@ function openModal(id) {
         <span style="font-family:var(--font-mono);font-size:11px;color:var(--outline);">Utilization Rate Metric:</span>
         <span style="font-family:var(--font-mono);font-size:11px;background:#e0f2fe;color:#0369a1;padding:4px 10px;border-radius:4px;font-weight:700;">${ind.demandSupplyGap.utilizationRate}</span>
       </div>
-      <div style="height:200px;">
+      <div style="height:210px;">
         <canvas id="demandSupplyCanvas"></canvas>
       </div>
     </div>
 
-    <!-- 9. SWOT Summary (Priority 9) -->
-    <div class="deck-module-card" data-module-cat="market priority">
+    <!-- 11. Technology/Disruption Radar (Col 2) -->
+    <div class="deck-module-card" data-module-cat="regulatory market">
+      <div class="boxed-section-header">
+        <div class="boxed-section-title-group">
+          ⚡ Technology &amp; Disruption Radar
+        </div>
+        <span class="source-citation">[Source: Innovation Trackers]</span>
+      </div>
+      <div class="tech-radar-grid">
+        <div class="tech-radar-card">
+          <span class="tech-name">🤖 GenAI / AI Integration</span>
+          ${makeBadge(ind.techRadar.aiIntegration)}
+        </div>
+        <div class="tech-radar-card">
+          <span class="tech-name">🦾 Robotics / Automation</span>
+          ${makeBadge(ind.techRadar.roboticsAutomation)}
+        </div>
+        <div class="tech-radar-card">
+          <span class="tech-name">🛒 D2C / Omnichannel</span>
+          ${makeBadge(ind.techRadar.d2cOmnichannel)}
+        </div>
+        <div class="tech-radar-card">
+          <span class="tech-name">🌐 Platform Ecosystem</span>
+          ${makeBadge(ind.techRadar.platformEcosystem)}
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. SWOT Summary (Priority 9 - Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="market priority">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
           <span class="priority-tag">PRIORITY 9</span>
@@ -945,8 +936,8 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- 10. Recent Deal Timeline -->
-    <div class="deck-module-card" data-module-cat="financial">
+    <!-- 10. Recent Deal Timeline (Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="financial">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
           🤝 Recent Deal Timeline (M&amp;A &amp; PE Deals)
@@ -967,36 +958,45 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- 11. Technology/Disruption Radar -->
-    <div class="deck-module-card" data-module-cat="regulatory market">
-      <div class="boxed-section-header">
-        <div class="boxed-section-title-group">
-          ⚡ Technology &amp; Disruption Radar
+    <!-- Visual Value Chain Stage Pipeline Flow (Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="market">
+      <div class="modal-section-title">🔗 Visual Value Chain Flow Pipeline</div>
+      <div class="vc-pipeline-flow">
+        <div class="vc-flow-step">
+          <div class="vc-flow-step-num">STAGE 1</div>
+          <div class="vc-flow-step-title">Inputs</div>
+          <div class="vc-flow-step-desc">${vc.inputs}</div>
         </div>
-        <span class="source-citation">[Source: Innovation Trackers]</span>
+        <div class="vc-flow-step">
+          <div class="vc-flow-step-num">STAGE 2</div>
+          <div class="vc-flow-step-title">Operations</div>
+          <div class="vc-flow-step-desc">${vc.operations}</div>
+        </div>
+        <div class="vc-flow-step">
+          <div class="vc-flow-step-num">STAGE 3</div>
+          <div class="vc-flow-step-title">Distribution</div>
+          <div class="vc-flow-step-desc">${vc.distribution}</div>
+        </div>
+        <div class="vc-flow-step">
+          <div class="vc-flow-step-num">STAGE 4</div>
+          <div class="vc-flow-step-title">Touchpoints</div>
+          <div class="vc-flow-step-desc">${vc.endMarkets}</div>
+        </div>
       </div>
-      <div class="tech-radar-grid">
-        <div class="tech-radar-card">
-          <span class="tech-name">🤖 GenAI / AI Integration</span>
-          ${makeBadge(ind.techRadar.aiIntegration)}
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+        <div class="modal-metric" style="background:#e0f2fe;border-color:rgba(2,132,199,0.3);">
+          <div class="modal-metric-label" style="color:#0369a1;">Highest Margin Driver</div>
+          <div style="font-size:12px;font-weight:600;color:#0369a1;">${vc.marginDriver}</div>
         </div>
-        <div class="tech-radar-card">
-          <span class="tech-name">🦾 Robotics / Automation</span>
-          ${makeBadge(ind.techRadar.roboticsAutomation)}
-        </div>
-        <div class="tech-radar-card">
-          <span class="tech-name">🛒 D2C / Omnichannel</span>
-          ${makeBadge(ind.techRadar.d2cOmnichannel)}
-        </div>
-        <div class="tech-radar-card">
-          <span class="tech-name">🌐 Platform Ecosystem</span>
-          ${makeBadge(ind.techRadar.platformEcosystem)}
+        <div class="modal-metric" style="background:#fef2f2;border-color:rgba(220,38,38,0.2);">
+          <div class="modal-metric-label" style="color:#b91c1c;">Value Chain Bottleneck</div>
+          <div style="font-size:12px;font-weight:600;color:#b91c1c;">${vc.bottleneck}</div>
         </div>
       </div>
     </div>
 
-    <!-- Porter's Five Forces Radar Chart & Badges -->
-    <div class="deck-module-card" data-module-cat="market">
+    <!-- Porter's Five Forces Radar Chart & Badges (Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="market">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;">
         <div>
           <div class="modal-section-title">Five Forces Intensity Profile</div>
@@ -1018,7 +1018,7 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- 12. Common Interview Angles (Placement Prep) -->
+    <!-- 12. Common Interview Angles (Placement Prep - Col 1) -->
     <div class="deck-module-card" data-module-cat="prep">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
@@ -1031,7 +1031,7 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- 13. Sector Glossary -->
+    <!-- 13. Sector Glossary (Col 2) -->
     <div class="deck-module-card" data-module-cat="prep">
       <div class="boxed-section-header">
         <div class="boxed-section-title-group">
@@ -1049,16 +1049,16 @@ function openModal(id) {
       </div>
     </div>
 
-    <!-- Key Players -->
-    <div class="deck-module-card" data-module-cat="market">
+    <!-- Key Players (Full Width) -->
+    <div class="deck-module-card span-full" data-module-cat="market">
       <div class="modal-section-title">Key Industry Players</div>
       <div class="modal-players-list">
         ${ind.players.map(p => `<span class="player-chip">${p}</span>`).join('')}
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div style="display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:10px;padding-top:16px;border-top:1px solid var(--surface-stroke);">
+    <!-- Action Buttons (Full Width) -->
+    <div class="span-full" style="display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:10px;padding-top:16px;border-top:1px solid var(--surface-stroke);">
       ${state.compareList.includes(id) ? `
         <button class="btn-secondary-sm" style="color:var(--critical-red);" onclick="removeFromCompare('${id}');closeModal();">Remove from Compare</button>
       ` : `
@@ -1167,28 +1167,122 @@ function renderGlobalBenchmarkingChart(ind) {
   });
 }
 
+/* Financial Waterfall Bridge Calculation & Rendering */
+function calculateWaterfallBridge(costStructure) {
+  const rawLabels = costStructure.labels || ["Total Revenue", "Raw Materials", "Employee Cost", "Other Opex", "EBITDA", "D&A", "PAT"];
+  const rawVals = costStructure.values || [100, 52, 14, 14, 20, 5, 15];
+
+  const ranges = [];
+  const colors = [];
+  const tooltips = [];
+
+  let running = rawVals[0] || 100;
+
+  // 1. Total Revenue (0 to Revenue)
+  ranges.push([0, running]);
+  colors.push('#0284c7'); // Cyan/Navy Total
+  tooltips.push(`Total Revenue: ${running}%`);
+
+  // 2. Raw Materials Deduction (-vals[1])
+  const cost1 = rawVals[1] || 40;
+  let next = running - cost1;
+  ranges.push([Math.max(0, next), running]);
+  colors.push('#dc2626'); // Red cost deduction
+  tooltips.push(`- ${rawLabels[1]}: ${cost1}% (${running}% ➔ ${next}%)`);
+  running = next;
+
+  // 3. Employee Cost Deduction (-vals[2])
+  const cost2 = rawVals[2] || 14;
+  next = running - cost2;
+  ranges.push([Math.max(0, next), running]);
+  colors.push('#ea580c'); // Orange cost deduction
+  tooltips.push(`- ${rawLabels[2]}: ${cost2}% (${running}% ➔ ${next}%)`);
+  running = next;
+
+  // 4. Other Opex Deduction (-vals[3])
+  const cost3 = rawVals[3] || 14;
+  next = running - cost3;
+  ranges.push([Math.max(0, next), running]);
+  colors.push('#d97706'); // Amber cost deduction
+  tooltips.push(`- ${rawLabels[3]}: ${cost3}% (${running}% ➔ ${next}%)`);
+  running = next;
+
+  // 5. EBITDA Subtotal (0 to EBITDA)
+  const ebitda = rawVals[4] || running;
+  ranges.push([0, ebitda]);
+  colors.push('#059669'); // Emerald Green Subtotal
+  tooltips.push(`EBITDA Subtotal: ${ebitda}% of Revenue`);
+  running = ebitda;
+
+  // 6. D&A / Provision Deduction (-vals[5])
+  const da = rawVals[5] || 5;
+  next = running - da;
+  ranges.push([Math.max(0, next), running]);
+  colors.push('#64748b'); // Slate Gray deduction
+  tooltips.push(`- ${rawLabels[5]}: ${da}% (${running}% ➔ ${next}%)`);
+  running = next;
+
+  // 7. PAT Net Profit Final (0 to PAT)
+  const pat = rawVals[6] || running;
+  ranges.push([0, pat]);
+  colors.push('#0369a1'); // Deep Blue Net Profit
+  tooltips.push(`PAT (Net Profit): ${pat}% of Revenue`);
+
+  return {
+    labels: rawLabels,
+    ranges,
+    colors,
+    tooltips
+  };
+}
+
 function renderCostStructureChart(ind) {
   const ctx = document.getElementById('costStructureCanvas');
   if (!ctx || !ind.costStructure) return;
 
+  const bridge = calculateWaterfallBridge(ind.costStructure);
+
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ind.costStructure.labels,
+      labels: bridge.labels,
       datasets: [{
-        label: '% of Revenue',
-        data: ind.costStructure.values,
-        backgroundColor: ['#0284c7', '#dc2626', '#d97706', '#ea580c', '#059669', '#64748b', '#0369a1'],
-        borderRadius: 4
+        label: 'Waterfall Bridge (% of Revenue)',
+        data: bridge.ranges,
+        backgroundColor: bridge.colors,
+        borderRadius: 4,
+        borderSkipped: false
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#ffffff',
+          borderColor: 'rgba(30,64,120,0.14)',
+          borderWidth: 1,
+          titleColor: '#0f1e35',
+          bodyColor: '#1e4078',
+          padding: 10,
+          titleFont: { family: 'Space Mono', size: 11, weight: '700' },
+          bodyFont: { family: 'Inter', size: 12 },
+          callbacks: {
+            label: function(context) {
+              const idx = context.dataIndex;
+              return bridge.tooltips[idx] || `${context.raw[0]}% - ${context.raw[1]}%`;
+            }
+          }
+        }
+      },
       scales: {
         x: { grid: { display: false }, ticks: { font: { family: 'Space Mono', size: 9 } } },
-        y: { grid: { color: 'rgba(30,64,120,0.06)' }, ticks: { callback: v => `${v}%` } }
+        y: {
+          min: 0, max: 100,
+          grid: { color: 'rgba(30,64,120,0.06)' },
+          ticks: { callback: v => `${v}%`, font: { family: 'Space Mono', size: 9 } }
+        }
       }
     }
   });
