@@ -53,24 +53,27 @@ function ensureIndustryEnrichment(ind) {
   const s = (ind.sector || '').toLowerCase();
   const n = (ind.name || '').toLowerCase();
 
+  // Helper for word boundaries to avoid false positives (e.g. matching 'mobile' in 'automobile')
+  const hasWord = (str, word) => new RegExp('\\b' + word + '\\b', 'i').test(str);
+
   // 1. FINANCIAL SERVICES
-  if (s.includes('financial') || n.includes('banking') || n.includes('insurance') || n.includes('fintech') || n.includes('asset') || n.includes('wealth')) {
+  if (s.includes('financial') || hasWord(n, 'banking') || hasWord(n, 'insurance') || hasWord(n, 'fintech') || hasWord(n, 'asset') || hasWord(n, 'wealth') || hasWord(n, 'nbfc')) {
     if (!ind.regulatoryTimeline) {
       ind.regulatoryTimeline = [
-        { year: "2018", title: "Insolvency Code (IBC)", detail: "NCLT resolution framework & NPA cleanup" },
-        { year: "2020", title: "UPI & Account Aggregator", detail: "Open banking API & real-time payment protocol" },
-        { year: "2022", title: "Digital Lending Norms", detail: "RBI guidelines on FLDG & customer data privacy" },
-        { year: "2024+", title: "Sovereign Bond Inclusions", detail: "JPMorgan GBI-EM index inclusion & capital inflows" }
+        { year: "2018", title: "Insolvency Code (IBC)", detail: "NCLT resolution framework & NPA cleanup across Indian banks" },
+        { year: "2020", title: "UPI & Account Aggregator", detail: "Open banking API & real-time digital payment protocol expansion" },
+        { year: "2022", title: "Digital Lending Norms", detail: "RBI guidelines on FLDG, co-lending & customer data privacy" },
+        { year: "2024+", title: "Sovereign Bond Inclusions", detail: "JPMorgan GBI-EM index inclusion & foreign capital inflows" }
       ];
     }
     if (!ind.globalBenchmarking) {
       ind.globalBenchmarking = { metricLabel: "Credit / AUM to GDP Ratio (%)", labels: ["India", "China", "USA", "UK", "Global Avg"], values: [58, 185, 216, 165, 140] };
     }
     if (!ind.costStructure) {
-      ind.costStructure = { labels: ["Total Revenue", "Interest Cost", "Employee Cost", "Other Opex", "EBITDA/PPOP", "D&A / Prov", "PAT"], values: [100, 42, 16, 14, 28, 8, 20] };
+      ind.costStructure = { labels: ["Total Revenue", "Interest Cost", "Employee Cost", "Other Opex", "EBITDA/PPOP", "Provisions & D&A", "PAT"], values: [100, 42, 16, 14, 28, 8, 20] };
     }
     if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 0, receivableDays: 15, payableDays: 12, cashConversionCycle: 3 }; }
-    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "N/A (CRAR: 16.8%)", creditRating: "AAA / Stable", costOfDebt: "6.8%", liquidityBuffer: "CRAR 17.2% vs 11.5% Min" }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "N/A (CRAR: 16.8%)", creditRating: "AAA / Stable", costOfDebt: "6.8%", liquidityBuffer: "CRAR 17.2% vs 11.5% Regulatory Min" }; }
     if (!ind.stockPerformance) {
       ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 109, 118, 126, 134, 148], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+26.8%", return3Yr: "+68.4%", volatilityBeta: "1.08x" };
     }
@@ -78,44 +81,105 @@ function ensureIndustryEnrichment(ind) {
       ind.customerSegmentation = { labels: ["Retail Individual", "HNI & Family Offices", "Corporate Treasuries"], values: [52, 28, 20], incomeCohort: "Tier-1 Metros (50%), Tier-2 Cities (35%), Rural/Semi-Urban (15%)" };
     }
     if (!ind.demandSupplyGap) {
-      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 112, 128, 145, 168], actualDemand: [92, 105, 122, 140, 162], utilizationRate: "94.2% Credit Expansion Rate" };
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 112, 128, 145, 168], actualDemand: [92, 105, 122, 140, 162], utilizationRate: "94.2% Credit Deployment Rate" };
     }
     if (!ind.swot) {
       ind.swot = {
-        strengths: ["High Net Interest Margins (NIM) & low-cost CASA deposit base", "Accelerating UPI digital transaction scale & credit underwriting APIs"],
-        weaknesses: ["Unsecured retail credit default risks during macro slowdowns", "Regulatory capital lock-in & stringent CRR/SLR reserve ratios"],
-        opportunities: ["Financial inclusion expansion across Tier-2/3 wealth management", "Co-lending partnerships between Banks, NBFCs & Fintechs"],
-        threats: ["Cybersecurity breaches & fraudulent digital transaction vectors", "Rising deposit rate competition reducing spread margins"]
+        strengths: ["High NIM & low-cost CASA deposit base driving spread income", "Accelerating UPI digital transactions & AI credit underwriting"],
+        weaknesses: ["Unsecured retail credit default risk during macro slowdowns", "Regulatory capital lock-in with stringent CRR/SLR reserve ratios"],
+        opportunities: ["Financial inclusion expansion into Tier-2/3 wealth management", "Co-lending partnerships between Banks, NBFCs & Fintechs"],
+        threats: ["Cybersecurity breaches & digital fraud vectors increasing", "Rising deposit rate competition squeezing spread margins"]
       };
     }
     if (!ind.dealTimeline) {
       ind.dealTimeline = [
-        { date: "Q2 2023", company: "HDFC Ltd & Bank Merger", value: "$40.0B", buyer: "HDFC Group Mega Merger" },
+        { date: "Q2 2023", company: "HDFC Ltd & HDFC Bank Merger", value: "$40.0B", buyer: "HDFC Group Mega Merger" },
         { date: "Q4 2023", company: "Suvidhaa NBFC Acquisition", value: "$320M", buyer: "Fintech Global Holdings" },
-        { date: "Q1 2024", company: "Wealth Management Private Buyout", value: "$550M", buyer: "Global Private Equity" }
+        { date: "Q1 2024", company: "Wealth Management Buyout", value: "$550M", buyer: "Global Private Equity" }
       ];
     }
     if (!ind.techRadar) { ind.techRadar = { aiIntegration: "High", roboticsAutomation: "Medium", d2cOmnichannel: "High", platformEcosystem: "High" }; }
     if (!ind.interviewAngles) {
       ind.interviewAngles = [
-        "Market Sizing: Estimate the annual credit demand for small business (MSME) loans in India.",
-        "Financial Valuation: How do you value a commercial bank using Price-to-Book (P/B) and ROE?",
-        "Credit Risk Analysis: Explain how Net Interest Margin (NIM) and Cost of Risk impact ROA.",
-        "Fintech Disruption: How does UPI Account Aggregator threaten legacy retail banking fee income?"
+        "Market Sizing: Estimate the annual credit demand for MSME loans in India by segment.",
+        "Valuation: How do you value a commercial bank using P/B multiple and ROE-g model?",
+        "Credit Risk: Explain how NIM and Cost of Risk interact to drive Return on Assets (ROA).",
+        "Disruption: How does UPI Account Aggregator threaten legacy retail banking fee income?"
       ];
     }
     if (!ind.glossary) {
       ind.glossary = [
-        { term: "NIM", definition: "Net Interest Margin — Difference between interest earned and interest paid." },
-        { term: "CASA", definition: "Current Account Savings Account — Low-cost deposit ratio." },
-        { term: "GNPA", definition: "Gross Non-Performing Assets — Percentage of loans overdue >90 days." },
-        { term: "CRAR", definition: "Capital to Risk-Weighted Assets Ratio — Capital cushion enforced by RBI." }
+        { term: "NIM", definition: "Net Interest Margin — Spread between interest earned and interest paid on deposits." },
+        { term: "CASA", definition: "Current Account Savings Account — Low-cost deposit base ratio." },
+        { term: "GNPA", definition: "Gross Non-Performing Assets — Loans overdue beyond 90 days as % of advances." },
+        { term: "CRAR", definition: "Capital to Risk-Weighted Assets Ratio — Capital cushion mandated by RBI." }
       ];
     }
   }
 
-  // 2. AVIATION & LOGISTICS
-  else if (s.includes('aviation') || s.includes('logistics') || n.includes('airline') || n.includes('airport') || n.includes('freight') || n.includes('shipping') || n.includes('port')) {
+  // 2. AUTOMOTIVE & EV
+  else if (s.includes('automotive') || hasWord(s, 'auto') || hasWord(n, 'auto') || hasWord(n, 'vehicle') || hasWord(n, 'vehicles') || hasWord(n, 'ev') || hasWord(n, 'electric') || hasWord(n, 'car') || hasWord(n, 'cars') || hasWord(n, 'mobility') || hasWord(n, 'drivetrain') || hasWord(n, 'battery')) {
+    if (!ind.regulatoryTimeline) {
+      ind.regulatoryTimeline = [
+        { year: "2019", title: "FAME II Scheme", detail: "₹10,000 Cr subsidies for EV two-wheelers & public transport" },
+        { year: "2020", title: "BS-VI Emission Norms", detail: "Mandatory transition to ultra-low sulfur emission standards" },
+        { year: "2022", title: "Auto PLI Incentive", detail: "₹25,938 Cr budget for advanced automotive technologies" },
+        { year: "2024+", title: "New EV Policy & FAME III", detail: "Concessional import duties for localized EV manufacturing" }
+      ];
+    }
+    if (!ind.globalBenchmarking) {
+      ind.globalBenchmarking = { metricLabel: "Car Ownership per 1,000 People", labels: ["India", "China", "Japan", "USA", "Global Avg"], values: [34, 210, 620, 840, 180] };
+    }
+    if (!ind.costStructure) {
+      ind.costStructure = { labels: ["Net Revenue", "Raw Materials", "Employee Cost", "R&D & Royalty", "EBITDA", "D&A", "PAT"], values: [100, 68, 8, 5, 13, 4, 8] };
+    }
+    if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 38, receivableDays: 22, payableDays: 54, cashConversionCycle: 6 }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "0.9x", creditRating: "AA+ / Positive", costOfDebt: "7.5%", liquidityBuffer: "₹14,500 Cr Cash Reserves" }; }
+    if (!ind.stockPerformance) {
+      ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 114, 132, 145, 162, 184], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+42.5%", return3Yr: "+112.0%", volatilityBeta: "1.24x" };
+    }
+    if (!ind.customerSegmentation) {
+      ind.customerSegmentation = { labels: ["Passenger SUV/Cars", "Two-Wheelers", "Commercial Fleets"], values: [42, 45, 13], incomeCohort: "Middle-Income Households (55%), High-Net-Worth (25%), Rural Commuters (20%)" };
+    }
+    if (!ind.demandSupplyGap) {
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 110, 125, 140, 160], actualDemand: [84, 96, 112, 128, 148], utilizationRate: "81.2% Factory Utilization" };
+    }
+    if (!ind.swot) {
+      ind.swot = {
+        strengths: ["Rapid premiumization trend towards high-margin SUVs", "Strong domestic Tier-1 component manufacturing ecosystem"],
+        weaknesses: ["Heavy import dependency on lithium-ion cells & magnet motors", "Cyclical sensitivity to monsoon & rural disposable income"],
+        opportunities: ["Export hub for EV two-wheelers & compact SUVs to ASEAN & Africa", "Government PLI incentives driving localization of EV drivetrains"],
+        threats: ["Global semiconductor supply disruptions & raw material inflation", "Aggressive price cuts by international EV entrants"]
+      };
+    }
+    if (!ind.dealTimeline) {
+      ind.dealTimeline = [
+        { date: "Q1 2023", company: "TPG Investment in Tata Passenger EV", value: "$1.0B", buyer: "TPG Rise Climate" },
+        { date: "Q3 2023", company: "Ather Energy Sovereign Funding", value: "$128M", buyer: "NIIF & Hero MotoCorp" },
+        { date: "Q1 2024", company: "Commercial Fleet EV Acquisition", value: "$210M", buyer: "Logistics Infra Fund" }
+      ];
+    }
+    if (!ind.techRadar) { ind.techRadar = { aiIntegration: "Medium", roboticsAutomation: "High", d2cOmnichannel: "Medium", platformEcosystem: "High" }; }
+    if (!ind.interviewAngles) {
+      ind.interviewAngles = [
+        "Market Sizing: Estimate the annual volume of electric two-wheelers sold in India in 2026.",
+        "Profitability Case: How can an OEM offset raw material price inflation through localization?",
+        "Strategic Shift: Evaluate whether a traditional ICE automaker should spin off its EV division.",
+        "Supply Chain Guesstimate: Calculate the required battery gigafactory capacity for 1 million EVs."
+      ];
+    }
+    if (!ind.glossary) {
+      ind.glossary = [
+        { term: "OEM", definition: "Original Equipment Manufacturer — Company producing final vehicles." },
+        { term: "FAME", definition: "Faster Adoption and Manufacturing of Hybrid & Electric Vehicles." },
+        { term: "BS-VI", definition: "Bharat Stage VI — Stringent national vehicle emission standard." },
+        { term: "BMS", definition: "Battery Management System — Electronic unit regulating lithium cell packs." }
+      ];
+    }
+  }
+
+  // 3. TRANSPORTATION & LOGISTICS / AVIATION
+  else if (s.includes('transportation') || s.includes('logistics') || s.includes('aviation') || hasWord(n, 'airline') || hasWord(n, 'airport') || hasWord(n, 'freight') || hasWord(n, 'shipping') || hasWord(n, 'port') || n.includes('supply chain')) {
     if (!ind.regulatoryTimeline) {
       ind.regulatoryTimeline = [
         { year: "2016", title: "NCAP Policy & UDAN", detail: "Regional connectivity scheme subsidizing tier-2/3 flight routes" },
@@ -175,7 +239,495 @@ function ensureIndustryEnrichment(ind) {
     }
   }
 
-  // Fallbacks for remaining fields
+  // 4. ENERGY & RENEWABLES
+  else if (s.includes('energy') || s.includes('power') || hasWord(n, 'solar') || hasWord(n, 'wind') || hasWord(n, 'renewable') || hasWord(n, 'hydrogen') || hasWord(n, 'grid') || hasWord(n, 'oil') || hasWord(n, 'gas')) {
+    if (!ind.regulatoryTimeline) {
+      ind.regulatoryTimeline = [
+        { year: "2015", title: "175 GW Renewable Target", detail: "National milestone establishing clean energy transition path" },
+        { year: "2021", title: "500 GW Non-Fossil Goal (COP26)", detail: "Pledge to achieve 50% non-fossil power capacity by 2030" },
+        { year: "2023", title: "National Green Hydrogen Mission", detail: "₹19,744 Cr outlay targeting 5 MMT annual production" },
+        { year: "2024+", title: "PM Surya Ghar Muft Bijli", detail: "₹75,021 Cr scheme for 10 million rooftop solar installations" }
+      ];
+    }
+    if (!ind.globalBenchmarking) {
+      ind.globalBenchmarking = { metricLabel: "Per Capita Power Consumption (kWh)", labels: ["India", "China", "Brazil", "USA", "Global Avg"], values: [1255, 6050, 2600, 12900, 3400] };
+    }
+    if (!ind.costStructure) {
+      ind.costStructure = { labels: ["Net Revenue", "Solar/Wind Modules", "O&M & Grid Charges", "Land & Civil", "EBITDA", "D&A / Interest", "PAT"], values: [100, 36, 12, 8, 44, 28, 16] };
+    }
+    if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 18, receivableDays: 85, payableDays: 42, cashConversionCycle: 61 }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "4.2x (Infrastructure Project Debt)", creditRating: "AA / Stable", costOfDebt: "8.2%", liquidityBuffer: "20-Year PPA Sovereign Guarantees" }; }
+    if (!ind.stockPerformance) {
+      ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 124, 148, 176, 210, 265], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+78.5%", return3Yr: "+210.0%", volatilityBeta: "1.38x" };
+    }
+    if (!ind.customerSegmentation) {
+      ind.customerSegmentation = { labels: ["State Discom Off-takers", "Commercial & Industrial (C&I)", "Green Hydrogen / Export Hubs"], values: [55, 32, 13], incomeCohort: "State Power Distribution Utilities (55%), Industrial Factories & Data Centers (32%), Export Port Hubs (13%)" };
+    }
+    if (!ind.demandSupplyGap) {
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 118, 138, 164, 196], actualDemand: [88, 105, 124, 148, 178], utilizationRate: "24.5% Plant Load Factor (PLF Solar/Wind)" };
+    }
+    if (!ind.swot) {
+      ind.swot = {
+        strengths: ["Long-term 25-year Power Purchase Agreements (PPA) with fixed tariffs", "Rapidly falling Levelized Cost of Energy (LCOE) cheaper than thermal coal"],
+        weaknesses: ["Intermittent generation profile requiring expensive battery storage (BESS)", "Working capital lock-in due to state Discom payment delays"],
+        opportunities: ["Green Hydrogen electrolyzer exports & green ammonia bunkering", "C&I open-access captive solar adoption by heavy industrial manufacturers"],
+        threats: ["Basic Customs Duty (BCD) import tariffs on PV modules & cells", "Transmission grid congestion blocking evacuation from Rajasthan & Gujarat"]
+      };
+    }
+    if (!ind.dealTimeline) {
+      ind.dealTimeline = [
+        { date: "Q2 2023", company: "Adani Green Renewable Funding", value: "$1.4B", buyer: "TotalEnergies Strategic Deal" },
+        { date: "Q4 2023", company: "ReNew Power InvIT Monetization", value: "$850M", buyer: "Global Infra Partners" },
+        { date: "Q1 2024", company: "Solar PV Cell Factory Expansion", value: "$620M", buyer: "Domestic CleanTech Group" }
+      ];
+    }
+    if (!ind.techRadar) { ind.techRadar = { aiIntegration: "High", roboticsAutomation: "Medium", d2cOmnichannel: "Low", platformEcosystem: "High" }; }
+    if (!ind.interviewAngles) {
+      ind.interviewAngles = [
+        "Market Sizing: Calculate total solar installation needed to hit 500 GW capacity by 2030.",
+        "Valuation Case: How do you value a renewable IPP using DCF of PPA cash flows vs EV/EBITDA?",
+        "Levelized Cost: Explain Levelized Cost of Energy (LCOE) and the impact of BESS storage costs.",
+        "Grid Evacuation: Evaluate operational bottlenecks in Discom payment cycles & transmission corridors."
+      ];
+    }
+    if (!ind.glossary) {
+      ind.glossary = [
+        { term: "PPA", definition: "Power Purchase Agreement — Long-term 25-year off-take contract." },
+        { term: "LCOE", definition: "Levelized Cost of Energy — Lifetime cost of power generation per kWh." },
+        { term: "BESS", definition: "Battery Energy Storage System — Grid-scale energy storage." },
+        { term: "Discom", definition: "Distribution Company — State electricity distribution utility." }
+      ];
+    }
+  }
+
+  // 5. CONSUMER GOODS & FMCG
+  else if (s.includes('consumer') || s.includes('fmcg') || hasWord(n, 'retail') || hasWord(n, 'food') || hasWord(n, 'beverage') || hasWord(n, 'beauty') || hasWord(n, 'd2c') || n.includes('quick commerce') || n.includes('e-commerce') || hasWord(n, 'apparel') || hasWord(n, 'fashion') || hasWord(n, 'hospitality') || hasWord(n, 'media') || hasWord(n, 'entertainment') || hasWord(n, 'tourism')) {
+    if (!ind.regulatoryTimeline) {
+      ind.regulatoryTimeline = [
+        { year: "2017", title: "GST Rate Harmonization", detail: "Tax rate rationalization for essential daily staples" },
+        { year: "2020", title: "FSSAI Labeling Standards", detail: "Strict front-of-pack nutritional & allergen disclosures" },
+        { year: "2022", title: "Single-Use Plastic Ban", detail: "Mandatory eco-friendly recycled packaging rules" },
+        { year: "2024+", title: "ONDC Open Commerce Expansion", detail: "Government open network democratizing digital e-commerce" }
+      ];
+    }
+    if (!ind.globalBenchmarking) {
+      ind.globalBenchmarking = { metricLabel: "Per Capita FMCG Spend ($)", labels: ["India", "China", "Brazil", "USA", "Global Avg"], values: [48, 240, 190, 850, 310] };
+    }
+    if (!ind.costStructure) {
+      ind.costStructure = { labels: ["Net Revenue", "Agricultural & Chemical Inputs", "Packaging & Freight", "Marketing & Ad Spend", "EBITDA", "D&A", "PAT"], values: [100, 44, 12, 14, 20, 4, 16] };
+    }
+    if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 42, receivableDays: 18, payableDays: 58, cashConversionCycle: 2 }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "0.2x (Net Cash Positive)", creditRating: "AAA / Stable", costOfDebt: "6.9%", liquidityBuffer: "₹12,800 Cr Net Cash & Liquid Mutual Funds" }; }
+    if (!ind.stockPerformance) {
+      ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 106, 114, 122, 130, 142], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+22.5%", return3Yr: "+58.0%", volatilityBeta: "0.78x" };
+    }
+    if (!ind.customerSegmentation) {
+      ind.customerSegmentation = { labels: ["Urban Modern Trade & E-Com", "Rural Kirana", "Quick Commerce (10-Min)"], values: [42, 46, 12], incomeCohort: "Rural Mass Market (46%), Tier-1/2 Middle Income (42%), Affluent D2C Buyers (12%)" };
+    }
+    if (!ind.demandSupplyGap) {
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 108, 118, 130, 144], actualDemand: [88, 96, 108, 122, 136], utilizationRate: "84.2% Plant Capacity Utilization" };
+    }
+    if (!ind.swot) {
+      ind.swot = {
+        strengths: ["Massive unmatchable direct reach across 9+ million Kirana retail outlets", "Strong pricing power & product premiumization across household brands"],
+        weaknesses: ["Margin sensitivity to palm oil, crude derivative & agri commodity cycles", "Sluggish rural volume growth during uneven rainfall monsoons"],
+        opportunities: ["Hyper-growth of Quick Commerce channels (Blinkit, Zepto, Instamart)", "Acquisition of digital-first D2C beauty & personal care brands"],
+        threats: ["Local regional unorganized brands undercutting prices in tier-3 markets", "Hyperlocal dark store channel conflict with traditional trade distributors"]
+      };
+    }
+    if (!ind.dealTimeline) {
+      ind.dealTimeline = [
+        { date: "Q2 2023", company: "HUL Brands Portfolio Buyout", value: "$380M", buyer: "Hindustan Unilever" },
+        { date: "Q4 2023", company: "D2C Personal Care Buyout", value: "$210M", buyer: "Marico Growth Fund" },
+        { date: "Q1 2024", company: "Quick Commerce Stake Integration", value: "$450M", buyer: "Retail Conglomerate" }
+      ];
+    }
+    if (!ind.techRadar) { ind.techRadar = { aiIntegration: "Medium", roboticsAutomation: "Medium", d2cOmnichannel: "High", platformEcosystem: "High" }; }
+    if (!ind.interviewAngles) {
+      ind.interviewAngles = [
+        "Market Sizing: Estimate the daily consumption volume of packaged milk in urban India.",
+        "Channel Strategy: Compare trade margins across Kiranas, Modern Trade, and Quick Commerce.",
+        "Brand Portfolio: How should an FMCG leader launch a premium D2C brand without cannibalization?",
+        "Supply Chain Guesstimate: Calculate dark store density required for 10-minute delivery in Mumbai."
+      ];
+    }
+    if (!ind.glossary) {
+      ind.glossary = [
+        { term: "Kirana", definition: "Traditional mom-and-pop neighborhood grocery retail store." },
+        { term: "Modern Trade", definition: "Supermarkets and hypermarket retail chain networks." },
+        { term: "Dark Store", definition: "Local fulfillment hub optimized exclusively for quick commerce." },
+        { term: "Direct Reach", definition: "Number of retail outlets serviced directly by company sales reps." }
+      ];
+    }
+  }
+
+  // 6. HEALTHCARE & PHARMA
+  else if (s.includes('health') || s.includes('healthcare') || hasWord(n, 'pharma') || hasWord(n, 'pharmaceutical') || hasWord(n, 'hospital') || hasWord(n, 'diagnostic') || hasWord(n, 'biotech') || hasWord(n, 'medtech')) {
+    if (!ind.regulatoryTimeline) {
+      ind.regulatoryTimeline = [
+        { year: "2019", title: "Ayushman Bharat PM-JAY", detail: "Universal health coverage for 500M+ citizens" },
+        { year: "2021", title: "Bulk Drug Parks PLI", detail: "₹15,000 Cr incentives for active pharmaceutical ingredients" },
+        { year: "2023", title: "Uniform Code for Pharma Practices", detail: "Ethical marketing standards & R&D tax incentives" },
+        { year: "2024+", title: "MedTech Regulatory Framework", detail: "CDSCO medical device registration & ISO standards" }
+      ];
+    }
+    if (!ind.globalBenchmarking) {
+      ind.globalBenchmarking = { metricLabel: "Healthcare Spend as % of GDP", labels: ["India", "China", "Brazil", "USA", "Global Avg"], values: [3.8, 5.4, 9.6, 17.8, 10.2] };
+    }
+    if (!ind.costStructure) {
+      ind.costStructure = { labels: ["Net Revenue", "API & Raw Materials", "Employee Cost", "R&D & Compliance", "EBITDA", "D&A", "PAT"], values: [100, 38, 18, 12, 22, 6, 16] };
+    }
+    if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 72, receivableDays: 58, payableDays: 64, cashConversionCycle: 66 }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "1.2x", creditRating: "AA / Stable", costOfDebt: "7.4%", liquidityBuffer: "₹8,200 Cr Cash & Investments" }; }
+    if (!ind.stockPerformance) {
+      ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 112, 128, 142, 156, 175], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+36.5%", return3Yr: "+88.2%", volatilityBeta: "0.85x" };
+    }
+    if (!ind.customerSegmentation) {
+      ind.customerSegmentation = { labels: ["Generics Exports", "Domestic Formulations", "Hospitals & Diagnostics"], values: [48, 36, 16], incomeCohort: "Domestic Hospitals (40%), Overseas Exports (48%), OTC Consumer (12%)" };
+    }
+    if (!ind.demandSupplyGap) {
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 112, 126, 142, 162], actualDemand: [88, 102, 118, 136, 156], utilizationRate: "83.8% Capacity Utilization" };
+    }
+    if (!ind.swot) {
+      ind.swot = {
+        strengths: ["World's pharmacy status with 20%+ global generic supply share", "Low-cost high-compliance FDA-approved manufacturing plants"],
+        weaknesses: ["High import dependence on China for Active Pharma Ingredients (APIs)", "Stringent price controls (NLEM) on essential medicines"],
+        opportunities: ["Patent cliff in US ($200B+ drugs expiring) opening biosimilar wave", "Expansion of private hospital chains into Tier-2/3 cities"],
+        threats: ["USFDA regulatory import alerts & warning letters", "Geopolitical raw material price spikes & logistics delays"]
+      };
+    }
+    if (!ind.dealTimeline) {
+      ind.dealTimeline = [
+        { date: "Q1 2023", company: "Glenmark Life Sciences Buyout", value: "$920M", buyer: "Nirma Group" },
+        { date: "Q3 2023", company: "Manipal Hospitals Stake Sale", value: "$1.5B", buyer: "Temasek Holdings" },
+        { date: "Q1 2024", company: "Biocon Biologics Integration", value: "$3.3B", buyer: "Viatris Biosimilars Deal" }
+      ];
+    }
+    if (!ind.techRadar) { ind.techRadar = { aiIntegration: "High", roboticsAutomation: "Medium", d2cOmnichannel: "High", platformEcosystem: "Medium" }; }
+    if (!ind.interviewAngles) {
+      ind.interviewAngles = [
+        "Market Sizing: Estimate the market size of hospital beds needed in India to meet WHO standards.",
+        "Profitability Case: How can a domestic pharma company offset regulatory price caps (NLEM)?",
+        "M&A Due Diligence: Evaluate an acquisition target specializing in complex biosimilars.",
+        "Regulatory Risk: Explain the financial impact of a USFDA Form 483 warning letter on margins."
+      ];
+    }
+    if (!ind.glossary) {
+      ind.glossary = [
+        { term: "API", definition: "Active Pharmaceutical Ingredient — Raw chemical substance producing therapeutic effect." },
+        { term: "ANDAS", definition: "Abbreviated New Drug Application — USFDA filing for generic drug approvals." },
+        { term: "NLEM", definition: "National List of Essential Medicines — Government price-controlled drugs." },
+        { term: "Biosimilar", definition: "Biologic medical product almost identical to an original patented drug." }
+      ];
+    }
+  }
+
+  // 7. TECHNOLOGY & IT & SAAS
+  else if (s.includes('technology') || s.includes('tech') || hasWord(n, 'saas') || hasWord(n, 'cloud') || hasWord(n, 'software') || hasWord(n, 'gaming') || hasWord(n, 'semiconductor') || hasWord(n, 'edtech') || hasWord(n, 'animation') || hasWord(n, 'vfx') || hasWord(n, 'telecom') || hasWord(n, '5g') || n.includes('it services') || n.includes('it service')) {
+    if (!ind.regulatoryTimeline) {
+      ind.regulatoryTimeline = [
+        { year: "2020", title: "OSP Liberalization", detail: "Simplified IT/ITeS remote working & telecom regulations" },
+        { year: "2021", title: "Semiconductor Mission", detail: "₹76,000 Cr PLI for silicon fab & chip packaging units" },
+        { year: "2023", title: "DPDP Act Enactment", detail: "Digital Personal Data Protection framework compliance" },
+        { year: "2024+", title: "IndiaAI Mission", detail: "₹10,372 Cr allocated for GPU supercomputing clusters" }
+      ];
+    }
+    if (!ind.globalBenchmarking) {
+      ind.globalBenchmarking = { metricLabel: "IT & Software Export Market Share (%)", labels: ["India", "USA", "Ireland", "China", "Global Avg"], values: [56, 18, 9, 7, 10] };
+    }
+    if (!ind.costStructure) {
+      ind.costStructure = { labels: ["Total Revenue", "Employee Cost", "Subcontracting", "Facility & Cloud", "EBITDA", "D&A", "PAT"], values: [100, 56, 12, 8, 24, 4, 18] };
+    }
+    if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 0, receivableDays: 68, payableDays: 24, cashConversionCycle: 44 }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "0.1x (Net Cash Positive)", creditRating: "AAA / Stable", costOfDebt: "6.2%", liquidityBuffer: "$8.5 Billion Net Cash" }; }
+    if (!ind.stockPerformance) {
+      ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 104, 110, 116, 122, 134], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+18.2%", return3Yr: "+46.5%", volatilityBeta: "1.02x" };
+    }
+    if (!ind.customerSegmentation) {
+      ind.customerSegmentation = { labels: ["BFSI (Banking)", "Retail & Consumer", "Healthcare & High-Tech"], values: [40, 32, 28], incomeCohort: "North America (55%), Europe (30%), Rest of World (15%)" };
+    }
+    if (!ind.demandSupplyGap) {
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 115, 132, 150, 172], actualDemand: [96, 112, 128, 146, 168], utilizationRate: "84.5% Employee Utilization" };
+    }
+    if (!ind.swot) {
+      ind.swot = {
+        strengths: ["Unrivaled scale of 5M+ English-speaking engineering talent", "High recurring revenue share with Fortune 500 enterprise clients"],
+        weaknesses: ["Exposure to US/Europe enterprise IT budget cuts", "High senior tech talent attrition during tech expansion cycles"],
+        opportunities: ["Generative AI migration, cloud transformation & cyber defense", "India Semiconductor Mission fab & chip design incentives"],
+        threats: ["Automated AI code generation compressing billable hours", "Protectionist visa policies & currency volatility"]
+      };
+    }
+    if (!ind.dealTimeline) {
+      ind.dealTimeline = [
+        { date: "Q1 2023", company: "Infosys InSemi Silicon Acquisition", value: "$340M", buyer: "Infosys Tech" },
+        { date: "Q3 2023", company: "Freshworks SaaS Buyback", value: "$500M", buyer: "Public Shareholder Buyback" },
+        { date: "Q1 2024", company: "GenAI Enterprise Startup Deal", value: "$180M", buyer: "Tech Mahindra VC" }
+      ];
+    }
+    if (!ind.techRadar) { ind.techRadar = { aiIntegration: "High", roboticsAutomation: "High", d2cOmnichannel: "High", platformEcosystem: "High" }; }
+    if (!ind.interviewAngles) {
+      ind.interviewAngles = [
+        "Market Sizing: Estimate the revenue impact of GenAI adoption on Indian IT services by 2028.",
+        "Profitability Case: How does a SaaS company optimize Customer Acquisition Cost (CAC) vs LTV?",
+        "M&A Due Diligence: Evaluate an acquisition target in cloud-native application modernization.",
+        "Operational Metric: Explain how Employee Attrition & Utilization Rate drive operating margins."
+      ];
+    }
+    if (!ind.glossary) {
+      ind.glossary = [
+        { term: "TCV", definition: "Total Contract Value — Total revenue from signed enterprise deals." },
+        { term: "ARR", definition: "Annual Recurring Revenue — Key SaaS subscription metric." },
+        { term: "Utilization", definition: "Percentage of billable employee time assigned to client projects." },
+        { term: "FTE", definition: "Full-Time Equivalent — Standard measure of project staffing." }
+      ];
+    }
+  }
+
+  // 8. MANUFACTURING & METALS & MINING
+  else if (s.includes('manufacturing') || s.includes('metal') || s.includes('mining') || s.includes('steel') || s.includes('cement') || s.includes('chemical') || s.includes('textile') || s.includes('engineering') || hasWord(n, 'metals') || hasWord(n, 'metal') || hasWord(n, 'mining') || hasWord(n, 'steel') || hasWord(n, 'cement') || hasWord(n, 'chemical') || hasWord(n, 'chemicals') || hasWord(n, 'textile') || hasWord(n, 'textiles') || n.includes('capital goods') || n.includes('capital good') || n.includes('engineering')) {
+    if (!ind.regulatoryTimeline) {
+      ind.regulatoryTimeline = [
+        { year: "2015", title: "MMDR Amendment Act", detail: "Mandatory competitive auction regime for mineral concessions" },
+        { year: "2017", title: "National Steel Policy", detail: "Targeting 300 Million Tonnes annual crude steel capacity by 2030" },
+        { year: "2021", title: "Production Linked Incentive (PLI)", detail: "₹6,322 Cr scheme for specialty high-grade steel manufacturing" },
+        { year: "2024+", title: "Critical Minerals Auction", detail: "First commercial auctions for Lithium, Cobalt & Rare Earths" }
+      ];
+    }
+    if (!ind.globalBenchmarking) {
+      ind.globalBenchmarking = { metricLabel: "Per Capita Finished Steel Consumption (kg)", labels: ["India", "China", "Japan", "USA", "Global Avg"], values: [86, 690, 480, 290, 233] };
+    }
+    if (!ind.costStructure) {
+      ind.costStructure = { labels: ["Net Revenue", "Coking Coal & Iron Ore", "Power & Logistics", "Employee Cost", "EBITDA", "D&A / Interest", "PAT"], values: [100, 42, 22, 8, 28, 14, 14] };
+    }
+    if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 54, receivableDays: 28, payableDays: 45, cashConversionCycle: 37 }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "2.1x", creditRating: "AA / Positive", costOfDebt: "8.1%", liquidityBuffer: "Integrated Captive Mines Cushion" }; }
+    if (!ind.stockPerformance) {
+      ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 112, 128, 144, 168, 195], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+46.0%", return3Yr: "+118.0%", volatilityBeta: "1.45x" };
+    }
+    if (!ind.customerSegmentation) {
+      ind.customerSegmentation = { labels: ["Infra & Construction", "Auto & Engineering", "Consumer Durables"], values: [58, 26, 16], incomeCohort: "EPC Infra Contractors (58%), Auto OEMs (26%), Industrial Manufacturers (16%)" };
+    }
+    if (!ind.demandSupplyGap) {
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 108, 118, 130, 145], actualDemand: [84, 94, 106, 120, 136], utilizationRate: "82.8% Blast Furnace Capacity Utilization" };
+    }
+    if (!ind.swot) {
+      ind.swot = {
+        strengths: ["Rich domestic high-grade iron ore reserves & integrated captive mines", "Low-cost steel production position relative to European mills"],
+        weaknesses: ["Heavy import dependency on Australian metallurgical coking coal", "High carbon intensity requiring expensive Green Steel hydrogen transition"],
+        opportunities: ["National Infra Pipeline driving 10%+ domestic steel demand growth", "Auction of critical battery minerals (Lithium, Nickel, REE)"],
+        threats: ["Cheap Chinese steel dumping during global real estate downturns", "EU Carbon Border Adjustment Mechanism (CBAM) export tariffs"]
+      };
+    }
+    if (!ind.dealTimeline) {
+      ind.dealTimeline = [
+        { date: "Q2 2023", company: "Tata Steel Neelachal Integration", value: "$1.6B", buyer: "Tata Steel Long Products" },
+        { date: "Q4 2023", company: "JSW Port & Mining Asset Deal", value: "$750M", buyer: "JSW Steel Group" },
+        { date: "Q1 2024", company: "Critical Mineral Block Lease", value: "$410M", buyer: "Domestic Mining Corp" }
+      ];
+    }
+    if (!ind.techRadar) { ind.techRadar = { aiIntegration: "Medium", roboticsAutomation: "High", d2cOmnichannel: "Low", platformEcosystem: "Medium" }; }
+    if (!ind.interviewAngles) {
+      ind.interviewAngles = [
+        "Market Sizing: Calculate total crude steel capacity needed to meet India's 2030 300 MT goal.",
+        "Cyclical Valuation: How do you value a cyclical steel producer across peak vs trough EBITDA?",
+        "Margin Sensitivity: Calculate the EBITDA impact of a $50/ton surge in imported coking coal.",
+        "CBAM Risk: Evaluate the carbon tax risk on Indian steel exports to the European Union."
+      ];
+    }
+    if (!ind.glossary) {
+      ind.glossary = [
+        { term: "EAF/BF", definition: "Electric Arc Furnace / Blast Furnace — Primary steelmaking technologies." },
+        { term: "CBAM", definition: "Carbon Border Adjustment Mechanism — EU carbon tariff on imported metals." },
+        { term: "Coking Coal", definition: "Essential metallurgical coal used as a reducing agent in blast furnaces." },
+        { term: "Captive Mine", definition: "Mine owned directly by a factory to secure cheap raw materials." }
+      ];
+    }
+  }
+
+  // 9. GOVERNMENT & DEFENSE
+  else if (s.includes('government') || s.includes('defense') || hasWord(n, 'defence') || hasWord(n, 'defense') || hasWord(n, 'aerospace') || hasWord(n, 'space') || hasWord(n, 'deep tech') || hasWord(n, 'ordnance')) {
+    if (!ind.regulatoryTimeline) {
+      ind.regulatoryTimeline = [
+        { year: "2018", title: "Defense Production Policy", detail: "Targeting $26B production & self-reliance by 2025" },
+        { year: "2020", title: "Defence Acquisition Procedure (DAP)", detail: "Simplified procurement and higher local content requirements" },
+        { year: "2022", title: "Negative Import Lists", detail: "Banning import of 411 defense systems to mandate local procurement" },
+        { year: "2024+", title: "Defense FDI Limit (74%)", detail: "FDI limit raised to 74% under automatic route to boost tech transfers" }
+      ];
+    }
+    if (!ind.globalBenchmarking) {
+      ind.globalBenchmarking = { metricLabel: "Defense Spending (USD Billion)", labels: ["India", "Saudi Arabia", "Russia", "China", "USA"], values: [75, 72, 86, 292, 877] };
+    }
+    if (!ind.costStructure) {
+      ind.costStructure = { labels: ["Net Revenue", "Imported Components", "Raw Materials & Casting", "Employee Cost", "EBITDA", "D&A & Finance", "PAT"], values: [100, 32, 24, 16, 16, 4, 8] };
+    }
+    if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 120, receivableDays: 95, payableDays: 80, cashConversionCycle: 135 }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "0.8x", creditRating: "AAA / Stable", costOfDebt: "7.2%", liquidityBuffer: "Government Capital Budget Backing" }; }
+    if (!ind.stockPerformance) {
+      ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 130, 165, 210, 275, 340], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+115.2%", return3Yr: "+380.0%", volatilityBeta: "1.30x" };
+    }
+    if (!ind.customerSegmentation) {
+      ind.customerSegmentation = { labels: ["Indian Army & Navy", "Air Force", "Exports & Commercial Aerospace"], values: [45, 40, 15], incomeCohort: "MoD Capital Allocation (85%), Exports to Friendly Countries (15%)" };
+    }
+    if (!ind.demandSupplyGap) {
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 115, 135, 160, 190], actualDemand: [95, 110, 130, 155, 185], utilizationRate: "97.4% Production Capacity Utilization" };
+    }
+    if (!ind.swot) {
+      ind.swot = {
+        strengths: ["Mandatory buy-local clauses in DAP providing long-term revenue", "Established defense PSU infrastructure & sovereign manufacturing support"],
+        weaknesses: ["Extended R&D-to-production cycles and bureaucratic delays", "Heavy dependency on critical engine components & avionics imports"],
+        opportunities: ["Private defense sector participation & aerospace manufacturing JVs", "Rapidly expanding defense exports to Southeast Asia, Middle East & Africa"],
+        threats: ["Geopolitical realignments disrupting technology transfer pipelines", "High capital intensity with high product obsolescence risks"]
+      };
+    }
+    if (!ind.dealTimeline) {
+      ind.dealTimeline = [
+        { date: "Q2 2023", company: "GE-HAL Fighter Jet Engine JV", value: "$1.2B", buyer: "HAL Engine Manufacturing" },
+        { date: "Q4 2023", company: "Private Drone Startup Funding", value: "$45M", buyer: "Venture Capital Consortium" },
+        { date: "Q1 2024", company: "Tactical Communications Acquisition", value: "$120M", buyer: "Domestic Systems Integrator" }
+      ];
+    }
+    if (!ind.techRadar) { ind.techRadar = { aiIntegration: "High", roboticsAutomation: "High", d2cOmnichannel: "Low", platformEcosystem: "Medium" }; }
+    if (!ind.interviewAngles) {
+      ind.interviewAngles = [
+        "Market Sizing: Estimate the domestic defense electronics market size in India by 2030.",
+        "Procurement: Explain the key differences between Buy (Indian-IDDM) and Buy (Global) pathways.",
+        "Working Capital: Analyze how the negative import lists affect inventory holdings for OEMs.",
+        "Space Tech: Evaluate the market opportunity for private launch vehicle operators in India."
+      ];
+    }
+    if (!ind.glossary) {
+      ind.glossary = [
+        { term: "IDDM", definition: "Indigenously Designed, Developed and Manufactured — Highest priority DAP category." },
+        { term: "DPSU", definition: "Defence Public Sector Undertaking — State-owned defense manufacturer." },
+        { term: "FDI", definition: "Foreign Direct Investment — Permitted up to 74% automatically in defense." },
+        { term: "MoD", definition: "Ministry of Defence — Sovereign procurement customer authority." }
+      ];
+    }
+  }
+
+  // 10. INFRASTRUCTURE & REAL ESTATE
+  else if (s.includes('infrastructure') || s.includes('infra') || n.includes('real estate') || n.includes('construction') || n.includes('highway') || n.includes('road') || n.includes('water') || n.includes('sanitation') || n.includes('epc')) {
+    if (!ind.regulatoryTimeline) {
+      ind.regulatoryTimeline = [
+        { year: "2016", title: "RERA Act Enforcement", detail: "Real estate consumer protection & project accountability rules" },
+        { year: "2020", title: "PM GatiShakti Masterplan", detail: "₹100 Lakh Cr NIP for roads, rail, airports and multimodal connectivity" },
+        { year: "2022", title: "InvIT & REIT Frameworks", detail: "Asset monetization of public roads and commercial buildings" },
+        { year: "2024+", title: "National Infrastructure Pipeline", detail: "Recycling capital through public asset sales to finance greenfield builds" }
+      ];
+    }
+    if (!ind.globalBenchmarking) {
+      ind.globalBenchmarking = { metricLabel: "Infrastructure Spend as % of GDP", labels: ["India", "China", "USA", "Brazil", "Global Avg"], values: [5.0, 8.5, 2.4, 2.8, 3.5] };
+    }
+    if (!ind.costStructure) {
+      ind.costStructure = { labels: ["Net Revenue", "Material & Sub-contract", "Labour & Equipment", "Land & Legal Costs", "EBITDA", "D&A / Finance Cost", "PAT"], values: [100, 50, 18, 8, 14, 7, 7] };
+    }
+    if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 28, receivableDays: 90, payableDays: 60, cashConversionCycle: 58 }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "3.2x", creditRating: "AA- / Stable", costOfDebt: "8.6%", liquidityBuffer: "Government EPC Order Book" }; }
+    if (!ind.stockPerformance) {
+      ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 118, 138, 162, 188, 225], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+58.0%", return3Yr: "+168.0%", volatilityBeta: "1.35x" };
+    }
+    if (!ind.customerSegmentation) {
+      ind.customerSegmentation = { labels: ["Govt EPC & PPP", "Residential Properties", "Industrial Spaces"], values: [55, 32, 13], incomeCohort: "Central/State Governments (55%), Urban Home Buyers (32%), Industrial Clients (13%)" };
+    }
+    if (!ind.demandSupplyGap) {
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 112, 128, 148, 172], actualDemand: [94, 108, 126, 146, 168], utilizationRate: "76.5% Equipment & Labour Utilization" };
+    }
+    if (!ind.swot) {
+      ind.swot = {
+        strengths: ["Massive government capex pipeline providing order book visibility", "Asset-light InvIT monetization models recycling capital"],
+        weaknesses: ["High receivable days from government bodies causing cash strain", "Land acquisition delays stretching project timelines"],
+        opportunities: ["Smart City infrastructure, data centers & private logistics parks", "Rapidly expanding residential real estate demand in tier-2 cities"],
+        threats: ["Input cost inflation (cement, steel) squeezing EPC margins", "Interest rate hikes impacting residential real estate sales"]
+      };
+    }
+    if (!ind.dealTimeline) {
+      ind.dealTimeline = [
+        { date: "Q2 2023", company: "NHAI InvIT Monetization", value: "$1.2B", buyer: "Global Infra Pension Funds" },
+        { date: "Q4 2023", company: "DLF Commercial Assets Sale", value: "$850M", buyer: "GIC Singapore" },
+        { date: "Q1 2024", company: "EPC Asset Restructuring", value: "$220M", buyer: "Infrastructure PE Fund" }
+      ];
+    }
+    if (!ind.techRadar) { ind.techRadar = { aiIntegration: "Low", roboticsAutomation: "High", d2cOmnichannel: "Low", platformEcosystem: "Medium" }; }
+    if (!ind.interviewAngles) {
+      ind.interviewAngles = [
+        "Market Sizing: Estimate total road length India must build to reach 5 km/1,000 sqkm density.",
+        "Project Finance: How do you structure non-recourse project debt for a greenfield highway?",
+        "InvIT Valuation: How do you value an InvIT using yield-based NAV vs EV/EBITDA?",
+        "Real Estate: Estimate residential demand over 5 years using household formation rates."
+      ];
+    }
+    if (!ind.glossary) {
+      ind.glossary = [
+        { term: "EPC", definition: "Engineering, Procurement & Construction — Turnkey project delivery contract." },
+        { term: "InvIT", definition: "Infrastructure Investment Trust — Yield-bearing listed trust for infra assets." },
+        { term: "RERA", definition: "Real Estate Regulatory Authority — Consumer protection framework for property." },
+        { term: "HAM", definition: "Hybrid Annuity Model — Govt-private risk-sharing model for highway construction." }
+      ];
+    }
+  }
+
+  // 11. AGRICULTURE & AGRITECH
+  else if (s.includes('agriculture') || s.includes('agri') || hasWord(n, 'agriculture') || hasWord(n, 'agritech') || hasWord(n, 'farming') || hasWord(n, 'crop') || hasWord(n, 'seeds')) {
+    if (!ind.regulatoryTimeline) {
+      ind.regulatoryTimeline = [
+        { year: "2018", title: "PM-KISAN Scheme Launch", detail: "Direct income support transfer of ₹6,000/year to landholding farmers" },
+        { year: "2020", title: "Agriculture Infrastructure Fund (AIF)", detail: "₹1 Lakh Cr debt support for post-harvest management infrastructure" },
+        { year: "2022", title: "Drone Subsidy in Farming", detail: "100% financial grants for agritech drones & precision farming pilots" },
+        { year: "2024+", title: "Agri-Stack Digital Mission", detail: "National crop registration database & registry IDs for farmers" }
+      ];
+    }
+    if (!ind.globalBenchmarking) {
+      ind.globalBenchmarking = { metricLabel: "Average Farm Yield (Tonnes/Hectare)", labels: ["India", "China", "Brazil", "USA", "Global Avg"], values: [3.2, 6.5, 4.8, 8.2, 5.1] };
+    }
+    if (!ind.costStructure) {
+      ind.costStructure = { labels: ["Total Output Value", "Seeds & Fertilizers", "Power & Irrigation", "Labour Cost", "EBITDA", "Logistics & Storage", "Net Margin"], values: [100, 28, 14, 22, 18, 12, 6] };
+    }
+    if (!ind.workingCapital) { ind.workingCapital = { inventoryDays: 60, receivableDays: 45, payableDays: 30, cashConversionCycle: 75 }; }
+    if (!ind.creditProfile) { ind.creditProfile = { netDebtToEbitda: "1.8x", creditRating: "A / Stable", costOfDebt: "8.5%", liquidityBuffer: "NABARD Refinancing Support" }; }
+    if (!ind.stockPerformance) {
+      ind.stockPerformance = { labels: ["Q1 23", "Q2 23", "Q3 23", "Q4 23", "Q1 24", "Q2 24"], sectorIndex: [100, 108, 116, 125, 138, 155], benchmarkNifty: [100, 105, 112, 116, 122, 130], return1Yr: "+28.4%", return3Yr: "+64.8%", volatilityBeta: "0.92x" };
+    }
+    if (!ind.customerSegmentation) {
+      ind.customerSegmentation = { labels: ["Smallholder Farms", "Commercial Plantations", "Food Processing Cooperatives"], values: [65, 20, 15], incomeCohort: "Marginal Landholders (65%), Agri-business Corporates (35%)" };
+    }
+    if (!ind.demandSupplyGap) {
+      ind.demandSupplyGap = { labels: ["2021", "2022", "2023", "2024E", "2025F"], installedCapacity: [100, 106, 114, 124, 136], actualDemand: [95, 102, 110, 118, 128], utilizationRate: "88.2% Storage Capacity Utilization" };
+    }
+    if (!ind.swot) {
+      ind.swot = {
+        strengths: ["Massive arable land resources & year-round cropping seasons", "Strong governmental input subsidies (fertilizer, power, water)"],
+        weaknesses: ["Low crop yields & high dependency on monsoon rainfall patterns", "Fragmented landholdings leading to low farm mechanization"],
+        opportunities: ["Agritech drone deployment & precision soil mapping services", "Agri-exports growth & food processing value-chain integration"],
+        threats: ["Climate change & extreme weather events destroying crop output", "Agrochemical regulation bans impacting pesticide sale margins"]
+      };
+    }
+    if (!ind.dealTimeline) {
+      ind.dealTimeline = [
+        { date: "Q2 2023", company: "Agritech Marketplace Series B", value: "$65M", buyer: "Impact Venture Capital" },
+        { date: "Q4 2023", company: "Cold Chain Storage Network Sale", value: "$110M", buyer: "Agritech Logistics Corp" },
+        { date: "Q1 2024", company: "Organic Fertilizer JV Setup", value: "$30M", buyer: "Domestic Agrochemical Group" }
+      ];
+    }
+    if (!ind.techRadar) { ind.techRadar = { aiIntegration: "Medium", roboticsAutomation: "Medium", d2cOmnichannel: "Low", platformEcosystem: "High" }; }
+    if (!ind.interviewAngles) {
+      ind.interviewAngles = [
+        "Market Sizing: Estimate the total addressable market of agritech smart-soil sensors in India.",
+        "Agri Finance: Explain the credit structure of Crop Loans vs Capital Investment Loans.",
+        "Supply Chain: Calculate post-harvest wastage cost reduction through cold chain setup.",
+        "Mechanization: Evaluate the economic payback period for a drone spraying service startup."
+      ];
+    }
+    if (!ind.glossary) {
+      ind.glossary = [
+        { term: "AIF", definition: "Agriculture Infrastructure Fund — Government interest-subvention fund." },
+        { term: "FPO", definition: "Farmer Producer Organisation — Group of farmers forming a business entity." },
+        { term: "MSP", definition: "Minimum Support Price — Guaranteed crop purchase price set by Government." },
+        { term: "NABARD", definition: "National Bank for Agriculture and Rural Development — Apex development bank." }
+      ];
+    }
+  }
+
+  // Fallbacks for remaining fields (if any fields are still missing)
   if (!ind.regulatoryTimeline) {
     ind.regulatoryTimeline = [
       { year: "2017", title: "GST Implementation", detail: "Unified national tax regime eliminating interstate logistics bottlenecks" },
@@ -241,43 +793,48 @@ function ensureIndustryEnrichment(ind) {
    REAL PDF TEXT PARSING ENGINE
    =============================================== */
 function parsePdfTextToIntelligence(fileName, pdfText) {
-  const text = (pdfText || '').toLowerCase();
+  const safePdfText = pdfText || '';
+  const text = safePdfText.toLowerCase();
   const cleanBaseName = fileName.replace(/\.pdf$/i, '').replace(/[^a-zA-Z0-9]/g, ' ');
 
   // Sector detection based on extracted keywords in PDF
   let sector = "General Industry";
   if (text.includes('aviation') || text.includes('airline') || text.includes('passenger') || text.includes('atf') || text.includes('flight')) {
-    sector = "Aviation";
+    sector = "Transportation & Logistics";
   } else if (text.includes('solar') || text.includes('renewable') || text.includes('wind') || text.includes('hydrogen') || text.includes('energy')) {
-    sector = "Renewable Energy";
+    sector = "Energy";
   } else if (text.includes('ev') || text.includes('vehicle') || text.includes('auto') || text.includes('battery') || text.includes('oem')) {
     sector = "Automotive";
-  } else if (text.includes('pharma') || text.includes('health') || text.includes('drug') || text.includes('hospital') || text.includes('clinical')) {
+  } else if (text.includes('pharma') || text.includes('health') || text.includes('drug') || text.includes('hospital') || text.includes('clinical') || text.includes('biotech')) {
     sector = "Healthcare";
-  } else if (text.includes('saas') || text.includes('cloud') || text.includes('software') || text.includes('tech') || text.includes('ai')) {
+  } else if (text.includes('saas') || text.includes('cloud') || text.includes('software') || text.includes('tech') || text.includes('ai') || text.includes('semiconductor')) {
     sector = "Technology";
-  } else if (text.includes('bank') || text.includes('fintech') || text.includes('loan') || text.includes('credit') || text.includes('fund')) {
+  } else if (text.includes('bank') || text.includes('fintech') || text.includes('loan') || text.includes('credit') || text.includes('fund') || text.includes('wealth')) {
     sector = "Financial Services";
-  } else if (text.includes('fmcg') || text.includes('retail') || text.includes('food') || text.includes('consumer') || text.includes('d2c')) {
-    sector = "Consumer Goods";
+  } else if (text.includes('fmcg') || text.includes('retail') || text.includes('food') || text.includes('consumer') || text.includes('d2c') || text.includes('ecommerce') || text.includes('apparel')) {
+    sector = "Consumer";
   } else if (text.includes('telecom') || text.includes('5g') || text.includes('mobile') || text.includes('tower') || text.includes('spectrum')) {
-    sector = "Telecommunications";
-  } else if (text.includes('steel') || text.includes('metal') || text.includes('mining') || text.includes('iron') || text.includes('copper')) {
-    sector = "Metals & Mining";
-  } else if (text.includes('cement') || text.includes('infra') || text.includes('construction') || text.includes('highway') || text.includes('road')) {
+    sector = "Technology"; // Telecom maps to Technology sector in data.js
+  } else if (text.includes('steel') || text.includes('metal') || text.includes('mining') || text.includes('iron') || text.includes('copper') || text.includes('chemical') || text.includes('textile')) {
+    sector = "Manufacturing";
+  } else if (text.includes('cement') || text.includes('infra') || text.includes('construction') || text.includes('highway') || text.includes('road') || text.includes('real estate')) {
     sector = "Infrastructure";
+  } else if (text.includes('agri') || text.includes('agriculture') || text.includes('farm') || text.includes('farming') || text.includes('crop') || text.includes('seed')) {
+    sector = "Agriculture";
+  } else if (text.includes('defense') || text.includes('defence') || text.includes('aerospace') || text.includes('space') || text.includes('military')) {
+    sector = "Government & Defense";
   }
 
   // Extract Market Size from PDF text or generate realistic number
   let marketSize = "$18.5 Billion Market";
-  const sizeMatch = pdfText.match(/(\$\d+(\.\d+)?\s*(billion|million|B|M)|₹\d+(\.\d+)?\s*(lakh|crore|Cr))/i);
+  const sizeMatch = safePdfText.match(/(\$\d+(\.\d+)?\s*(billion|million|B|M)|₹\d+(\.\d+)?\s*(lakh|crore|Cr))/i);
   if (sizeMatch) {
     marketSize = sizeMatch[0] + " Market";
   }
 
   // Extract CAGR % from PDF text
   let cagr = "~18% CAGR";
-  const cagrMatch = pdfText.match(/(\d+(\.\d+)?%)\s*(cagr|growth|annual)/i);
+  const cagrMatch = safePdfText.match(/(\d+(\.\d+)?%)\s*(cagr|growth|annual)/i);
   if (cagrMatch) {
     cagr = `~${cagrMatch[1]} CAGR`;
   }
