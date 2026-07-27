@@ -27,6 +27,76 @@ function loadInitialUploads() {
   return [...DEFAULT_UPLOAD_HISTORY];
 }
 
+// Redefine sector colors with a premium consulting slate/teal/navy palette
+const SECTOR_COLORS = {
+  "Financial Services": "#1e3a8a",          // Premium Navy
+  "Automotive": "#0f766e",                  // Muted Teal
+  "Transportation & Logistics": "#5b21b6",  // Royal Violet
+  "Technology": "#065f46",                  // Deep Emerald
+  "Healthcare": "#9a3412",                  // Muted Terracotta
+  "Infrastructure": "#881337",              // Muted Burgundy
+  "Manufacturing": "#831843",              // Deep Rose
+  "Consumer": "#c2410c",                    // Muted Orange
+  "Energy": "#3f6212",                      // Muted Moss Green
+  "Government & Defense": "#312e81",        // Indigo Ink
+  "Agriculture": "#115e59"                  // Pine Green
+};
+
+// Custom value drawing plugin for Chart.js (consulting style labels on top of elements)
+const valueLabelsPlugin = {
+  id: 'valueLabels',
+  afterDraw: (chart) => {
+    const { ctx } = chart;
+    ctx.save();
+    ctx.font = 'bold 9.5px "Space Mono", monospace';
+    ctx.fillStyle = '#4a6080'; // Clean slate gray text
+    
+    chart.data.datasets.forEach((dataset, datasetIndex) => {
+      const meta = chart.getDatasetMeta(datasetIndex);
+      if (meta.hidden) return;
+      
+      meta.data.forEach((element, index) => {
+        let val = dataset.data[index];
+        let displayVal = '';
+        
+        // Handle floating bar (ranges) for Waterfall
+        if (Array.isArray(val)) {
+          const diff = Math.round(Math.abs(val[1] - val[0]));
+          const label = chart.data.labels[index];
+          if (label === 'Total Revenue' || label === 'EBITDA' || label === 'PAT') {
+            displayVal = `${Math.round(val[1])}%`;
+          } else {
+            displayVal = `-${diff}%`;
+          }
+        } else if (typeof val === 'number') {
+          // Format based on chart canvas ID or settings
+          if (chart.canvas.id === 'compareCagrCanvas' || chart.canvas.id === 'globalBenchmarkingCanvas' || chart.canvas.id === 'cagrLeaderboardCanvas') {
+            displayVal = `${val}%`;
+          } else if (chart.canvas.id === 'demandSupplyCanvas') {
+            displayVal = `${val}`;
+          } else {
+            displayVal = val.toString();
+          }
+        }
+        
+        if (!displayVal || displayVal.includes('NaN')) return;
+        
+        const position = element.tooltipPosition();
+        if (chart.options.indexAxis === 'y') {
+          ctx.textAlign = 'left';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(' ' + displayVal, position.x, position.y);
+        } else {
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.fillText(displayVal, position.x, position.y - 4);
+        }
+      });
+    });
+    ctx.restore();
+  }
+};
+
 const state = {
   currentPage: 'explorer',
   searchQuery: '',
@@ -1442,12 +1512,12 @@ function renderSectorChart() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: '65%',
+      cutout: '75%',
       plugins: {
         legend: { display: false },
         tooltip: {
           backgroundColor: '#ffffff',
-          borderColor: 'rgba(30,64,120,0.14)',
+          borderColor: 'rgba(30,64,120,0.12)',
           borderWidth: 1,
           titleColor: '#0f1e35',
           bodyColor: '#4a6080',
@@ -1491,9 +1561,10 @@ function renderCagrLeaderboardChart() {
       datasets: [{
         label: 'CAGR Growth %',
         data: parsed.map(p => p.cagr),
-        backgroundColor: parsed.map(p => SECTOR_COLORS[p.sector] || '#0284c7'),
-        borderRadius: 6,
-        borderSkipped: false
+        backgroundColor: parsed.map(p => (SECTOR_COLORS[p.sector] || '#1e3a8a') + 'dd'), // slightly transparent for premium aesthetic
+        borderRadius: 4,
+        borderSkipped: false,
+        barThickness: 16
       }]
     },
     options: {
@@ -1504,10 +1575,10 @@ function renderCagrLeaderboardChart() {
         legend: { display: false },
         tooltip: {
           backgroundColor: '#ffffff',
-          borderColor: 'rgba(30,64,120,0.14)',
+          borderColor: 'rgba(30,64,120,0.12)',
           borderWidth: 1,
           titleColor: '#0f1e35',
-          bodyColor: '#059669',
+          bodyColor: '#1e3a8a',
           padding: 10,
           titleFont: { family: 'Space Mono', size: 11 },
           bodyFont: { family: 'Inter', size: 12, weight: '600' },
@@ -1516,17 +1587,21 @@ function renderCagrLeaderboardChart() {
       },
       scales: {
         x: {
-          grid: { color: 'rgba(30,64,120,0.06)' },
-          ticks: { color: '#8aa0be', font: { family: 'Space Mono', size: 9 }, callback: val => `${val}%` }
+          grid: { display: false },
+          ticks: { display: false }, // Hide x axis completely since we use datalabels
+          border: { display: false }
         },
         y: {
           grid: { display: false },
-          ticks: { color: '#0f1e35', font: { family: 'Inter', size: 11, weight: '500' } }
+          ticks: { color: '#0f1e35', font: { family: 'Inter', size: 11, weight: '600' } },
+          border: { display: false }
         }
       }
-    }
+    },
+    plugins: [valueLabelsPlugin] // draw the actual values right next to the horizontal bars!
   });
 }
+
 
 function renderHeatmapTable() {
   const tbody = document.getElementById('heatmapBody');
@@ -2228,10 +2303,10 @@ function renderModalForcesRadar(ind) {
       datasets: [{
         label: ind.name,
         data,
-        backgroundColor: 'rgba(2, 132, 199, 0.20)',
-        borderColor: '#0284c7',
+        backgroundColor: 'rgba(30, 58, 138, 0.12)',
+        borderColor: '#1e3a8a', // Premium Navy
         borderWidth: 2,
-        pointBackgroundColor: '#0284c7',
+        pointBackgroundColor: '#1e3a8a',
         pointRadius: 4
       }]
     },
@@ -2243,8 +2318,8 @@ function renderModalForcesRadar(ind) {
         r: {
           min: 0, max: 5,
           ticks: { display: false, stepSize: 1 },
-          grid: { color: 'rgba(30,64,120,0.1)' },
-          pointLabels: { font: { family: 'Space Mono', size: 9 }, color: '#4a6080' }
+          grid: { color: 'rgba(30, 64, 120, 0.08)' },
+          pointLabels: { font: { family: 'Space Mono', size: 9, weight: '700' }, color: '#4a6080' }
         }
       }
     }
@@ -2262,8 +2337,9 @@ function renderGlobalBenchmarkingChart(ind) {
       datasets: [{
         label: ind.globalBenchmarking.metricLabel,
         data: ind.globalBenchmarking.values,
-        backgroundColor: ['#0284c7', '#059669', '#7c3aed', '#d97706', '#94a3b8'],
-        borderRadius: 4
+        backgroundColor: ['#1e3a8a', '#0f766e', '#5b21b6', '#c2410c', '#64748b'], // Coordinated palette
+        borderRadius: 4,
+        barThickness: 16
       }]
     },
     options: {
@@ -2271,10 +2347,19 @@ function renderGlobalBenchmarkingChart(ind) {
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { family: 'Space Mono', size: 9 } } },
-        y: { grid: { color: 'rgba(30,64,120,0.06)' } }
+        x: { 
+          grid: { display: false }, 
+          ticks: { font: { family: 'Space Mono', size: 9 }, color: '#4a6080' },
+          border: { display: false }
+        },
+        y: { 
+          grid: { display: false }, 
+          ticks: { display: false }, // Hide y axis completely since we show datalabels
+          border: { display: false }
+        }
       }
-    }
+    },
+    plugins: [valueLabelsPlugin]
   });
 }
 
@@ -2291,14 +2376,14 @@ function calculateWaterfallBridge(costStructure) {
 
   // 1. Total Revenue (0 to Revenue)
   ranges.push([0, running]);
-  colors.push('#0284c7'); // Cyan/Navy Total
+  colors.push('#1e3a8a'); // Navy Revenue
   tooltips.push(`Total Revenue: ${running}%`);
 
   // 2. Cost Deduction 1 (-vals[1])
   const cost1 = rawVals[1] || 40;
   let next = running - cost1;
   ranges.push([Math.max(0, next), running]);
-  colors.push('#dc2626'); // Red cost deduction
+  colors.push('#be123c'); // Crimson cost deduction
   tooltips.push(`- ${rawLabels[1]}: ${cost1}% (${running}% ➔ ${next}%)`);
   running = next;
 
@@ -2306,7 +2391,7 @@ function calculateWaterfallBridge(costStructure) {
   const cost2 = rawVals[2] || 14;
   next = running - cost2;
   ranges.push([Math.max(0, next), running]);
-  colors.push('#ea580c'); // Orange cost deduction
+  colors.push('#be123c'); // Crimson cost deduction
   tooltips.push(`- ${rawLabels[2]}: ${cost2}% (${running}% ➔ ${next}%)`);
   running = next;
 
@@ -2314,14 +2399,14 @@ function calculateWaterfallBridge(costStructure) {
   const cost3 = rawVals[3] || 14;
   next = running - cost3;
   ranges.push([Math.max(0, next), running]);
-  colors.push('#d97706'); // Amber cost deduction
+  colors.push('#be123c'); // Crimson cost deduction
   tooltips.push(`- ${rawLabels[3]}: ${cost3}% (${running}% ➔ ${next}%)`);
   running = next;
 
   // 5. EBITDA Subtotal (0 to EBITDA)
   const ebitda = rawVals[4] || running;
   ranges.push([0, ebitda]);
-  colors.push('#059669'); // Emerald Green Subtotal
+  colors.push('#065f46'); // Emerald Green Subtotal
   tooltips.push(`EBITDA Subtotal: ${ebitda}% of Revenue`);
   running = ebitda;
 
@@ -2336,7 +2421,7 @@ function calculateWaterfallBridge(costStructure) {
   // 7. PAT Net Profit Final (0 to PAT)
   const pat = rawVals[6] || running;
   ranges.push([0, pat]);
-  colors.push('#0369a1'); // Deep Blue Net Profit
+  colors.push('#0f766e'); // Teal Net Profit
   tooltips.push(`PAT (Net Profit): ${pat}% of Revenue`);
 
   return {
@@ -2362,7 +2447,8 @@ function renderCostStructureChart(ind) {
         data: bridge.ranges,
         backgroundColor: bridge.colors,
         borderRadius: 4,
-        borderSkipped: false
+        borderSkipped: false,
+        barThickness: 24
       }]
     },
     options: {
@@ -2372,7 +2458,7 @@ function renderCostStructureChart(ind) {
         legend: { display: false },
         tooltip: {
           backgroundColor: '#ffffff',
-          borderColor: 'rgba(30,64,120,0.14)',
+          borderColor: 'rgba(30,64,120,0.12)',
           borderWidth: 1,
           titleColor: '#0f1e35',
           bodyColor: '#1e4078',
@@ -2388,14 +2474,19 @@ function renderCostStructureChart(ind) {
         }
       },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { family: 'Space Mono', size: 9 } } },
+        x: { 
+          grid: { display: false }, 
+          ticks: { font: { family: 'Space Mono', size: 9 }, color: '#4a6080' },
+          border: { display: false }
+        },
         y: {
-          min: 0, max: 100,
-          grid: { color: 'rgba(30,64,120,0.06)' },
-          ticks: { callback: v => `${v}%`, font: { family: 'Space Mono', size: 9 } }
+          grid: { display: false },
+          ticks: { display: false }, // Hide y axis completely since we use datalabels
+          border: { display: false }
         }
       }
-    }
+    },
+    plugins: [valueLabelsPlugin]
   });
 }
 
@@ -2411,18 +2502,22 @@ function renderStockPerformanceChart(ind) {
         {
           label: `${ind.name} Index`,
           data: ind.stockPerformance.sectorIndex,
-          borderColor: '#0284c7',
-          backgroundColor: 'rgba(2, 132, 199, 0.08)',
+          borderColor: '#0f766e', // Premium Teal
+          backgroundColor: 'rgba(15, 118, 110, 0.04)', // subtle area fill
           fill: true,
-          tension: 0.3
+          tension: 0.25,
+          borderWidth: 2.5,
+          pointRadius: 3
         },
         {
           label: 'Nifty 50 Benchmark',
           data: ind.stockPerformance.benchmarkNifty,
           borderColor: '#94a3b8',
-          borderDash: [4, 4],
+          borderDash: [5, 5],
           fill: false,
-          tension: 0.3
+          tension: 0.25,
+          borderWidth: 1.5,
+          pointRadius: 0 // clean dashed line without dots
         }
       ]
     },
@@ -2430,11 +2525,19 @@ function renderStockPerformanceChart(ind) {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: { labels: { font: { family: 'Space Mono', size: 9 } } }
+        legend: { labels: { font: { family: 'Space Mono', size: 9, weight: '700' }, color: '#0f1e35' } }
       },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { family: 'Space Mono', size: 9 } } },
-        y: { grid: { color: 'rgba(30,64,120,0.06)' } }
+        x: { 
+          grid: { display: false }, 
+          ticks: { font: { family: 'Space Mono', size: 9 }, color: '#4a6080' },
+          border: { display: false }
+        },
+        y: { 
+          grid: { color: 'rgba(30,64,120,0.04)' },
+          ticks: { font: { family: 'Space Mono', size: 9 }, color: '#4a6080' },
+          border: { display: false }
+        }
       }
     }
   });
@@ -2450,16 +2553,17 @@ function renderCustomerSegChart(ind) {
       labels: ind.customerSegmentation.labels,
       datasets: [{
         data: ind.customerSegmentation.values,
-        backgroundColor: ['#0284c7', '#059669', '#7c3aed'],
-        borderWidth: 2
+        backgroundColor: ['#1e3a8a', '#0f766e', '#5b21b6'], // Coordinated palette
+        borderWidth: 2,
+        borderColor: '#ffffff'
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: '60%',
+      cutout: '70%',
       plugins: {
-        legend: { position: 'bottom', labels: { font: { family: 'Inter', size: 10 } } }
+        legend: { position: 'bottom', labels: { font: { family: 'Inter', size: 10, weight: '600' } } }
       }
     }
   });
@@ -2478,27 +2582,39 @@ function renderDemandSupplyChart(ind) {
           label: 'Installed Capacity',
           data: ind.demandSupplyGap.installedCapacity,
           backgroundColor: '#94a3b8',
-          borderRadius: 4
+          borderRadius: 4,
+          barThickness: 10
         },
         {
           label: 'Actual Demand',
           data: ind.demandSupplyGap.actualDemand,
-          backgroundColor: '#0284c7',
-          borderRadius: 4
+          backgroundColor: '#1e3a8a',
+          borderRadius: 4,
+          barThickness: 10
         }
       ]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { labels: { font: { family: 'Space Mono', size: 9 } } } },
+      plugins: { legend: { labels: { font: { family: 'Space Mono', size: 9, weight: '700' } } } },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { family: 'Space Mono', size: 9 } } },
-        y: { grid: { color: 'rgba(30,64,120,0.06)' } }
+        x: { 
+          grid: { display: false }, 
+          ticks: { font: { family: 'Space Mono', size: 9 }, color: '#4a6080' },
+          border: { display: false }
+        },
+        y: { 
+          grid: { display: false }, 
+          ticks: { display: false }, // Hide y axis completely since we show datalabels
+          border: { display: false }
+        }
       }
-    }
+    },
+    plugins: [valueLabelsPlugin]
   });
 }
+
 
 function closeModal() {
   document.getElementById('modalOverlay').classList.remove('open');
@@ -2770,7 +2886,7 @@ function renderCompareCharts(industries) {
   const radarCtx = document.getElementById('compareRadarCanvas');
   const cagrCtx = document.getElementById('compareCagrCanvas');
 
-  const chartColors = ['#0284c7', '#059669', '#7c3aed', '#d97706'];
+  const chartColors = ['#1e3a8a', '#0f766e', '#5b21b6', '#c2410c']; // Premium Consulting Palette
 
   if (radarCtx) {
     const datasets = industries.map((ind, idx) => ({
@@ -2782,9 +2898,11 @@ function renderCompareCharts(industries) {
         forceToScore(ind.forces.substitutes),
         forceToScore(ind.forces.rivalry)
       ],
-      backgroundColor: chartColors[idx % chartColors.length] + '20',
+      backgroundColor: chartColors[idx % chartColors.length] + '12',
       borderColor: chartColors[idx % chartColors.length],
-      borderWidth: 2
+      borderWidth: 2,
+      pointBackgroundColor: chartColors[idx % chartColors.length],
+      pointRadius: 3
     }));
 
     new Chart(radarCtx, {
@@ -2800,8 +2918,8 @@ function renderCompareCharts(industries) {
           r: {
             min: 0, max: 5,
             ticks: { display: false },
-            grid: { color: 'rgba(30,64,120,0.1)' },
-            pointLabels: { font: { family: 'Space Mono', size: 9 }, color: '#4a6080' }
+            grid: { color: 'rgba(30, 64, 120, 0.08)' },
+            pointLabels: { font: { family: 'Space Mono', size: 9, weight: '700' }, color: '#4a6080' }
           }
         }
       }
@@ -2822,7 +2940,8 @@ function renderCompareCharts(industries) {
           label: 'CAGR Growth %',
           data: cagrVals,
           backgroundColor: industries.map((i, idx) => chartColors[idx % chartColors.length]),
-          borderRadius: 6
+          borderRadius: 4,
+          barThickness: 16
         }]
       },
       options: {
@@ -2830,10 +2949,19 @@ function renderCompareCharts(industries) {
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: {
-          x: { grid: { display: false }, ticks: { font: { family: 'Space Mono', size: 10 } } },
-          y: { grid: { color: 'rgba(30,64,120,0.06)' }, ticks: { callback: v => `${v}%` } }
+          x: { 
+            grid: { display: false }, 
+            ticks: { font: { family: 'Space Mono', size: 9 }, color: '#4a6080' },
+            border: { display: false }
+          },
+          y: { 
+            grid: { display: false }, 
+            ticks: { display: false }, // Hide y axis completely since we show datalabels
+            border: { display: false }
+          }
         }
-      }
+      },
+      plugins: [valueLabelsPlugin]
     });
   }
 }
