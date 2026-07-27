@@ -28,7 +28,7 @@ function loadInitialUploads() {
 }
 
 // Redefine sector colors with a premium consulting slate/teal/navy palette
-const SECTOR_COLORS = {
+const PREMIUM_SECTOR_COLORS = {
   "Financial Services": "#1e3a8a",          // Premium Navy
   "Automotive": "#0f766e",                  // Muted Teal
   "Transportation & Logistics": "#5b21b6",  // Royal Violet
@@ -1493,7 +1493,7 @@ function renderSectorChart() {
 
   const labels = Object.keys(sectorCount);
   const data = Object.values(sectorCount);
-  const colors = labels.map(l => SECTOR_COLORS[l] || '#1e4078');
+  const colors = labels.map(l => PREMIUM_SECTOR_COLORS[l] || '#1e4078');
 
   if (state.charts.sector) state.charts.sector.destroy();
 
@@ -1561,7 +1561,7 @@ function renderCagrLeaderboardChart() {
       datasets: [{
         label: 'CAGR Growth %',
         data: parsed.map(p => p.cagr),
-        backgroundColor: parsed.map(p => (SECTOR_COLORS[p.sector] || '#1e3a8a') + 'dd'), // slightly transparent for premium aesthetic
+        backgroundColor: parsed.map(p => (PREMIUM_SECTOR_COLORS[p.sector] || '#1e3a8a') + 'dd'), // slightly transparent for premium aesthetic
         borderRadius: 4,
         borderSkipped: false,
         barThickness: 16
@@ -1700,7 +1700,7 @@ function renderIndustryGrid() {
   noResults.classList.add('hidden');
 
   grid.innerHTML = filtered.map(ind => {
-    const color = SECTOR_COLORS[ind.sector] || '#2563eb';
+    const color = PREMIUM_SECTOR_COLORS[ind.sector] || '#2563eb';
     const isNew = ind.isNew || ind.uploadedDoc === latestDoc;
     return `
       <div class="industry-card ${isNew ? 'card-highlight-new' : ''}" data-id="${ind.id}">
