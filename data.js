@@ -33,7 +33,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Retail Investors, High Net-Worth Individuals (HNIs), Corporate Treasuries",
       "marginDriver": "Asset Management Fees (AUM %), Net Interest Margin (NIM)",
       "bottleneck": "Regulatory Approvals (SEBI/RBI) & Customer Acquisition Cost (CAC)"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2018",
+        "title": "Insolvency Code (IBC)",
+        "detail": "NCLT resolution framework & NPA cleanup"
+      },
+      {
+        "year": "2020",
+        "title": "UPI & Account Aggregator",
+        "detail": "Open banking API & real-time payment protocol"
+      },
+      {
+        "year": "2022",
+        "title": "Digital Lending Norms",
+        "detail": "RBI guidelines on FLDG & customer data privacy"
+      },
+      {
+        "year": "2024+",
+        "title": "Sovereign Bond Inclusions",
+        "detail": "JPMorgan GBI-EM index inclusion & capital inflows"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Credit / AUM to GDP Ratio (%)",
+      "labels": [
+        "India",
+        "China",
+        "USA",
+        "UK",
+        "Global Avg"
+      ],
+      "values": [
+        58,
+        185,
+        216,
+        165,
+        140
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Interest Cost",
+        "Employee Cost",
+        "Other Opex",
+        "EBITDA/PPOP",
+        "D&A / Prov",
+        "PAT"
+      ],
+      "values": [
+        100,
+        42,
+        16,
+        14,
+        28,
+        8,
+        20
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 15,
+      "payableDays": 12,
+      "cashConversionCycle": 3
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "N/A (Capital Adequacy: 16.8%)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.8%",
+      "liquidityBuffer": "CRAR 17.2% vs 11.5% Min"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        109,
+        118,
+        126,
+        134,
+        148
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+26.8%",
+      "return3Yr": "+68.4%",
+      "volatilityBeta": "1.08x (Low Volatility)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Retail Individual",
+        "HNI & Family Offices",
+        "Corporate Treasuries"
+      ],
+      "values": [
+        52,
+        28,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (50%), Tier-2 Cities (35%), Rural/Semi-Urban (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        128,
+        145,
+        168
+      ],
+      "actualDemand": [
+        92,
+        105,
+        122,
+        140,
+        162
+      ],
+      "utilizationRate": "94.2% Credit Growth Rate"
+    },
+    "swot": {
+      "strengths": [
+        "High Net Interest Margins (NIM) & low-cost CASA deposit base",
+        "Accelerating UPI digital transaction scale & credit underwriting APIs"
+      ],
+      "weaknesses": [
+        "Unsecured retail credit default risks during macro slowdowns",
+        "Regulatory capital lock-in & stringent CRR/SLR reserve ratios"
+      ],
+      "opportunities": [
+        "Financial inclusion expansion across Tier-2/3 wealth management",
+        "Co-lending partnerships between Banks, NBFCs & Fintechs"
+      ],
+      "threats": [
+        "Cybersecurity breaches & fraudulent digital transaction vectors",
+        "Rising deposit rate competition reducing spread margins"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "HDFC Ltd & HDFC Bank Merger",
+        "value": "$40.0B",
+        "buyer": "HDFC Group Mega Merger"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "Suvidhaa NBFC Acquisition",
+        "value": "$320M",
+        "buyer": "Fintech Global Holdings"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Wealth Management Private Buyout",
+        "value": "$550M",
+        "buyer": "Global Private Equity"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the annual credit demand for small business (MSME) loans in India.",
+      "Financial Valuation: How do you value a commercial bank using Price-to-Book (P/B) and ROE?",
+      "Credit Risk Analysis: Explain how Net Interest Margin (NIM) and Cost of Risk impact ROA.",
+      "Fintech Disruption: How does UPI Account Aggregator threaten legacy retail banking fee income?"
+    ],
+    "glossary": [
+      {
+        "term": "NIM",
+        "definition": "Net Interest Margin — Difference between interest earned and interest paid relative to assets."
+      },
+      {
+        "term": "CASA",
+        "definition": "Current Account Savings Account — Low-cost deposit ratio driving bank profitability."
+      },
+      {
+        "term": "GNPA",
+        "definition": "Gross Non-Performing Assets — Percentage of total loans overdue >90 days."
+      },
+      {
+        "term": "CRAR",
+        "definition": "Capital to Risk-Weighted Assets Ratio — Regulatory capital cushion enforced by RBI."
+      }
+    ]
   },
   {
     "id": "automobile",
@@ -67,7 +272,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Urban & Rural Commuters, Commercial Logistics Fleets, Ride-Hailing Platforms",
       "marginDriver": "High-margin SUVs, After-sales Spare Parts & Battery Software Upgrades",
       "bottleneck": "Semiconductor Chip Supply & Lithium-Ion Cell Import Dependencies"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2019",
+        "title": "FAME II Scheme",
+        "detail": "₹10,000 Cr subsidies for EV two-wheelers & public transport"
+      },
+      {
+        "year": "2020",
+        "title": "BS-VI Emission Norms",
+        "detail": "Mandatory transition to ultra-low sulfur emission standards"
+      },
+      {
+        "year": "2022",
+        "title": "Auto PLI Incentive",
+        "detail": "₹25,938 Cr budget for advanced automotive technologies"
+      },
+      {
+        "year": "2024+",
+        "title": "New EV Policy & FAME III",
+        "detail": "Concessional import duties for localized EV manufacturing"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Car Ownership per 1,000 People",
+      "labels": [
+        "India",
+        "China",
+        "Japan",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        34,
+        210,
+        620,
+        840,
+        180
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "R&D & Royalty",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        68,
+        8,
+        5,
+        13,
+        4,
+        8
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 38,
+      "receivableDays": 22,
+      "payableDays": 54,
+      "cashConversionCycle": 6
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "0.9x",
+      "creditRating": "AA+ / Positive",
+      "costOfDebt": "7.5%",
+      "liquidityBuffer": "₹14,500 Cr Cash Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        114,
+        132,
+        145,
+        162,
+        184
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+42.5%",
+      "return3Yr": "+112.0%",
+      "volatilityBeta": "1.24x (High Growth)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Passenger SUV/Cars",
+        "Two-Wheelers",
+        "Commercial & Logistics Fleets"
+      ],
+      "values": [
+        42,
+        45,
+        13
+      ],
+      "incomeCohort": "Middle-Income Households (55%), High-Net-Worth (25%), Rural Commuters (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        110,
+        125,
+        140,
+        160
+      ],
+      "actualDemand": [
+        84,
+        96,
+        112,
+        128,
+        148
+      ],
+      "utilizationRate": "81.2% Factory Capacity"
+    },
+    "swot": {
+      "strengths": [
+        "Rapid premiumization trend towards high-margin SUVs",
+        "Strong domestic Tier-1 component manufacturing ecosystem"
+      ],
+      "weaknesses": [
+        "Heavy import dependency on lithium-ion cells & magnet motors",
+        "Cyclical sensitivity to monsoon & rural disposable income"
+      ],
+      "opportunities": [
+        "Export hub for EV two-wheelers & compact SUVs to ASEAN & Africa",
+        "Government PLI incentives driving localization of EV drivetrains"
+      ],
+      "threats": [
+        "Global semiconductor supply disruptions & raw material inflation",
+        "Aggressive price cuts by international EV entrants"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "TPG Investment in Tata Passenger EV",
+        "value": "$1.0B",
+        "buyer": "TPG Rise Climate"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Ather Energy Sovereign Funding",
+        "value": "$128M",
+        "buyer": "NIIF & Hero MotoCorp"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Commercial Fleet EV Acquisition",
+        "value": "$210M",
+        "buyer": "Logistics Infra Fund"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "High",
+      "d2cOmnichannel": "Medium",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the annual volume of electric two-wheelers sold in India in 2026.",
+      "Profitability Case: How can an OEM offset raw material price inflation through localization?",
+      "Strategic Shift: Evaluate whether a traditional ICE automaker should spin off its EV division.",
+      "Supply Chain Guesstimate: Calculate the required battery gigafactory capacity for 1 million EVs."
+    ],
+    "glossary": [
+      {
+        "term": "OEM",
+        "definition": "Original Equipment Manufacturer — Company producing final vehicles."
+      },
+      {
+        "term": "FAME",
+        "definition": "Faster Adoption and Manufacturing of Hybrid & Electric Vehicles scheme."
+      },
+      {
+        "term": "BS-VI",
+        "definition": "Bharat Stage VI — Stringent national vehicle emission control standard."
+      },
+      {
+        "term": "BMS",
+        "definition": "Battery Management System — Electronic unit regulating lithium cell packs."
+      }
+    ]
   },
   {
     "id": "aviation",
@@ -101,7 +511,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Domestic & Global Travelers, E-commerce Platforms, Export Freight Clients",
       "marginDriver": "Fleet Capacity Utilization (Passenger Load Factor) & Dynamic Pricing",
       "bottleneck": "Fuel Price Volatility & Airport/Port Infrastructure Bottlenecks"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "banking",
@@ -135,7 +750,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Retail Investors, High Net-Worth Individuals (HNIs), Corporate Treasuries",
       "marginDriver": "Asset Management Fees (AUM %), Net Interest Margin (NIM)",
       "bottleneck": "Regulatory Approvals (SEBI/RBI) & Customer Acquisition Cost (CAC)"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2018",
+        "title": "Insolvency Code (IBC)",
+        "detail": "NCLT resolution framework & NPA cleanup"
+      },
+      {
+        "year": "2020",
+        "title": "UPI & Account Aggregator",
+        "detail": "Open banking API & real-time payment protocol"
+      },
+      {
+        "year": "2022",
+        "title": "Digital Lending Norms",
+        "detail": "RBI guidelines on FLDG & customer data privacy"
+      },
+      {
+        "year": "2024+",
+        "title": "Sovereign Bond Inclusions",
+        "detail": "JPMorgan GBI-EM index inclusion & capital inflows"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Credit / AUM to GDP Ratio (%)",
+      "labels": [
+        "India",
+        "China",
+        "USA",
+        "UK",
+        "Global Avg"
+      ],
+      "values": [
+        58,
+        185,
+        216,
+        165,
+        140
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Interest Cost",
+        "Employee Cost",
+        "Other Opex",
+        "EBITDA/PPOP",
+        "D&A / Prov",
+        "PAT"
+      ],
+      "values": [
+        100,
+        42,
+        16,
+        14,
+        28,
+        8,
+        20
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 15,
+      "payableDays": 12,
+      "cashConversionCycle": 3
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "N/A (Capital Adequacy: 16.8%)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.8%",
+      "liquidityBuffer": "CRAR 17.2% vs 11.5% Min"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        109,
+        118,
+        126,
+        134,
+        148
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+26.8%",
+      "return3Yr": "+68.4%",
+      "volatilityBeta": "1.08x (Low Volatility)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Retail Individual",
+        "HNI & Family Offices",
+        "Corporate Treasuries"
+      ],
+      "values": [
+        52,
+        28,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (50%), Tier-2 Cities (35%), Rural/Semi-Urban (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        128,
+        145,
+        168
+      ],
+      "actualDemand": [
+        92,
+        105,
+        122,
+        140,
+        162
+      ],
+      "utilizationRate": "94.2% Credit Growth Rate"
+    },
+    "swot": {
+      "strengths": [
+        "High Net Interest Margins (NIM) & low-cost CASA deposit base",
+        "Accelerating UPI digital transaction scale & credit underwriting APIs"
+      ],
+      "weaknesses": [
+        "Unsecured retail credit default risks during macro slowdowns",
+        "Regulatory capital lock-in & stringent CRR/SLR reserve ratios"
+      ],
+      "opportunities": [
+        "Financial inclusion expansion across Tier-2/3 wealth management",
+        "Co-lending partnerships between Banks, NBFCs & Fintechs"
+      ],
+      "threats": [
+        "Cybersecurity breaches & fraudulent digital transaction vectors",
+        "Rising deposit rate competition reducing spread margins"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "HDFC Ltd & HDFC Bank Merger",
+        "value": "$40.0B",
+        "buyer": "HDFC Group Mega Merger"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "Suvidhaa NBFC Acquisition",
+        "value": "$320M",
+        "buyer": "Fintech Global Holdings"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Wealth Management Private Buyout",
+        "value": "$550M",
+        "buyer": "Global Private Equity"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the annual credit demand for small business (MSME) loans in India.",
+      "Financial Valuation: How do you value a commercial bank using Price-to-Book (P/B) and ROE?",
+      "Credit Risk Analysis: Explain how Net Interest Margin (NIM) and Cost of Risk impact ROA.",
+      "Fintech Disruption: How does UPI Account Aggregator threaten legacy retail banking fee income?"
+    ],
+    "glossary": [
+      {
+        "term": "NIM",
+        "definition": "Net Interest Margin — Difference between interest earned and interest paid relative to assets."
+      },
+      {
+        "term": "CASA",
+        "definition": "Current Account Savings Account — Low-cost deposit ratio driving bank profitability."
+      },
+      {
+        "term": "GNPA",
+        "definition": "Gross Non-Performing Assets — Percentage of total loans overdue >90 days."
+      },
+      {
+        "term": "CRAR",
+        "definition": "Capital to Risk-Weighted Assets Ratio — Regulatory capital cushion enforced by RBI."
+      }
+    ]
   },
   {
     "id": "cement",
@@ -169,7 +989,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "National Highways, High-Rise Residential Projects, Industrial Parks, Smart Cities",
       "marginDriver": "Operating Scale Economies, Freight Cost Optimization & Premium Brand Cement",
       "bottleneck": "High Thermal Energy (Coal) Costs & Environmental Clearance Delays"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2016",
+        "title": "RERA Act Enactment",
+        "detail": "Real Estate Regulation & buyer protection framework"
+      },
+      {
+        "year": "2019",
+        "title": "National Infrastructure Pipeline",
+        "detail": "₹111 Lakh Cr master plan for roads, rail & ports"
+      },
+      {
+        "year": "2021",
+        "title": "PM Gati Shakti Master Plan",
+        "detail": "Multimodal transport infrastructure integration"
+      },
+      {
+        "year": "2024+",
+        "title": "Record Capex Outlay",
+        "detail": "₹11.11 Lakh Cr central government infrastructure capex"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Cement / Infra Consumption (kg)",
+      "labels": [
+        "India",
+        "China",
+        "Vietnam",
+        "Turkey",
+        "Global Avg"
+      ],
+      "values": [
+        260,
+        1650,
+        780,
+        620,
+        530
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Power & Fuel (Coal)",
+        "Freight & Logistics",
+        "Raw Materials",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        28,
+        24,
+        18,
+        18,
+        6,
+        12
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 45,
+      "receivableDays": 42,
+      "payableDays": 68,
+      "cashConversionCycle": 19
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "2.2x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "8.5%",
+      "liquidityBuffer": "Strong Order Book Coverage (3.2x Revenue)"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        115,
+        130,
+        148,
+        165,
+        188
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+45.2%",
+      "return3Yr": "+118.5%",
+      "volatilityBeta": "1.32x (High Beta Infra)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Government Roads & Rail",
+        "Commercial & Residential",
+        "Industrial Factories"
+      ],
+      "values": [
+        50,
+        35,
+        15
+      ],
+      "incomeCohort": "State & Central Contracts (50%), Tier-1 Developers (35%), SME B2B (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        108,
+        118,
+        132,
+        150
+      ],
+      "actualDemand": [
+        78,
+        88,
+        102,
+        118,
+        138
+      ],
+      "utilizationRate": "78.6% Kiln Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Record central government capex allocation (₹11.11 Lakh Cr)",
+        "High entry barriers due to limestone reserves & logistics freight networks"
+      ],
+      "weaknesses": [
+        "High sensitivity to imported coal & diesel freight costs",
+        "Working capital delays in state government project receivables"
+      ],
+      "opportunities": [
+        "Dedicated Freight Corridors & High-speed Rail Expansion",
+        "Green Cement & Waste Heat Recovery Systems (WHRS) reducing power cost"
+      ],
+      "threats": [
+        "Environmental clearance bottlenecks & land acquisition delays",
+        "Monsoon seasonal construction slowdowns"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Ambuja Cement Sanghi Acquisition",
+        "value": "$600M",
+        "buyer": "Adani Cement Group"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "Kesoram Cement Asset Buyout",
+        "value": "$640M",
+        "buyer": "UltraTech Cement"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Highway InvIT Concession Buyout",
+        "value": "$1.1B",
+        "buyer": "CPP Investments"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "Low",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate total cement demand generated by affordable housing in India.",
+      "Valuation Case: How do you value an EPC contractor using EV/EBITDA vs Price/Book?",
+      "Profitability Case: How does freight optimization impact EBITDA per ton for a cement producer?",
+      "Project Finance: Explain Debt Service Coverage Ratio (DSCR) in toll road InvITs."
+    ],
+    "glossary": [
+      {
+        "term": "EPC",
+        "definition": "Engineering, Procurement, and Construction contract model."
+      },
+      {
+        "term": "WHRS",
+        "definition": "Waste Heat Recovery System — Capturing kiln exhaust heat for cheap power."
+      },
+      {
+        "term": "InvIT",
+        "definition": "Infrastructure Investment Trust — Vehicle pooling operational toll assets."
+      },
+      {
+        "term": "Clinker",
+        "definition": "Nodule raw material produced by heating limestone in cement kilns."
+      }
+    ]
   },
   {
     "id": "chemicals",
@@ -203,7 +1228,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Heavy Engineering Plants, Defense Contractors, Automotive OEMs, Infra Developers",
       "marginDriver": "Specialty High-Purity Chemicals, Customized OEM Assemblies & Value-Added Steel",
       "bottleneck": "Raw Material Price Cyclicality & High Capital Expenditure Requirements"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "consumer-goods",
@@ -237,7 +1467,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Household Consumers across Tier 1, Tier 2 & Rural Indian Markets",
       "marginDriver": "Premium Brand Products, Direct-to-Consumer (D2C) Margins & Supply Chain Scale",
       "bottleneck": "Raw Material Price Volatility (Palm Oil/Cotton) & Hyperlocal Logistics Costs"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "defense",
@@ -271,7 +1706,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Indian Armed Forces (Army/Navy/Air Force), Space Research Organizations (ISRO)",
       "marginDriver": "High-Value Indigenous Defense Production Contracts & Long-Term AMC Contracts",
       "bottleneck": "Long Procurement Cycles & High Technological R&D Risk"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "edtech",
@@ -305,7 +1945,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Global Fortune 500 Enterprises, SMEs, Mobile Consumers & Gaming Enthusiasts",
       "marginDriver": "Recurring Software Licenses (ARR), High Gross Margin Code IP",
       "bottleneck": "High Senior Tech Talent Attrition & Specialized Hardware Availability"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2020",
+        "title": "OSP Liberalization",
+        "detail": "Simplified IT/ITeS remote working & telecom regulations"
+      },
+      {
+        "year": "2021",
+        "title": "Semiconductor Mission",
+        "detail": "76,000 Cr PLI for silicon fab & chip packaging units"
+      },
+      {
+        "year": "2023",
+        "title": "DPDP Act Enactment",
+        "detail": "Digital Personal Data Protection framework compliance"
+      },
+      {
+        "year": "2024+",
+        "title": "IndiaAI Mission",
+        "detail": "₹10,372 Cr allocated for GPU supercomputing clusters"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "IT & Software Export Market Share (%)",
+      "labels": [
+        "India",
+        "USA",
+        "Ireland",
+        "China",
+        "Global Avg"
+      ],
+      "values": [
+        56,
+        18,
+        9,
+        7,
+        10
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Employee Cost",
+        "Subcontracting",
+        "Facility & Cloud",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        56,
+        12,
+        8,
+        24,
+        4,
+        18
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 68,
+      "payableDays": 24,
+      "cashConversionCycle": 44
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "0.1x (Net Cash Positive)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.2%",
+      "liquidityBuffer": "$8.5 Billion Net Cash"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        104,
+        110,
+        116,
+        122,
+        134
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+18.2%",
+      "return3Yr": "+46.5%",
+      "volatilityBeta": "1.02x (Defensive Growth)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "BFSI (Banking & Finance)",
+        "Retail & Consumer",
+        "Healthcare & High-Tech"
+      ],
+      "values": [
+        40,
+        32,
+        28
+      ],
+      "incomeCohort": "North America (55%), Europe (30%), Rest of World (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        115,
+        132,
+        150,
+        172
+      ],
+      "actualDemand": [
+        96,
+        112,
+        128,
+        146,
+        168
+      ],
+      "utilizationRate": "84.5% Employee Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Unrivaled scale of 5M+ English-speaking engineering talent",
+        "High recurring revenue share with Fortune 500 enterprise clients"
+      ],
+      "weaknesses": [
+        "Exposure to US/Europe enterprise IT budget cuts",
+        "High senior tech talent attrition during tech expansion cycles"
+      ],
+      "opportunities": [
+        "Generative AI migration, cloud transformation & cyber defense",
+        "India Semiconductor Mission fab & chip design incentives"
+      ],
+      "threats": [
+        "Automated AI code generation compressing billable hours",
+        "Protectionist visa policies & currency volatility"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "Infosys InSemi Silicon Acquisition",
+        "value": "$340M",
+        "buyer": "Infosys Tech"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Freshworks SaaS Buyback",
+        "value": "$500M",
+        "buyer": "Public Shareholder Buyback"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "GenAI Enterprise Startup Deal",
+        "value": "$180M",
+        "buyer": "Tech Mahindra VC"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "High",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the revenue impact of GenAI adoption on Indian IT services by 2028.",
+      "Profitability Case: How does a SaaS company optimize Customer Acquisition Cost (CAC) vs LTV?",
+      "M&A Due Diligence: Evaluate an acquisition target in cloud-native application modernization.",
+      "Operational Metric: Explain how Employee Attrition & Utilization Rate drive operating margins."
+    ],
+    "glossary": [
+      {
+        "term": "TCV",
+        "definition": "Total Contract Value — Total revenue from signed enterprise deals."
+      },
+      {
+        "term": "ARR",
+        "definition": "Annual Recurring Revenue — Key SaaS subscription metric."
+      },
+      {
+        "term": "Utilization",
+        "definition": "Percentage of billable employee time assigned to client projects."
+      },
+      {
+        "term": "FTE",
+        "definition": "Full-Time Equivalent — Standard measure of project staffing."
+      }
+    ]
   },
   {
     "id": "energy",
@@ -339,7 +2184,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Enterprise Buyers, Commercial Outlets & Individual Domestic Consumers",
       "marginDriver": "Product Differentiation, Scale Efficiency & Channel Partner Optimization",
       "bottleneck": "Supply Chain Disruption Risks & Regulatory Compliance Requirements"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "fintech",
@@ -373,7 +2423,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Retail Investors, High Net-Worth Individuals (HNIs), Corporate Treasuries",
       "marginDriver": "Asset Management Fees (AUM %), Net Interest Margin (NIM)",
       "bottleneck": "Regulatory Approvals (SEBI/RBI) & Customer Acquisition Cost (CAC)"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2018",
+        "title": "Insolvency Code (IBC)",
+        "detail": "NCLT resolution framework & NPA cleanup"
+      },
+      {
+        "year": "2020",
+        "title": "UPI & Account Aggregator",
+        "detail": "Open banking API & real-time payment protocol"
+      },
+      {
+        "year": "2022",
+        "title": "Digital Lending Norms",
+        "detail": "RBI guidelines on FLDG & customer data privacy"
+      },
+      {
+        "year": "2024+",
+        "title": "Sovereign Bond Inclusions",
+        "detail": "JPMorgan GBI-EM index inclusion & capital inflows"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Credit / AUM to GDP Ratio (%)",
+      "labels": [
+        "India",
+        "China",
+        "USA",
+        "UK",
+        "Global Avg"
+      ],
+      "values": [
+        58,
+        185,
+        216,
+        165,
+        140
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Interest Cost",
+        "Employee Cost",
+        "Other Opex",
+        "EBITDA/PPOP",
+        "D&A / Prov",
+        "PAT"
+      ],
+      "values": [
+        100,
+        42,
+        16,
+        14,
+        28,
+        8,
+        20
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 15,
+      "payableDays": 12,
+      "cashConversionCycle": 3
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "N/A (Capital Adequacy: 16.8%)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.8%",
+      "liquidityBuffer": "CRAR 17.2% vs 11.5% Min"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        109,
+        118,
+        126,
+        134,
+        148
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+26.8%",
+      "return3Yr": "+68.4%",
+      "volatilityBeta": "1.08x (Low Volatility)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Retail Individual",
+        "HNI & Family Offices",
+        "Corporate Treasuries"
+      ],
+      "values": [
+        52,
+        28,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (50%), Tier-2 Cities (35%), Rural/Semi-Urban (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        128,
+        145,
+        168
+      ],
+      "actualDemand": [
+        92,
+        105,
+        122,
+        140,
+        162
+      ],
+      "utilizationRate": "94.2% Credit Growth Rate"
+    },
+    "swot": {
+      "strengths": [
+        "High Net Interest Margins (NIM) & low-cost CASA deposit base",
+        "Accelerating UPI digital transaction scale & credit underwriting APIs"
+      ],
+      "weaknesses": [
+        "Unsecured retail credit default risks during macro slowdowns",
+        "Regulatory capital lock-in & stringent CRR/SLR reserve ratios"
+      ],
+      "opportunities": [
+        "Financial inclusion expansion across Tier-2/3 wealth management",
+        "Co-lending partnerships between Banks, NBFCs & Fintechs"
+      ],
+      "threats": [
+        "Cybersecurity breaches & fraudulent digital transaction vectors",
+        "Rising deposit rate competition reducing spread margins"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "HDFC Ltd & HDFC Bank Merger",
+        "value": "$40.0B",
+        "buyer": "HDFC Group Mega Merger"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "Suvidhaa NBFC Acquisition",
+        "value": "$320M",
+        "buyer": "Fintech Global Holdings"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Wealth Management Private Buyout",
+        "value": "$550M",
+        "buyer": "Global Private Equity"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the annual credit demand for small business (MSME) loans in India.",
+      "Financial Valuation: How do you value a commercial bank using Price-to-Book (P/B) and ROE?",
+      "Credit Risk Analysis: Explain how Net Interest Margin (NIM) and Cost of Risk impact ROA.",
+      "Fintech Disruption: How does UPI Account Aggregator threaten legacy retail banking fee income?"
+    ],
+    "glossary": [
+      {
+        "term": "NIM",
+        "definition": "Net Interest Margin — Difference between interest earned and interest paid relative to assets."
+      },
+      {
+        "term": "CASA",
+        "definition": "Current Account Savings Account — Low-cost deposit ratio driving bank profitability."
+      },
+      {
+        "term": "GNPA",
+        "definition": "Gross Non-Performing Assets — Percentage of total loans overdue >90 days."
+      },
+      {
+        "term": "CRAR",
+        "definition": "Capital to Risk-Weighted Assets Ratio — Regulatory capital cushion enforced by RBI."
+      }
+    ]
   },
   {
     "id": "healthcare",
@@ -407,7 +2662,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Patients, Diagnostic Clinics, Government Health Programs, Global Export Markets",
       "marginDriver": "Patented Specialty Drugs, High-volume Generics & Proprietary Formulations",
       "bottleneck": "API Raw Material Import Reliance & Stringent USFDA Regulatory Audits"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2019",
+        "title": "Ayushman Bharat (PM-JAY)",
+        "detail": "Universal health coverage for 500M+ citizens"
+      },
+      {
+        "year": "2021",
+        "title": "Bulk Drug Parks PLI",
+        "detail": "₹15,000 Cr incentives for active pharmaceutical ingredients"
+      },
+      {
+        "year": "2023",
+        "title": "Uniform Code for Pharma Practices",
+        "detail": "Ethical marketing standards & R&D tax incentives"
+      },
+      {
+        "year": "2024+",
+        "title": "MedTech Regulatory Framework",
+        "detail": "CDSCO medical device registration & ISO standards"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Healthcare Spend as % of GDP",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        3.8,
+        5.4,
+        9.6,
+        17.8,
+        10.2
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "API & Raw Materials",
+        "Employee Cost",
+        "R&D & Compliance",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        38,
+        18,
+        12,
+        22,
+        6,
+        16
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 72,
+      "receivableDays": 58,
+      "payableDays": 64,
+      "cashConversionCycle": 66
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.2x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.4%",
+      "liquidityBuffer": "₹8,200 Cr Cash & Investments"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        112,
+        128,
+        142,
+        156,
+        175
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+36.5%",
+      "return3Yr": "+88.2%",
+      "volatilityBeta": "0.85x (Defensive)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Generics Exports (US/EU)",
+        "Domestic Formulations",
+        "Hospitals & Diagnostics"
+      ],
+      "values": [
+        48,
+        36,
+        16
+      ],
+      "incomeCohort": "Domestic Hospitals (40%), Overseas Exports (48%), OTC Consumer (12%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        162
+      ],
+      "actualDemand": [
+        88,
+        102,
+        118,
+        136,
+        156
+      ],
+      "utilizationRate": "83.8% Capacity Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "World's pharmacy status with 20%+ global generic supply share",
+        "Low-cost high-compliance FDA-approved manufacturing plants"
+      ],
+      "weaknesses": [
+        "High import dependence on China for Active Pharma Ingredients (APIs)",
+        "Stringent price controls (NLEM) on essential medicines"
+      ],
+      "opportunities": [
+        "Patent cliff in US ($200B+ drugs expiring) opening biosimilar wave",
+        "Expansion of private hospital chains into Tier-2/3 cities"
+      ],
+      "threats": [
+        "USFDA regulatory import alerts & warning letters",
+        "Geopolitical raw material price spikes & logistics delays"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "Glenmark Life Sciences Buyout",
+        "value": "$920M",
+        "buyer": "Nirma Group"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Manipal Hospitals Stake Sale",
+        "value": "$1.5B",
+        "buyer": "Temasek Holdings"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Biocon Biologics Integration",
+        "value": "$3.3B",
+        "buyer": "Viatris Biosimilars Deal"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the market size of hospital beds needed in India to meet WHO standards.",
+      "Profitability Case: How can a domestic pharma company offset regulatory price caps (NLEM)?",
+      "M&A Due Diligence: Evaluate an acquisition target specializing in complex biosimilars.",
+      "Regulatory Risk: Explain the financial impact of a USFDA Form 483 warning letter on margins."
+    ],
+    "glossary": [
+      {
+        "term": "API",
+        "definition": "Active Pharmaceutical Ingredient — Raw chemical substance producing therapeutic effect."
+      },
+      {
+        "term": "ANDAS",
+        "definition": "Abbreviated New Drug Application — USFDA filing for generic drug approvals."
+      },
+      {
+        "term": "NLEM",
+        "definition": "National List of Essential Medicines — Government price-controlled drugs."
+      },
+      {
+        "term": "Biosimilar",
+        "definition": "Biologic medical product almost identical to an original patented drug."
+      }
+    ]
   },
   {
     "id": "hospitality",
@@ -441,7 +2901,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Household Consumers across Tier 1, Tier 2 & Rural Indian Markets",
       "marginDriver": "Premium Brand Products, Direct-to-Consumer (D2C) Margins & Supply Chain Scale",
       "bottleneck": "Raw Material Price Volatility (Palm Oil/Cotton) & Hyperlocal Logistics Costs"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "infrastructure",
@@ -475,7 +3140,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "National Highways, High-Rise Residential Projects, Industrial Parks, Smart Cities",
       "marginDriver": "Operating Scale Economies, Freight Cost Optimization & Premium Brand Cement",
       "bottleneck": "High Thermal Energy (Coal) Costs & Environmental Clearance Delays"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2016",
+        "title": "RERA Act Enactment",
+        "detail": "Real Estate Regulation & buyer protection framework"
+      },
+      {
+        "year": "2019",
+        "title": "National Infrastructure Pipeline",
+        "detail": "₹111 Lakh Cr master plan for roads, rail & ports"
+      },
+      {
+        "year": "2021",
+        "title": "PM Gati Shakti Master Plan",
+        "detail": "Multimodal transport infrastructure integration"
+      },
+      {
+        "year": "2024+",
+        "title": "Record Capex Outlay",
+        "detail": "₹11.11 Lakh Cr central government infrastructure capex"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Cement / Infra Consumption (kg)",
+      "labels": [
+        "India",
+        "China",
+        "Vietnam",
+        "Turkey",
+        "Global Avg"
+      ],
+      "values": [
+        260,
+        1650,
+        780,
+        620,
+        530
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Power & Fuel (Coal)",
+        "Freight & Logistics",
+        "Raw Materials",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        28,
+        24,
+        18,
+        18,
+        6,
+        12
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 45,
+      "receivableDays": 42,
+      "payableDays": 68,
+      "cashConversionCycle": 19
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "2.2x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "8.5%",
+      "liquidityBuffer": "Strong Order Book Coverage (3.2x Revenue)"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        115,
+        130,
+        148,
+        165,
+        188
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+45.2%",
+      "return3Yr": "+118.5%",
+      "volatilityBeta": "1.32x (High Beta Infra)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Government Roads & Rail",
+        "Commercial & Residential",
+        "Industrial Factories"
+      ],
+      "values": [
+        50,
+        35,
+        15
+      ],
+      "incomeCohort": "State & Central Contracts (50%), Tier-1 Developers (35%), SME B2B (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        108,
+        118,
+        132,
+        150
+      ],
+      "actualDemand": [
+        78,
+        88,
+        102,
+        118,
+        138
+      ],
+      "utilizationRate": "78.6% Kiln Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Record central government capex allocation (₹11.11 Lakh Cr)",
+        "High entry barriers due to limestone reserves & logistics freight networks"
+      ],
+      "weaknesses": [
+        "High sensitivity to imported coal & diesel freight costs",
+        "Working capital delays in state government project receivables"
+      ],
+      "opportunities": [
+        "Dedicated Freight Corridors & High-speed Rail Expansion",
+        "Green Cement & Waste Heat Recovery Systems (WHRS) reducing power cost"
+      ],
+      "threats": [
+        "Environmental clearance bottlenecks & land acquisition delays",
+        "Monsoon seasonal construction slowdowns"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Ambuja Cement Sanghi Acquisition",
+        "value": "$600M",
+        "buyer": "Adani Cement Group"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "Kesoram Cement Asset Buyout",
+        "value": "$640M",
+        "buyer": "UltraTech Cement"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Highway InvIT Concession Buyout",
+        "value": "$1.1B",
+        "buyer": "CPP Investments"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "Low",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate total cement demand generated by affordable housing in India.",
+      "Valuation Case: How do you value an EPC contractor using EV/EBITDA vs Price/Book?",
+      "Profitability Case: How does freight optimization impact EBITDA per ton for a cement producer?",
+      "Project Finance: Explain Debt Service Coverage Ratio (DSCR) in toll road InvITs."
+    ],
+    "glossary": [
+      {
+        "term": "EPC",
+        "definition": "Engineering, Procurement, and Construction contract model."
+      },
+      {
+        "term": "WHRS",
+        "definition": "Waste Heat Recovery System — Capturing kiln exhaust heat for cheap power."
+      },
+      {
+        "term": "InvIT",
+        "definition": "Infrastructure Investment Trust — Vehicle pooling operational toll assets."
+      },
+      {
+        "term": "Clinker",
+        "definition": "Nodule raw material produced by heating limestone in cement kilns."
+      }
+    ]
   },
   {
     "id": "insurance",
@@ -509,7 +3379,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Retail Investors, High Net-Worth Individuals (HNIs), Corporate Treasuries",
       "marginDriver": "Asset Management Fees (AUM %), Net Interest Margin (NIM)",
       "bottleneck": "Regulatory Approvals (SEBI/RBI) & Customer Acquisition Cost (CAC)"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2018",
+        "title": "Insolvency Code (IBC)",
+        "detail": "NCLT resolution framework & NPA cleanup"
+      },
+      {
+        "year": "2020",
+        "title": "UPI & Account Aggregator",
+        "detail": "Open banking API & real-time payment protocol"
+      },
+      {
+        "year": "2022",
+        "title": "Digital Lending Norms",
+        "detail": "RBI guidelines on FLDG & customer data privacy"
+      },
+      {
+        "year": "2024+",
+        "title": "Sovereign Bond Inclusions",
+        "detail": "JPMorgan GBI-EM index inclusion & capital inflows"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Credit / AUM to GDP Ratio (%)",
+      "labels": [
+        "India",
+        "China",
+        "USA",
+        "UK",
+        "Global Avg"
+      ],
+      "values": [
+        58,
+        185,
+        216,
+        165,
+        140
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Interest Cost",
+        "Employee Cost",
+        "Other Opex",
+        "EBITDA/PPOP",
+        "D&A / Prov",
+        "PAT"
+      ],
+      "values": [
+        100,
+        42,
+        16,
+        14,
+        28,
+        8,
+        20
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 15,
+      "payableDays": 12,
+      "cashConversionCycle": 3
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "N/A (Capital Adequacy: 16.8%)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.8%",
+      "liquidityBuffer": "CRAR 17.2% vs 11.5% Min"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        109,
+        118,
+        126,
+        134,
+        148
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+26.8%",
+      "return3Yr": "+68.4%",
+      "volatilityBeta": "1.08x (Low Volatility)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Retail Individual",
+        "HNI & Family Offices",
+        "Corporate Treasuries"
+      ],
+      "values": [
+        52,
+        28,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (50%), Tier-2 Cities (35%), Rural/Semi-Urban (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        128,
+        145,
+        168
+      ],
+      "actualDemand": [
+        92,
+        105,
+        122,
+        140,
+        162
+      ],
+      "utilizationRate": "94.2% Credit Growth Rate"
+    },
+    "swot": {
+      "strengths": [
+        "High Net Interest Margins (NIM) & low-cost CASA deposit base",
+        "Accelerating UPI digital transaction scale & credit underwriting APIs"
+      ],
+      "weaknesses": [
+        "Unsecured retail credit default risks during macro slowdowns",
+        "Regulatory capital lock-in & stringent CRR/SLR reserve ratios"
+      ],
+      "opportunities": [
+        "Financial inclusion expansion across Tier-2/3 wealth management",
+        "Co-lending partnerships between Banks, NBFCs & Fintechs"
+      ],
+      "threats": [
+        "Cybersecurity breaches & fraudulent digital transaction vectors",
+        "Rising deposit rate competition reducing spread margins"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "HDFC Ltd & HDFC Bank Merger",
+        "value": "$40.0B",
+        "buyer": "HDFC Group Mega Merger"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "Suvidhaa NBFC Acquisition",
+        "value": "$320M",
+        "buyer": "Fintech Global Holdings"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Wealth Management Private Buyout",
+        "value": "$550M",
+        "buyer": "Global Private Equity"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the annual credit demand for small business (MSME) loans in India.",
+      "Financial Valuation: How do you value a commercial bank using Price-to-Book (P/B) and ROE?",
+      "Credit Risk Analysis: Explain how Net Interest Margin (NIM) and Cost of Risk impact ROA.",
+      "Fintech Disruption: How does UPI Account Aggregator threaten legacy retail banking fee income?"
+    ],
+    "glossary": [
+      {
+        "term": "NIM",
+        "definition": "Net Interest Margin — Difference between interest earned and interest paid relative to assets."
+      },
+      {
+        "term": "CASA",
+        "definition": "Current Account Savings Account — Low-cost deposit ratio driving bank profitability."
+      },
+      {
+        "term": "GNPA",
+        "definition": "Gross Non-Performing Assets — Percentage of total loans overdue >90 days."
+      },
+      {
+        "term": "CRAR",
+        "definition": "Capital to Risk-Weighted Assets Ratio — Regulatory capital cushion enforced by RBI."
+      }
+    ]
   },
   {
     "id": "it-services",
@@ -543,7 +3618,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Global Fortune 500 Enterprises, SMEs, Mobile Consumers & Gaming Enthusiasts",
       "marginDriver": "Recurring Software Licenses (ARR), High Gross Margin Code IP",
       "bottleneck": "High Senior Tech Talent Attrition & Specialized Hardware Availability"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2020",
+        "title": "OSP Liberalization",
+        "detail": "Simplified IT/ITeS remote working & telecom regulations"
+      },
+      {
+        "year": "2021",
+        "title": "Semiconductor Mission",
+        "detail": "76,000 Cr PLI for silicon fab & chip packaging units"
+      },
+      {
+        "year": "2023",
+        "title": "DPDP Act Enactment",
+        "detail": "Digital Personal Data Protection framework compliance"
+      },
+      {
+        "year": "2024+",
+        "title": "IndiaAI Mission",
+        "detail": "₹10,372 Cr allocated for GPU supercomputing clusters"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "IT & Software Export Market Share (%)",
+      "labels": [
+        "India",
+        "USA",
+        "Ireland",
+        "China",
+        "Global Avg"
+      ],
+      "values": [
+        56,
+        18,
+        9,
+        7,
+        10
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Employee Cost",
+        "Subcontracting",
+        "Facility & Cloud",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        56,
+        12,
+        8,
+        24,
+        4,
+        18
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 68,
+      "payableDays": 24,
+      "cashConversionCycle": 44
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "0.1x (Net Cash Positive)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.2%",
+      "liquidityBuffer": "$8.5 Billion Net Cash"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        104,
+        110,
+        116,
+        122,
+        134
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+18.2%",
+      "return3Yr": "+46.5%",
+      "volatilityBeta": "1.02x (Defensive Growth)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "BFSI (Banking & Finance)",
+        "Retail & Consumer",
+        "Healthcare & High-Tech"
+      ],
+      "values": [
+        40,
+        32,
+        28
+      ],
+      "incomeCohort": "North America (55%), Europe (30%), Rest of World (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        115,
+        132,
+        150,
+        172
+      ],
+      "actualDemand": [
+        96,
+        112,
+        128,
+        146,
+        168
+      ],
+      "utilizationRate": "84.5% Employee Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Unrivaled scale of 5M+ English-speaking engineering talent",
+        "High recurring revenue share with Fortune 500 enterprise clients"
+      ],
+      "weaknesses": [
+        "Exposure to US/Europe enterprise IT budget cuts",
+        "High senior tech talent attrition during tech expansion cycles"
+      ],
+      "opportunities": [
+        "Generative AI migration, cloud transformation & cyber defense",
+        "India Semiconductor Mission fab & chip design incentives"
+      ],
+      "threats": [
+        "Automated AI code generation compressing billable hours",
+        "Protectionist visa policies & currency volatility"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "Infosys InSemi Silicon Acquisition",
+        "value": "$340M",
+        "buyer": "Infosys Tech"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Freshworks SaaS Buyback",
+        "value": "$500M",
+        "buyer": "Public Shareholder Buyback"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "GenAI Enterprise Startup Deal",
+        "value": "$180M",
+        "buyer": "Tech Mahindra VC"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "High",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the revenue impact of GenAI adoption on Indian IT services by 2028.",
+      "Profitability Case: How does a SaaS company optimize Customer Acquisition Cost (CAC) vs LTV?",
+      "M&A Due Diligence: Evaluate an acquisition target in cloud-native application modernization.",
+      "Operational Metric: Explain how Employee Attrition & Utilization Rate drive operating margins."
+    ],
+    "glossary": [
+      {
+        "term": "TCV",
+        "definition": "Total Contract Value — Total revenue from signed enterprise deals."
+      },
+      {
+        "term": "ARR",
+        "definition": "Annual Recurring Revenue — Key SaaS subscription metric."
+      },
+      {
+        "term": "Utilization",
+        "definition": "Percentage of billable employee time assigned to client projects."
+      },
+      {
+        "term": "FTE",
+        "definition": "Full-Time Equivalent — Standard measure of project staffing."
+      }
+    ]
   },
   {
     "id": "media",
@@ -577,7 +3857,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Household Consumers across Tier 1, Tier 2 & Rural Indian Markets",
       "marginDriver": "Premium Brand Products, Direct-to-Consumer (D2C) Margins & Supply Chain Scale",
       "bottleneck": "Raw Material Price Volatility (Palm Oil/Cotton) & Hyperlocal Logistics Costs"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "metals",
@@ -611,7 +4096,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Heavy Engineering Plants, Defense Contractors, Automotive OEMs, Infra Developers",
       "marginDriver": "Specialty High-Purity Chemicals, Customized OEM Assemblies & Value-Added Steel",
       "bottleneck": "Raw Material Price Cyclicality & High Capital Expenditure Requirements"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "oil-gas",
@@ -645,7 +4335,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Enterprise Buyers, Commercial Outlets & Individual Domestic Consumers",
       "marginDriver": "Product Differentiation, Scale Efficiency & Channel Partner Optimization",
       "bottleneck": "Supply Chain Disruption Risks & Regulatory Compliance Requirements"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "real-estate",
@@ -679,7 +4574,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "National Highways, High-Rise Residential Projects, Industrial Parks, Smart Cities",
       "marginDriver": "Operating Scale Economies, Freight Cost Optimization & Premium Brand Cement",
       "bottleneck": "High Thermal Energy (Coal) Costs & Environmental Clearance Delays"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2016",
+        "title": "RERA Act Enactment",
+        "detail": "Real Estate Regulation & buyer protection framework"
+      },
+      {
+        "year": "2019",
+        "title": "National Infrastructure Pipeline",
+        "detail": "₹111 Lakh Cr master plan for roads, rail & ports"
+      },
+      {
+        "year": "2021",
+        "title": "PM Gati Shakti Master Plan",
+        "detail": "Multimodal transport infrastructure integration"
+      },
+      {
+        "year": "2024+",
+        "title": "Record Capex Outlay",
+        "detail": "₹11.11 Lakh Cr central government infrastructure capex"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Cement / Infra Consumption (kg)",
+      "labels": [
+        "India",
+        "China",
+        "Vietnam",
+        "Turkey",
+        "Global Avg"
+      ],
+      "values": [
+        260,
+        1650,
+        780,
+        620,
+        530
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Power & Fuel (Coal)",
+        "Freight & Logistics",
+        "Raw Materials",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        28,
+        24,
+        18,
+        18,
+        6,
+        12
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 45,
+      "receivableDays": 42,
+      "payableDays": 68,
+      "cashConversionCycle": 19
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "2.2x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "8.5%",
+      "liquidityBuffer": "Strong Order Book Coverage (3.2x Revenue)"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        115,
+        130,
+        148,
+        165,
+        188
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+45.2%",
+      "return3Yr": "+118.5%",
+      "volatilityBeta": "1.32x (High Beta Infra)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Government Roads & Rail",
+        "Commercial & Residential",
+        "Industrial Factories"
+      ],
+      "values": [
+        50,
+        35,
+        15
+      ],
+      "incomeCohort": "State & Central Contracts (50%), Tier-1 Developers (35%), SME B2B (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        108,
+        118,
+        132,
+        150
+      ],
+      "actualDemand": [
+        78,
+        88,
+        102,
+        118,
+        138
+      ],
+      "utilizationRate": "78.6% Kiln Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Record central government capex allocation (₹11.11 Lakh Cr)",
+        "High entry barriers due to limestone reserves & logistics freight networks"
+      ],
+      "weaknesses": [
+        "High sensitivity to imported coal & diesel freight costs",
+        "Working capital delays in state government project receivables"
+      ],
+      "opportunities": [
+        "Dedicated Freight Corridors & High-speed Rail Expansion",
+        "Green Cement & Waste Heat Recovery Systems (WHRS) reducing power cost"
+      ],
+      "threats": [
+        "Environmental clearance bottlenecks & land acquisition delays",
+        "Monsoon seasonal construction slowdowns"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Ambuja Cement Sanghi Acquisition",
+        "value": "$600M",
+        "buyer": "Adani Cement Group"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "Kesoram Cement Asset Buyout",
+        "value": "$640M",
+        "buyer": "UltraTech Cement"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Highway InvIT Concession Buyout",
+        "value": "$1.1B",
+        "buyer": "CPP Investments"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "Low",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate total cement demand generated by affordable housing in India.",
+      "Valuation Case: How do you value an EPC contractor using EV/EBITDA vs Price/Book?",
+      "Profitability Case: How does freight optimization impact EBITDA per ton for a cement producer?",
+      "Project Finance: Explain Debt Service Coverage Ratio (DSCR) in toll road InvITs."
+    ],
+    "glossary": [
+      {
+        "term": "EPC",
+        "definition": "Engineering, Procurement, and Construction contract model."
+      },
+      {
+        "term": "WHRS",
+        "definition": "Waste Heat Recovery System — Capturing kiln exhaust heat for cheap power."
+      },
+      {
+        "term": "InvIT",
+        "definition": "Infrastructure Investment Trust — Vehicle pooling operational toll assets."
+      },
+      {
+        "term": "Clinker",
+        "definition": "Nodule raw material produced by heating limestone in cement kilns."
+      }
+    ]
   },
   {
     "id": "retail",
@@ -713,7 +4813,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Household Consumers across Tier 1, Tier 2 & Rural Indian Markets",
       "marginDriver": "Premium Brand Products, Direct-to-Consumer (D2C) Margins & Supply Chain Scale",
       "bottleneck": "Raw Material Price Volatility (Palm Oil/Cotton) & Hyperlocal Logistics Costs"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "semiconductors",
@@ -747,7 +5052,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Global Fortune 500 Enterprises, SMEs, Mobile Consumers & Gaming Enthusiasts",
       "marginDriver": "Recurring Software Licenses (ARR), High Gross Margin Code IP",
       "bottleneck": "High Senior Tech Talent Attrition & Specialized Hardware Availability"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2020",
+        "title": "OSP Liberalization",
+        "detail": "Simplified IT/ITeS remote working & telecom regulations"
+      },
+      {
+        "year": "2021",
+        "title": "Semiconductor Mission",
+        "detail": "76,000 Cr PLI for silicon fab & chip packaging units"
+      },
+      {
+        "year": "2023",
+        "title": "DPDP Act Enactment",
+        "detail": "Digital Personal Data Protection framework compliance"
+      },
+      {
+        "year": "2024+",
+        "title": "IndiaAI Mission",
+        "detail": "₹10,372 Cr allocated for GPU supercomputing clusters"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "IT & Software Export Market Share (%)",
+      "labels": [
+        "India",
+        "USA",
+        "Ireland",
+        "China",
+        "Global Avg"
+      ],
+      "values": [
+        56,
+        18,
+        9,
+        7,
+        10
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Employee Cost",
+        "Subcontracting",
+        "Facility & Cloud",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        56,
+        12,
+        8,
+        24,
+        4,
+        18
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 68,
+      "payableDays": 24,
+      "cashConversionCycle": 44
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "0.1x (Net Cash Positive)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.2%",
+      "liquidityBuffer": "$8.5 Billion Net Cash"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        104,
+        110,
+        116,
+        122,
+        134
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+18.2%",
+      "return3Yr": "+46.5%",
+      "volatilityBeta": "1.02x (Defensive Growth)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "BFSI (Banking & Finance)",
+        "Retail & Consumer",
+        "Healthcare & High-Tech"
+      ],
+      "values": [
+        40,
+        32,
+        28
+      ],
+      "incomeCohort": "North America (55%), Europe (30%), Rest of World (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        115,
+        132,
+        150,
+        172
+      ],
+      "actualDemand": [
+        96,
+        112,
+        128,
+        146,
+        168
+      ],
+      "utilizationRate": "84.5% Employee Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Unrivaled scale of 5M+ English-speaking engineering talent",
+        "High recurring revenue share with Fortune 500 enterprise clients"
+      ],
+      "weaknesses": [
+        "Exposure to US/Europe enterprise IT budget cuts",
+        "High senior tech talent attrition during tech expansion cycles"
+      ],
+      "opportunities": [
+        "Generative AI migration, cloud transformation & cyber defense",
+        "India Semiconductor Mission fab & chip design incentives"
+      ],
+      "threats": [
+        "Automated AI code generation compressing billable hours",
+        "Protectionist visa policies & currency volatility"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "Infosys InSemi Silicon Acquisition",
+        "value": "$340M",
+        "buyer": "Infosys Tech"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Freshworks SaaS Buyback",
+        "value": "$500M",
+        "buyer": "Public Shareholder Buyback"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "GenAI Enterprise Startup Deal",
+        "value": "$180M",
+        "buyer": "Tech Mahindra VC"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "High",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the revenue impact of GenAI adoption on Indian IT services by 2028.",
+      "Profitability Case: How does a SaaS company optimize Customer Acquisition Cost (CAC) vs LTV?",
+      "M&A Due Diligence: Evaluate an acquisition target in cloud-native application modernization.",
+      "Operational Metric: Explain how Employee Attrition & Utilization Rate drive operating margins."
+    ],
+    "glossary": [
+      {
+        "term": "TCV",
+        "definition": "Total Contract Value — Total revenue from signed enterprise deals."
+      },
+      {
+        "term": "ARR",
+        "definition": "Annual Recurring Revenue — Key SaaS subscription metric."
+      },
+      {
+        "term": "Utilization",
+        "definition": "Percentage of billable employee time assigned to client projects."
+      },
+      {
+        "term": "FTE",
+        "definition": "Full-Time Equivalent — Standard measure of project staffing."
+      }
+    ]
   },
   {
     "id": "telecom",
@@ -781,7 +5291,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Global Fortune 500 Enterprises, SMEs, Mobile Consumers & Gaming Enthusiasts",
       "marginDriver": "Recurring Software Licenses (ARR), High Gross Margin Code IP",
       "bottleneck": "High Senior Tech Talent Attrition & Specialized Hardware Availability"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2020",
+        "title": "OSP Liberalization",
+        "detail": "Simplified IT/ITeS remote working & telecom regulations"
+      },
+      {
+        "year": "2021",
+        "title": "Semiconductor Mission",
+        "detail": "76,000 Cr PLI for silicon fab & chip packaging units"
+      },
+      {
+        "year": "2023",
+        "title": "DPDP Act Enactment",
+        "detail": "Digital Personal Data Protection framework compliance"
+      },
+      {
+        "year": "2024+",
+        "title": "IndiaAI Mission",
+        "detail": "₹10,372 Cr allocated for GPU supercomputing clusters"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "IT & Software Export Market Share (%)",
+      "labels": [
+        "India",
+        "USA",
+        "Ireland",
+        "China",
+        "Global Avg"
+      ],
+      "values": [
+        56,
+        18,
+        9,
+        7,
+        10
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Employee Cost",
+        "Subcontracting",
+        "Facility & Cloud",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        56,
+        12,
+        8,
+        24,
+        4,
+        18
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 68,
+      "payableDays": 24,
+      "cashConversionCycle": 44
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "0.1x (Net Cash Positive)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.2%",
+      "liquidityBuffer": "$8.5 Billion Net Cash"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        104,
+        110,
+        116,
+        122,
+        134
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+18.2%",
+      "return3Yr": "+46.5%",
+      "volatilityBeta": "1.02x (Defensive Growth)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "BFSI (Banking & Finance)",
+        "Retail & Consumer",
+        "Healthcare & High-Tech"
+      ],
+      "values": [
+        40,
+        32,
+        28
+      ],
+      "incomeCohort": "North America (55%), Europe (30%), Rest of World (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        115,
+        132,
+        150,
+        172
+      ],
+      "actualDemand": [
+        96,
+        112,
+        128,
+        146,
+        168
+      ],
+      "utilizationRate": "84.5% Employee Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Unrivaled scale of 5M+ English-speaking engineering talent",
+        "High recurring revenue share with Fortune 500 enterprise clients"
+      ],
+      "weaknesses": [
+        "Exposure to US/Europe enterprise IT budget cuts",
+        "High senior tech talent attrition during tech expansion cycles"
+      ],
+      "opportunities": [
+        "Generative AI migration, cloud transformation & cyber defense",
+        "India Semiconductor Mission fab & chip design incentives"
+      ],
+      "threats": [
+        "Automated AI code generation compressing billable hours",
+        "Protectionist visa policies & currency volatility"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "Infosys InSemi Silicon Acquisition",
+        "value": "$340M",
+        "buyer": "Infosys Tech"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Freshworks SaaS Buyback",
+        "value": "$500M",
+        "buyer": "Public Shareholder Buyback"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "GenAI Enterprise Startup Deal",
+        "value": "$180M",
+        "buyer": "Tech Mahindra VC"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "High",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the revenue impact of GenAI adoption on Indian IT services by 2028.",
+      "Profitability Case: How does a SaaS company optimize Customer Acquisition Cost (CAC) vs LTV?",
+      "M&A Due Diligence: Evaluate an acquisition target in cloud-native application modernization.",
+      "Operational Metric: Explain how Employee Attrition & Utilization Rate drive operating margins."
+    ],
+    "glossary": [
+      {
+        "term": "TCV",
+        "definition": "Total Contract Value — Total revenue from signed enterprise deals."
+      },
+      {
+        "term": "ARR",
+        "definition": "Annual Recurring Revenue — Key SaaS subscription metric."
+      },
+      {
+        "term": "Utilization",
+        "definition": "Percentage of billable employee time assigned to client projects."
+      },
+      {
+        "term": "FTE",
+        "definition": "Full-Time Equivalent — Standard measure of project staffing."
+      }
+    ]
   },
   {
     "id": "textiles",
@@ -815,7 +5530,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Household Consumers across Tier 1, Tier 2 & Rural Indian Markets",
       "marginDriver": "Premium Brand Products, Direct-to-Consumer (D2C) Margins & Supply Chain Scale",
       "bottleneck": "Raw Material Price Volatility (Palm Oil/Cotton) & Hyperlocal Logistics Costs"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "logistics",
@@ -849,7 +5769,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Domestic & Global Travelers, E-commerce Platforms, Export Freight Clients",
       "marginDriver": "Fleet Capacity Utilization (Passenger Load Factor) & Dynamic Pricing",
       "bottleneck": "Fuel Price Volatility & Airport/Port Infrastructure Bottlenecks"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "agriculture",
@@ -883,7 +6008,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Enterprise Buyers, Commercial Outlets & Individual Domestic Consumers",
       "marginDriver": "Product Differentiation, Scale Efficiency & Channel Partner Optimization",
       "bottleneck": "Supply Chain Disruption Risks & Regulatory Compliance Requirements"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "ev",
@@ -917,7 +6247,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Urban & Rural Commuters, Commercial Logistics Fleets, Ride-Hailing Platforms",
       "marginDriver": "High-margin SUVs, After-sales Spare Parts & Battery Software Upgrades",
       "bottleneck": "Semiconductor Chip Supply & Lithium-Ion Cell Import Dependencies"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2019",
+        "title": "FAME II Scheme",
+        "detail": "₹10,000 Cr subsidies for EV two-wheelers & public transport"
+      },
+      {
+        "year": "2020",
+        "title": "BS-VI Emission Norms",
+        "detail": "Mandatory transition to ultra-low sulfur emission standards"
+      },
+      {
+        "year": "2022",
+        "title": "Auto PLI Incentive",
+        "detail": "₹25,938 Cr budget for advanced automotive technologies"
+      },
+      {
+        "year": "2024+",
+        "title": "New EV Policy & FAME III",
+        "detail": "Concessional import duties for localized EV manufacturing"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Car Ownership per 1,000 People",
+      "labels": [
+        "India",
+        "China",
+        "Japan",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        34,
+        210,
+        620,
+        840,
+        180
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "R&D & Royalty",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        68,
+        8,
+        5,
+        13,
+        4,
+        8
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 38,
+      "receivableDays": 22,
+      "payableDays": 54,
+      "cashConversionCycle": 6
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "0.9x",
+      "creditRating": "AA+ / Positive",
+      "costOfDebt": "7.5%",
+      "liquidityBuffer": "₹14,500 Cr Cash Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        114,
+        132,
+        145,
+        162,
+        184
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+42.5%",
+      "return3Yr": "+112.0%",
+      "volatilityBeta": "1.24x (High Growth)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Passenger SUV/Cars",
+        "Two-Wheelers",
+        "Commercial & Logistics Fleets"
+      ],
+      "values": [
+        42,
+        45,
+        13
+      ],
+      "incomeCohort": "Middle-Income Households (55%), High-Net-Worth (25%), Rural Commuters (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        110,
+        125,
+        140,
+        160
+      ],
+      "actualDemand": [
+        84,
+        96,
+        112,
+        128,
+        148
+      ],
+      "utilizationRate": "81.2% Factory Capacity"
+    },
+    "swot": {
+      "strengths": [
+        "Rapid premiumization trend towards high-margin SUVs",
+        "Strong domestic Tier-1 component manufacturing ecosystem"
+      ],
+      "weaknesses": [
+        "Heavy import dependency on lithium-ion cells & magnet motors",
+        "Cyclical sensitivity to monsoon & rural disposable income"
+      ],
+      "opportunities": [
+        "Export hub for EV two-wheelers & compact SUVs to ASEAN & Africa",
+        "Government PLI incentives driving localization of EV drivetrains"
+      ],
+      "threats": [
+        "Global semiconductor supply disruptions & raw material inflation",
+        "Aggressive price cuts by international EV entrants"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "TPG Investment in Tata Passenger EV",
+        "value": "$1.0B",
+        "buyer": "TPG Rise Climate"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Ather Energy Sovereign Funding",
+        "value": "$128M",
+        "buyer": "NIIF & Hero MotoCorp"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Commercial Fleet EV Acquisition",
+        "value": "$210M",
+        "buyer": "Logistics Infra Fund"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "High",
+      "d2cOmnichannel": "Medium",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the annual volume of electric two-wheelers sold in India in 2026.",
+      "Profitability Case: How can an OEM offset raw material price inflation through localization?",
+      "Strategic Shift: Evaluate whether a traditional ICE automaker should spin off its EV division.",
+      "Supply Chain Guesstimate: Calculate the required battery gigafactory capacity for 1 million EVs."
+    ],
+    "glossary": [
+      {
+        "term": "OEM",
+        "definition": "Original Equipment Manufacturer — Company producing final vehicles."
+      },
+      {
+        "term": "FAME",
+        "definition": "Faster Adoption and Manufacturing of Hybrid & Electric Vehicles scheme."
+      },
+      {
+        "term": "BS-VI",
+        "definition": "Bharat Stage VI — Stringent national vehicle emission control standard."
+      },
+      {
+        "term": "BMS",
+        "definition": "Battery Management System — Electronic unit regulating lithium cell packs."
+      }
+    ]
   },
   {
     "id": "gaming",
@@ -951,7 +6486,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Global Fortune 500 Enterprises, SMEs, Mobile Consumers & Gaming Enthusiasts",
       "marginDriver": "Recurring Software Licenses (ARR), High Gross Margin Code IP",
       "bottleneck": "High Senior Tech Talent Attrition & Specialized Hardware Availability"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2020",
+        "title": "OSP Liberalization",
+        "detail": "Simplified IT/ITeS remote working & telecom regulations"
+      },
+      {
+        "year": "2021",
+        "title": "Semiconductor Mission",
+        "detail": "76,000 Cr PLI for silicon fab & chip packaging units"
+      },
+      {
+        "year": "2023",
+        "title": "DPDP Act Enactment",
+        "detail": "Digital Personal Data Protection framework compliance"
+      },
+      {
+        "year": "2024+",
+        "title": "IndiaAI Mission",
+        "detail": "₹10,372 Cr allocated for GPU supercomputing clusters"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "IT & Software Export Market Share (%)",
+      "labels": [
+        "India",
+        "USA",
+        "Ireland",
+        "China",
+        "Global Avg"
+      ],
+      "values": [
+        56,
+        18,
+        9,
+        7,
+        10
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Employee Cost",
+        "Subcontracting",
+        "Facility & Cloud",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        56,
+        12,
+        8,
+        24,
+        4,
+        18
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 68,
+      "payableDays": 24,
+      "cashConversionCycle": 44
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "0.1x (Net Cash Positive)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.2%",
+      "liquidityBuffer": "$8.5 Billion Net Cash"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        104,
+        110,
+        116,
+        122,
+        134
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+18.2%",
+      "return3Yr": "+46.5%",
+      "volatilityBeta": "1.02x (Defensive Growth)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "BFSI (Banking & Finance)",
+        "Retail & Consumer",
+        "Healthcare & High-Tech"
+      ],
+      "values": [
+        40,
+        32,
+        28
+      ],
+      "incomeCohort": "North America (55%), Europe (30%), Rest of World (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        115,
+        132,
+        150,
+        172
+      ],
+      "actualDemand": [
+        96,
+        112,
+        128,
+        146,
+        168
+      ],
+      "utilizationRate": "84.5% Employee Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Unrivaled scale of 5M+ English-speaking engineering talent",
+        "High recurring revenue share with Fortune 500 enterprise clients"
+      ],
+      "weaknesses": [
+        "Exposure to US/Europe enterprise IT budget cuts",
+        "High senior tech talent attrition during tech expansion cycles"
+      ],
+      "opportunities": [
+        "Generative AI migration, cloud transformation & cyber defense",
+        "India Semiconductor Mission fab & chip design incentives"
+      ],
+      "threats": [
+        "Automated AI code generation compressing billable hours",
+        "Protectionist visa policies & currency volatility"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "Infosys InSemi Silicon Acquisition",
+        "value": "$340M",
+        "buyer": "Infosys Tech"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Freshworks SaaS Buyback",
+        "value": "$500M",
+        "buyer": "Public Shareholder Buyback"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "GenAI Enterprise Startup Deal",
+        "value": "$180M",
+        "buyer": "Tech Mahindra VC"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "High",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the revenue impact of GenAI adoption on Indian IT services by 2028.",
+      "Profitability Case: How does a SaaS company optimize Customer Acquisition Cost (CAC) vs LTV?",
+      "M&A Due Diligence: Evaluate an acquisition target in cloud-native application modernization.",
+      "Operational Metric: Explain how Employee Attrition & Utilization Rate drive operating margins."
+    ],
+    "glossary": [
+      {
+        "term": "TCV",
+        "definition": "Total Contract Value — Total revenue from signed enterprise deals."
+      },
+      {
+        "term": "ARR",
+        "definition": "Annual Recurring Revenue — Key SaaS subscription metric."
+      },
+      {
+        "term": "Utilization",
+        "definition": "Percentage of billable employee time assigned to client projects."
+      },
+      {
+        "term": "FTE",
+        "definition": "Full-Time Equivalent — Standard measure of project staffing."
+      }
+    ]
   },
   {
     "id": "cloud-saas",
@@ -985,7 +6725,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Global Fortune 500 Enterprises, SMEs, Mobile Consumers & Gaming Enthusiasts",
       "marginDriver": "Recurring Software Licenses (ARR), High Gross Margin Code IP",
       "bottleneck": "High Senior Tech Talent Attrition & Specialized Hardware Availability"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2020",
+        "title": "OSP Liberalization",
+        "detail": "Simplified IT/ITeS remote working & telecom regulations"
+      },
+      {
+        "year": "2021",
+        "title": "Semiconductor Mission",
+        "detail": "76,000 Cr PLI for silicon fab & chip packaging units"
+      },
+      {
+        "year": "2023",
+        "title": "DPDP Act Enactment",
+        "detail": "Digital Personal Data Protection framework compliance"
+      },
+      {
+        "year": "2024+",
+        "title": "IndiaAI Mission",
+        "detail": "₹10,372 Cr allocated for GPU supercomputing clusters"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "IT & Software Export Market Share (%)",
+      "labels": [
+        "India",
+        "USA",
+        "Ireland",
+        "China",
+        "Global Avg"
+      ],
+      "values": [
+        56,
+        18,
+        9,
+        7,
+        10
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Total Revenue",
+        "Employee Cost",
+        "Subcontracting",
+        "Facility & Cloud",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        56,
+        12,
+        8,
+        24,
+        4,
+        18
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 0,
+      "receivableDays": 68,
+      "payableDays": 24,
+      "cashConversionCycle": 44
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "0.1x (Net Cash Positive)",
+      "creditRating": "AAA / Stable",
+      "costOfDebt": "6.2%",
+      "liquidityBuffer": "$8.5 Billion Net Cash"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        104,
+        110,
+        116,
+        122,
+        134
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+18.2%",
+      "return3Yr": "+46.5%",
+      "volatilityBeta": "1.02x (Defensive Growth)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "BFSI (Banking & Finance)",
+        "Retail & Consumer",
+        "Healthcare & High-Tech"
+      ],
+      "values": [
+        40,
+        32,
+        28
+      ],
+      "incomeCohort": "North America (55%), Europe (30%), Rest of World (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        115,
+        132,
+        150,
+        172
+      ],
+      "actualDemand": [
+        96,
+        112,
+        128,
+        146,
+        168
+      ],
+      "utilizationRate": "84.5% Employee Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Unrivaled scale of 5M+ English-speaking engineering talent",
+        "High recurring revenue share with Fortune 500 enterprise clients"
+      ],
+      "weaknesses": [
+        "Exposure to US/Europe enterprise IT budget cuts",
+        "High senior tech talent attrition during tech expansion cycles"
+      ],
+      "opportunities": [
+        "Generative AI migration, cloud transformation & cyber defense",
+        "India Semiconductor Mission fab & chip design incentives"
+      ],
+      "threats": [
+        "Automated AI code generation compressing billable hours",
+        "Protectionist visa policies & currency volatility"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "Infosys InSemi Silicon Acquisition",
+        "value": "$340M",
+        "buyer": "Infosys Tech"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Freshworks SaaS Buyback",
+        "value": "$500M",
+        "buyer": "Public Shareholder Buyback"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "GenAI Enterprise Startup Deal",
+        "value": "$180M",
+        "buyer": "Tech Mahindra VC"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "High",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the revenue impact of GenAI adoption on Indian IT services by 2028.",
+      "Profitability Case: How does a SaaS company optimize Customer Acquisition Cost (CAC) vs LTV?",
+      "M&A Due Diligence: Evaluate an acquisition target in cloud-native application modernization.",
+      "Operational Metric: Explain how Employee Attrition & Utilization Rate drive operating margins."
+    ],
+    "glossary": [
+      {
+        "term": "TCV",
+        "definition": "Total Contract Value — Total revenue from signed enterprise deals."
+      },
+      {
+        "term": "ARR",
+        "definition": "Annual Recurring Revenue — Key SaaS subscription metric."
+      },
+      {
+        "term": "Utilization",
+        "definition": "Percentage of billable employee time assigned to client projects."
+      },
+      {
+        "term": "FTE",
+        "definition": "Full-Time Equivalent — Standard measure of project staffing."
+      }
+    ]
   },
   {
     "id": "space",
@@ -1019,7 +6964,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Indian Armed Forces (Army/Navy/Air Force), Space Research Organizations (ISRO)",
       "marginDriver": "High-Value Indigenous Defense Production Contracts & Long-Term AMC Contracts",
       "bottleneck": "Long Procurement Cycles & High Technological R&D Risk"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "food-beverage",
@@ -1029,7 +7179,7 @@ const DEFAULT_INDUSTRIES = [
     "size": "$900 Billion market",
     "cagr": "~11% CAGR",
     "players": [
-      "Nestl\u00e9 India",
+      "Nestlé India",
       "Britannia",
       "ITC Foods",
       "Zomato",
@@ -1053,7 +7203,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Urban & Rural Commuters, Commercial Logistics Fleets, Ride-Hailing Platforms",
       "marginDriver": "High-margin SUVs, After-sales Spare Parts & Battery Software Upgrades",
       "bottleneck": "Semiconductor Chip Supply & Lithium-Ion Cell Import Dependencies"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2019",
+        "title": "FAME II Scheme",
+        "detail": "₹10,000 Cr subsidies for EV two-wheelers & public transport"
+      },
+      {
+        "year": "2020",
+        "title": "BS-VI Emission Norms",
+        "detail": "Mandatory transition to ultra-low sulfur emission standards"
+      },
+      {
+        "year": "2022",
+        "title": "Auto PLI Incentive",
+        "detail": "₹25,938 Cr budget for advanced automotive technologies"
+      },
+      {
+        "year": "2024+",
+        "title": "New EV Policy & FAME III",
+        "detail": "Concessional import duties for localized EV manufacturing"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Car Ownership per 1,000 People",
+      "labels": [
+        "India",
+        "China",
+        "Japan",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        34,
+        210,
+        620,
+        840,
+        180
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "R&D & Royalty",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        68,
+        8,
+        5,
+        13,
+        4,
+        8
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 38,
+      "receivableDays": 22,
+      "payableDays": 54,
+      "cashConversionCycle": 6
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "0.9x",
+      "creditRating": "AA+ / Positive",
+      "costOfDebt": "7.5%",
+      "liquidityBuffer": "₹14,500 Cr Cash Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        114,
+        132,
+        145,
+        162,
+        184
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+42.5%",
+      "return3Yr": "+112.0%",
+      "volatilityBeta": "1.24x (High Growth)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Passenger SUV/Cars",
+        "Two-Wheelers",
+        "Commercial & Logistics Fleets"
+      ],
+      "values": [
+        42,
+        45,
+        13
+      ],
+      "incomeCohort": "Middle-Income Households (55%), High-Net-Worth (25%), Rural Commuters (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        110,
+        125,
+        140,
+        160
+      ],
+      "actualDemand": [
+        84,
+        96,
+        112,
+        128,
+        148
+      ],
+      "utilizationRate": "81.2% Factory Capacity"
+    },
+    "swot": {
+      "strengths": [
+        "Rapid premiumization trend towards high-margin SUVs",
+        "Strong domestic Tier-1 component manufacturing ecosystem"
+      ],
+      "weaknesses": [
+        "Heavy import dependency on lithium-ion cells & magnet motors",
+        "Cyclical sensitivity to monsoon & rural disposable income"
+      ],
+      "opportunities": [
+        "Export hub for EV two-wheelers & compact SUVs to ASEAN & Africa",
+        "Government PLI incentives driving localization of EV drivetrains"
+      ],
+      "threats": [
+        "Global semiconductor supply disruptions & raw material inflation",
+        "Aggressive price cuts by international EV entrants"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "TPG Investment in Tata Passenger EV",
+        "value": "$1.0B",
+        "buyer": "TPG Rise Climate"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Ather Energy Sovereign Funding",
+        "value": "$128M",
+        "buyer": "NIIF & Hero MotoCorp"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Commercial Fleet EV Acquisition",
+        "value": "$210M",
+        "buyer": "Logistics Infra Fund"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "High",
+      "d2cOmnichannel": "Medium",
+      "platformEcosystem": "High"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the annual volume of electric two-wheelers sold in India in 2026.",
+      "Profitability Case: How can an OEM offset raw material price inflation through localization?",
+      "Strategic Shift: Evaluate whether a traditional ICE automaker should spin off its EV division.",
+      "Supply Chain Guesstimate: Calculate the required battery gigafactory capacity for 1 million EVs."
+    ],
+    "glossary": [
+      {
+        "term": "OEM",
+        "definition": "Original Equipment Manufacturer — Company producing final vehicles."
+      },
+      {
+        "term": "FAME",
+        "definition": "Faster Adoption and Manufacturing of Hybrid & Electric Vehicles scheme."
+      },
+      {
+        "term": "BS-VI",
+        "definition": "Bharat Stage VI — Stringent national vehicle emission control standard."
+      },
+      {
+        "term": "BMS",
+        "definition": "Battery Management System — Electronic unit regulating lithium cell packs."
+      }
+    ]
   },
   {
     "id": "water-sanitation",
@@ -1087,7 +7442,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "National Highways, High-Rise Residential Projects, Industrial Parks, Smart Cities",
       "marginDriver": "Operating Scale Economies, Freight Cost Optimization & Premium Brand Cement",
       "bottleneck": "High Thermal Energy (Coal) Costs & Environmental Clearance Delays"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2016",
+        "title": "RERA Act Enactment",
+        "detail": "Real Estate Regulation & buyer protection framework"
+      },
+      {
+        "year": "2019",
+        "title": "National Infrastructure Pipeline",
+        "detail": "₹111 Lakh Cr master plan for roads, rail & ports"
+      },
+      {
+        "year": "2021",
+        "title": "PM Gati Shakti Master Plan",
+        "detail": "Multimodal transport infrastructure integration"
+      },
+      {
+        "year": "2024+",
+        "title": "Record Capex Outlay",
+        "detail": "₹11.11 Lakh Cr central government infrastructure capex"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Cement / Infra Consumption (kg)",
+      "labels": [
+        "India",
+        "China",
+        "Vietnam",
+        "Turkey",
+        "Global Avg"
+      ],
+      "values": [
+        260,
+        1650,
+        780,
+        620,
+        530
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Power & Fuel (Coal)",
+        "Freight & Logistics",
+        "Raw Materials",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        28,
+        24,
+        18,
+        18,
+        6,
+        12
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 45,
+      "receivableDays": 42,
+      "payableDays": 68,
+      "cashConversionCycle": 19
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "2.2x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "8.5%",
+      "liquidityBuffer": "Strong Order Book Coverage (3.2x Revenue)"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        115,
+        130,
+        148,
+        165,
+        188
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+45.2%",
+      "return3Yr": "+118.5%",
+      "volatilityBeta": "1.32x (High Beta Infra)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Government Roads & Rail",
+        "Commercial & Residential",
+        "Industrial Factories"
+      ],
+      "values": [
+        50,
+        35,
+        15
+      ],
+      "incomeCohort": "State & Central Contracts (50%), Tier-1 Developers (35%), SME B2B (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        108,
+        118,
+        132,
+        150
+      ],
+      "actualDemand": [
+        78,
+        88,
+        102,
+        118,
+        138
+      ],
+      "utilizationRate": "78.6% Kiln Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Record central government capex allocation (₹11.11 Lakh Cr)",
+        "High entry barriers due to limestone reserves & logistics freight networks"
+      ],
+      "weaknesses": [
+        "High sensitivity to imported coal & diesel freight costs",
+        "Working capital delays in state government project receivables"
+      ],
+      "opportunities": [
+        "Dedicated Freight Corridors & High-speed Rail Expansion",
+        "Green Cement & Waste Heat Recovery Systems (WHRS) reducing power cost"
+      ],
+      "threats": [
+        "Environmental clearance bottlenecks & land acquisition delays",
+        "Monsoon seasonal construction slowdowns"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Ambuja Cement Sanghi Acquisition",
+        "value": "$600M",
+        "buyer": "Adani Cement Group"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "Kesoram Cement Asset Buyout",
+        "value": "$640M",
+        "buyer": "UltraTech Cement"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Highway InvIT Concession Buyout",
+        "value": "$1.1B",
+        "buyer": "CPP Investments"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "Low",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate total cement demand generated by affordable housing in India.",
+      "Valuation Case: How do you value an EPC contractor using EV/EBITDA vs Price/Book?",
+      "Profitability Case: How does freight optimization impact EBITDA per ton for a cement producer?",
+      "Project Finance: Explain Debt Service Coverage Ratio (DSCR) in toll road InvITs."
+    ],
+    "glossary": [
+      {
+        "term": "EPC",
+        "definition": "Engineering, Procurement, and Construction contract model."
+      },
+      {
+        "term": "WHRS",
+        "definition": "Waste Heat Recovery System — Capturing kiln exhaust heat for cheap power."
+      },
+      {
+        "term": "InvIT",
+        "definition": "Infrastructure Investment Trust — Vehicle pooling operational toll assets."
+      },
+      {
+        "term": "Clinker",
+        "definition": "Nodule raw material produced by heating limestone in cement kilns."
+      }
+    ]
   },
   {
     "id": "ecommerce",
@@ -1121,7 +7681,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Household Consumers across Tier 1, Tier 2 & Rural Indian Markets",
       "marginDriver": "Premium Brand Products, Direct-to-Consumer (D2C) Margins & Supply Chain Scale",
       "bottleneck": "Raw Material Price Volatility (Palm Oil/Cotton) & Hyperlocal Logistics Costs"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "diagnostics",
@@ -1155,7 +7920,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Patients, Diagnostic Clinics, Government Health Programs, Global Export Markets",
       "marginDriver": "Patented Specialty Drugs, High-volume Generics & Proprietary Formulations",
       "bottleneck": "API Raw Material Import Reliance & Stringent USFDA Regulatory Audits"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2019",
+        "title": "Ayushman Bharat (PM-JAY)",
+        "detail": "Universal health coverage for 500M+ citizens"
+      },
+      {
+        "year": "2021",
+        "title": "Bulk Drug Parks PLI",
+        "detail": "₹15,000 Cr incentives for active pharmaceutical ingredients"
+      },
+      {
+        "year": "2023",
+        "title": "Uniform Code for Pharma Practices",
+        "detail": "Ethical marketing standards & R&D tax incentives"
+      },
+      {
+        "year": "2024+",
+        "title": "MedTech Regulatory Framework",
+        "detail": "CDSCO medical device registration & ISO standards"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Healthcare Spend as % of GDP",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        3.8,
+        5.4,
+        9.6,
+        17.8,
+        10.2
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "API & Raw Materials",
+        "Employee Cost",
+        "R&D & Compliance",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        38,
+        18,
+        12,
+        22,
+        6,
+        16
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 72,
+      "receivableDays": 58,
+      "payableDays": 64,
+      "cashConversionCycle": 66
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.2x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.4%",
+      "liquidityBuffer": "₹8,200 Cr Cash & Investments"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        112,
+        128,
+        142,
+        156,
+        175
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+36.5%",
+      "return3Yr": "+88.2%",
+      "volatilityBeta": "0.85x (Defensive)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Generics Exports (US/EU)",
+        "Domestic Formulations",
+        "Hospitals & Diagnostics"
+      ],
+      "values": [
+        48,
+        36,
+        16
+      ],
+      "incomeCohort": "Domestic Hospitals (40%), Overseas Exports (48%), OTC Consumer (12%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        162
+      ],
+      "actualDemand": [
+        88,
+        102,
+        118,
+        136,
+        156
+      ],
+      "utilizationRate": "83.8% Capacity Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "World's pharmacy status with 20%+ global generic supply share",
+        "Low-cost high-compliance FDA-approved manufacturing plants"
+      ],
+      "weaknesses": [
+        "High import dependence on China for Active Pharma Ingredients (APIs)",
+        "Stringent price controls (NLEM) on essential medicines"
+      ],
+      "opportunities": [
+        "Patent cliff in US ($200B+ drugs expiring) opening biosimilar wave",
+        "Expansion of private hospital chains into Tier-2/3 cities"
+      ],
+      "threats": [
+        "USFDA regulatory import alerts & warning letters",
+        "Geopolitical raw material price spikes & logistics delays"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "Glenmark Life Sciences Buyout",
+        "value": "$920M",
+        "buyer": "Nirma Group"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Manipal Hospitals Stake Sale",
+        "value": "$1.5B",
+        "buyer": "Temasek Holdings"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Biocon Biologics Integration",
+        "value": "$3.3B",
+        "buyer": "Viatris Biosimilars Deal"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the market size of hospital beds needed in India to meet WHO standards.",
+      "Profitability Case: How can a domestic pharma company offset regulatory price caps (NLEM)?",
+      "M&A Due Diligence: Evaluate an acquisition target specializing in complex biosimilars.",
+      "Regulatory Risk: Explain the financial impact of a USFDA Form 483 warning letter on margins."
+    ],
+    "glossary": [
+      {
+        "term": "API",
+        "definition": "Active Pharmaceutical Ingredient — Raw chemical substance producing therapeutic effect."
+      },
+      {
+        "term": "ANDAS",
+        "definition": "Abbreviated New Drug Application — USFDA filing for generic drug approvals."
+      },
+      {
+        "term": "NLEM",
+        "definition": "National List of Essential Medicines — Government price-controlled drugs."
+      },
+      {
+        "term": "Biosimilar",
+        "definition": "Biologic medical product almost identical to an original patented drug."
+      }
+    ]
   },
   {
     "id": "animation-vfx",
@@ -1189,7 +8159,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Household Consumers across Tier 1, Tier 2 & Rural Indian Markets",
       "marginDriver": "Premium Brand Products, Direct-to-Consumer (D2C) Margins & Supply Chain Scale",
       "bottleneck": "Raw Material Price Volatility (Palm Oil/Cotton) & Hyperlocal Logistics Costs"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "construction",
@@ -1223,7 +8398,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "National Highways, High-Rise Residential Projects, Industrial Parks, Smart Cities",
       "marginDriver": "Operating Scale Economies, Freight Cost Optimization & Premium Brand Cement",
       "bottleneck": "High Thermal Energy (Coal) Costs & Environmental Clearance Delays"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2016",
+        "title": "RERA Act Enactment",
+        "detail": "Real Estate Regulation & buyer protection framework"
+      },
+      {
+        "year": "2019",
+        "title": "National Infrastructure Pipeline",
+        "detail": "₹111 Lakh Cr master plan for roads, rail & ports"
+      },
+      {
+        "year": "2021",
+        "title": "PM Gati Shakti Master Plan",
+        "detail": "Multimodal transport infrastructure integration"
+      },
+      {
+        "year": "2024+",
+        "title": "Record Capex Outlay",
+        "detail": "₹11.11 Lakh Cr central government infrastructure capex"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Cement / Infra Consumption (kg)",
+      "labels": [
+        "India",
+        "China",
+        "Vietnam",
+        "Turkey",
+        "Global Avg"
+      ],
+      "values": [
+        260,
+        1650,
+        780,
+        620,
+        530
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Power & Fuel (Coal)",
+        "Freight & Logistics",
+        "Raw Materials",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        28,
+        24,
+        18,
+        18,
+        6,
+        12
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 45,
+      "receivableDays": 42,
+      "payableDays": 68,
+      "cashConversionCycle": 19
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "2.2x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "8.5%",
+      "liquidityBuffer": "Strong Order Book Coverage (3.2x Revenue)"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        115,
+        130,
+        148,
+        165,
+        188
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+45.2%",
+      "return3Yr": "+118.5%",
+      "volatilityBeta": "1.32x (High Beta Infra)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Government Roads & Rail",
+        "Commercial & Residential",
+        "Industrial Factories"
+      ],
+      "values": [
+        50,
+        35,
+        15
+      ],
+      "incomeCohort": "State & Central Contracts (50%), Tier-1 Developers (35%), SME B2B (15%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        108,
+        118,
+        132,
+        150
+      ],
+      "actualDemand": [
+        78,
+        88,
+        102,
+        118,
+        138
+      ],
+      "utilizationRate": "78.6% Kiln Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Record central government capex allocation (₹11.11 Lakh Cr)",
+        "High entry barriers due to limestone reserves & logistics freight networks"
+      ],
+      "weaknesses": [
+        "High sensitivity to imported coal & diesel freight costs",
+        "Working capital delays in state government project receivables"
+      ],
+      "opportunities": [
+        "Dedicated Freight Corridors & High-speed Rail Expansion",
+        "Green Cement & Waste Heat Recovery Systems (WHRS) reducing power cost"
+      ],
+      "threats": [
+        "Environmental clearance bottlenecks & land acquisition delays",
+        "Monsoon seasonal construction slowdowns"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Ambuja Cement Sanghi Acquisition",
+        "value": "$600M",
+        "buyer": "Adani Cement Group"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "Kesoram Cement Asset Buyout",
+        "value": "$640M",
+        "buyer": "UltraTech Cement"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Highway InvIT Concession Buyout",
+        "value": "$1.1B",
+        "buyer": "CPP Investments"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "Low",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate total cement demand generated by affordable housing in India.",
+      "Valuation Case: How do you value an EPC contractor using EV/EBITDA vs Price/Book?",
+      "Profitability Case: How does freight optimization impact EBITDA per ton for a cement producer?",
+      "Project Finance: Explain Debt Service Coverage Ratio (DSCR) in toll road InvITs."
+    ],
+    "glossary": [
+      {
+        "term": "EPC",
+        "definition": "Engineering, Procurement, and Construction contract model."
+      },
+      {
+        "term": "WHRS",
+        "definition": "Waste Heat Recovery System — Capturing kiln exhaust heat for cheap power."
+      },
+      {
+        "term": "InvIT",
+        "definition": "Infrastructure Investment Trust — Vehicle pooling operational toll assets."
+      },
+      {
+        "term": "Clinker",
+        "definition": "Nodule raw material produced by heating limestone in cement kilns."
+      }
+    ]
   },
   {
     "id": "biotech",
@@ -1257,7 +8637,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Patients, Diagnostic Clinics, Government Health Programs, Global Export Markets",
       "marginDriver": "Patented Specialty Drugs, High-volume Generics & Proprietary Formulations",
       "bottleneck": "API Raw Material Import Reliance & Stringent USFDA Regulatory Audits"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2019",
+        "title": "Ayushman Bharat (PM-JAY)",
+        "detail": "Universal health coverage for 500M+ citizens"
+      },
+      {
+        "year": "2021",
+        "title": "Bulk Drug Parks PLI",
+        "detail": "₹15,000 Cr incentives for active pharmaceutical ingredients"
+      },
+      {
+        "year": "2023",
+        "title": "Uniform Code for Pharma Practices",
+        "detail": "Ethical marketing standards & R&D tax incentives"
+      },
+      {
+        "year": "2024+",
+        "title": "MedTech Regulatory Framework",
+        "detail": "CDSCO medical device registration & ISO standards"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Healthcare Spend as % of GDP",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        3.8,
+        5.4,
+        9.6,
+        17.8,
+        10.2
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "API & Raw Materials",
+        "Employee Cost",
+        "R&D & Compliance",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        38,
+        18,
+        12,
+        22,
+        6,
+        16
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 72,
+      "receivableDays": 58,
+      "payableDays": 64,
+      "cashConversionCycle": 66
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.2x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.4%",
+      "liquidityBuffer": "₹8,200 Cr Cash & Investments"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        112,
+        128,
+        142,
+        156,
+        175
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+36.5%",
+      "return3Yr": "+88.2%",
+      "volatilityBeta": "0.85x (Defensive)"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "Generics Exports (US/EU)",
+        "Domestic Formulations",
+        "Hospitals & Diagnostics"
+      ],
+      "values": [
+        48,
+        36,
+        16
+      ],
+      "incomeCohort": "Domestic Hospitals (40%), Overseas Exports (48%), OTC Consumer (12%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        162
+      ],
+      "actualDemand": [
+        88,
+        102,
+        118,
+        136,
+        156
+      ],
+      "utilizationRate": "83.8% Capacity Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "World's pharmacy status with 20%+ global generic supply share",
+        "Low-cost high-compliance FDA-approved manufacturing plants"
+      ],
+      "weaknesses": [
+        "High import dependence on China for Active Pharma Ingredients (APIs)",
+        "Stringent price controls (NLEM) on essential medicines"
+      ],
+      "opportunities": [
+        "Patent cliff in US ($200B+ drugs expiring) opening biosimilar wave",
+        "Expansion of private hospital chains into Tier-2/3 cities"
+      ],
+      "threats": [
+        "USFDA regulatory import alerts & warning letters",
+        "Geopolitical raw material price spikes & logistics delays"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q1 2023",
+        "company": "Glenmark Life Sciences Buyout",
+        "value": "$920M",
+        "buyer": "Nirma Group"
+      },
+      {
+        "date": "Q3 2023",
+        "company": "Manipal Hospitals Stake Sale",
+        "value": "$1.5B",
+        "buyer": "Temasek Holdings"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Biocon Biologics Integration",
+        "value": "$3.3B",
+        "buyer": "Viatris Biosimilars Deal"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "High",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the market size of hospital beds needed in India to meet WHO standards.",
+      "Profitability Case: How can a domestic pharma company offset regulatory price caps (NLEM)?",
+      "M&A Due Diligence: Evaluate an acquisition target specializing in complex biosimilars.",
+      "Regulatory Risk: Explain the financial impact of a USFDA Form 483 warning letter on margins."
+    ],
+    "glossary": [
+      {
+        "term": "API",
+        "definition": "Active Pharmaceutical Ingredient — Raw chemical substance producing therapeutic effect."
+      },
+      {
+        "term": "ANDAS",
+        "definition": "Abbreviated New Drug Application — USFDA filing for generic drug approvals."
+      },
+      {
+        "term": "NLEM",
+        "definition": "National List of Essential Medicines — Government price-controlled drugs."
+      },
+      {
+        "term": "Biosimilar",
+        "definition": "Biologic medical product almost identical to an original patented drug."
+      }
+    ]
   },
   {
     "id": "capital-goods",
@@ -1291,7 +8876,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Heavy Engineering Plants, Defense Contractors, Automotive OEMs, Infra Developers",
       "marginDriver": "Specialty High-Purity Chemicals, Customized OEM Assemblies & Value-Added Steel",
       "bottleneck": "Raw Material Price Cyclicality & High Capital Expenditure Requirements"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "quick-commerce",
@@ -1325,7 +9115,212 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Household Consumers across Tier 1, Tier 2 & Rural Indian Markets",
       "marginDriver": "Premium Brand Products, Direct-to-Consumer (D2C) Margins & Supply Chain Scale",
       "bottleneck": "Raw Material Price Volatility (Palm Oil/Cotton) & Hyperlocal Logistics Costs"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   },
   {
     "id": "apparel",
@@ -1359,13 +9354,230 @@ const DEFAULT_INDUSTRIES = [
       "endMarkets": "Household Consumers across Tier 1, Tier 2 & Rural Indian Markets",
       "marginDriver": "Premium Brand Products, Direct-to-Consumer (D2C) Margins & Supply Chain Scale",
       "bottleneck": "Raw Material Price Volatility (Palm Oil/Cotton) & Hyperlocal Logistics Costs"
-    }
+    },
+    "regulatoryTimeline": [
+      {
+        "year": "2017",
+        "title": "GST Implementation",
+        "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+      },
+      {
+        "year": "2020",
+        "title": "Atmanirbhar Bharat Push",
+        "detail": "Import substitution & localized supply chain mandates"
+      },
+      {
+        "year": "2022",
+        "title": "PLI Scheme Expansion",
+        "detail": "Sectoral manufacturing incentives for high-value exports"
+      },
+      {
+        "year": "2024+",
+        "title": "ESG & Sustainability Norms",
+        "detail": "Mandatory BRSR disclosures & green transition targets"
+      }
+    ],
+    "globalBenchmarking": {
+      "metricLabel": "Per Capita Consumption / Market Spend ($)",
+      "labels": [
+        "India",
+        "China",
+        "Brazil",
+        "USA",
+        "Global Avg"
+      ],
+      "values": [
+        42,
+        145,
+        95,
+        310,
+        120
+      ]
+    },
+    "costStructure": {
+      "labels": [
+        "Net Revenue",
+        "Raw Materials",
+        "Employee Cost",
+        "Marketing & Dist",
+        "EBITDA",
+        "D&A",
+        "PAT"
+      ],
+      "values": [
+        100,
+        52,
+        14,
+        14,
+        20,
+        5,
+        15
+      ]
+    },
+    "workingCapital": {
+      "inventoryDays": 36,
+      "receivableDays": 28,
+      "payableDays": 42,
+      "cashConversionCycle": 22
+    },
+    "creditProfile": {
+      "netDebtToEbitda": "1.4x",
+      "creditRating": "AA / Stable",
+      "costOfDebt": "7.8%",
+      "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+    },
+    "stockPerformance": {
+      "labels": [
+        "Q1 23",
+        "Q2 23",
+        "Q3 23",
+        "Q4 23",
+        "Q1 24",
+        "Q2 24"
+      ],
+      "sectorIndex": [
+        100,
+        108,
+        120,
+        130,
+        142,
+        158
+      ],
+      "benchmarkNifty": [
+        100,
+        105,
+        112,
+        116,
+        122,
+        130
+      ],
+      "return1Yr": "+29.5%",
+      "return3Yr": "+72.0%",
+      "volatilityBeta": "1.10x"
+    },
+    "customerSegmentation": {
+      "labels": [
+        "B2C Urban Consumers",
+        "B2C Rural Households",
+        "B2B Enterprise Clients"
+      ],
+      "values": [
+        45,
+        35,
+        20
+      ],
+      "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+    },
+    "demandSupplyGap": {
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025F"
+      ],
+      "installedCapacity": [
+        100,
+        112,
+        126,
+        142,
+        160
+      ],
+      "actualDemand": [
+        86,
+        98,
+        114,
+        130,
+        150
+      ],
+      "utilizationRate": "82.5% Factory Utilization"
+    },
+    "swot": {
+      "strengths": [
+        "Massive domestic demographic dividend & rising disposable income",
+        "Established distribution networks spanning urban & rural retail channels"
+      ],
+      "weaknesses": [
+        "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+        "Margin pressure in unorganized traditional trade segments"
+      ],
+      "opportunities": [
+        "Omnichannel digital commerce expansion & premium product adoption",
+        "Government PLI schemes driving export manufacturing competitiveness"
+      ],
+      "threats": [
+        "Hyperlocal quick-commerce disruption altering brand loyalty",
+        "Global supply chain disruptions & freight rate inflation"
+      ]
+    },
+    "dealTimeline": [
+      {
+        "date": "Q2 2023",
+        "company": "Brand Portfolio Acquisition",
+        "value": "$420M",
+        "buyer": "Consumer Conglomerate A"
+      },
+      {
+        "date": "Q4 2023",
+        "company": "D2C Strategic Stake Buyout",
+        "value": "$190M",
+        "buyer": "Private Equity Growth Fund"
+      },
+      {
+        "date": "Q1 2024",
+        "company": "Manufacturing Asset Deal",
+        "value": "$350M",
+        "buyer": "Global Industrial Group"
+      }
+    ],
+    "techRadar": {
+      "aiIntegration": "Medium",
+      "roboticsAutomation": "Medium",
+      "d2cOmnichannel": "High",
+      "platformEcosystem": "Medium"
+    },
+    "interviewAngles": [
+      "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+      "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+      "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+      "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+    ],
+    "glossary": [
+      {
+        "term": "D2C",
+        "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+      },
+      {
+        "term": "SKU",
+        "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+      },
+      {
+        "term": "TAM",
+        "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+      },
+      {
+        "term": "LTV/CAC",
+        "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+      }
+    ]
   }
 ];
 
 const DEFAULT_UPLOAD_HISTORY = [
-  { id: "doc-1", name: "Industry_Primer_Q3_2024.pdf", date: "2024-07-15", industries: 10, status: "Processed" },
-  { id: "doc-2", name: "India_Decks_Sector_Report.pdf", date: "2024-07-20", industries: 30, status: "Processed" }
+  {
+    "id": "doc-1",
+    "name": "Industry_Primer_Q3_2024.pdf",
+    "date": "2024-07-15",
+    "industries": 10,
+    "status": "Processed"
+  },
+  {
+    "id": "doc-2",
+    "name": "India_Decks_Sector_Report.pdf",
+    "date": "2024-07-20",
+    "industries": 30,
+    "status": "Processed"
+  }
 ];
 
 const PRESET_UPLOADS = [
@@ -1379,8 +9591,20 @@ const PRESET_UPLOADS = [
         "description": "India's generative AI ecosystem is expanding into sovereign LLMs, GPU cluster hosting, and local language AI models for enterprise deployment.",
         "size": "$14 Billion forecast by 2028",
         "cagr": "~45% CAGR",
-        "players": ["Sarvam AI", "Krutrim", "Krutrim Cloud", "Tata Communications AI", "Reliance Jio Brain"],
-        "forces": { "newEntrants": "High", "buyerPower": "High", "supplierPower": "High", "substitutes": "Low", "rivalry": "High" },
+        "players": [
+          "Sarvam AI",
+          "Krutrim",
+          "Krutrim Cloud",
+          "Tata Communications AI",
+          "Reliance Jio Brain"
+        ],
+        "forces": {
+          "newEntrants": "High",
+          "buyerPower": "High",
+          "supplierPower": "High",
+          "substitutes": "Low",
+          "rivalry": "High"
+        },
         "valueChain": {
           "inputs": "High-Performance H100/A100 GPUs, Training Datasets & Cloud Datacenters",
           "operations": "LLM Pre-training, Fine-tuning, Quantization, Guardrail Engineering & Inference APIs",
@@ -1390,7 +9614,212 @@ const PRESET_UPLOADS = [
           "bottleneck": "Global GPU Supply Constraints & High Datacenter Power Costs"
         },
         "trend": "up",
-        "outlook": "Positive"
+        "outlook": "Positive",
+        "regulatoryTimeline": [
+          {
+            "year": "2020",
+            "title": "OSP Liberalization",
+            "detail": "Simplified IT/ITeS remote working & telecom regulations"
+          },
+          {
+            "year": "2021",
+            "title": "Semiconductor Mission",
+            "detail": "76,000 Cr PLI for silicon fab & chip packaging units"
+          },
+          {
+            "year": "2023",
+            "title": "DPDP Act Enactment",
+            "detail": "Digital Personal Data Protection framework compliance"
+          },
+          {
+            "year": "2024+",
+            "title": "IndiaAI Mission",
+            "detail": "₹10,372 Cr allocated for GPU supercomputing clusters"
+          }
+        ],
+        "globalBenchmarking": {
+          "metricLabel": "IT & Software Export Market Share (%)",
+          "labels": [
+            "India",
+            "USA",
+            "Ireland",
+            "China",
+            "Global Avg"
+          ],
+          "values": [
+            56,
+            18,
+            9,
+            7,
+            10
+          ]
+        },
+        "costStructure": {
+          "labels": [
+            "Total Revenue",
+            "Employee Cost",
+            "Subcontracting",
+            "Facility & Cloud",
+            "EBITDA",
+            "D&A",
+            "PAT"
+          ],
+          "values": [
+            100,
+            56,
+            12,
+            8,
+            24,
+            4,
+            18
+          ]
+        },
+        "workingCapital": {
+          "inventoryDays": 0,
+          "receivableDays": 68,
+          "payableDays": 24,
+          "cashConversionCycle": 44
+        },
+        "creditProfile": {
+          "netDebtToEbitda": "0.1x (Net Cash Positive)",
+          "creditRating": "AAA / Stable",
+          "costOfDebt": "6.2%",
+          "liquidityBuffer": "$8.5 Billion Net Cash"
+        },
+        "stockPerformance": {
+          "labels": [
+            "Q1 23",
+            "Q2 23",
+            "Q3 23",
+            "Q4 23",
+            "Q1 24",
+            "Q2 24"
+          ],
+          "sectorIndex": [
+            100,
+            104,
+            110,
+            116,
+            122,
+            134
+          ],
+          "benchmarkNifty": [
+            100,
+            105,
+            112,
+            116,
+            122,
+            130
+          ],
+          "return1Yr": "+18.2%",
+          "return3Yr": "+46.5%",
+          "volatilityBeta": "1.02x (Defensive Growth)"
+        },
+        "customerSegmentation": {
+          "labels": [
+            "BFSI (Banking & Finance)",
+            "Retail & Consumer",
+            "Healthcare & High-Tech"
+          ],
+          "values": [
+            40,
+            32,
+            28
+          ],
+          "incomeCohort": "North America (55%), Europe (30%), Rest of World (15%)"
+        },
+        "demandSupplyGap": {
+          "labels": [
+            "2021",
+            "2022",
+            "2023",
+            "2024E",
+            "2025F"
+          ],
+          "installedCapacity": [
+            100,
+            115,
+            132,
+            150,
+            172
+          ],
+          "actualDemand": [
+            96,
+            112,
+            128,
+            146,
+            168
+          ],
+          "utilizationRate": "84.5% Employee Utilization"
+        },
+        "swot": {
+          "strengths": [
+            "Unrivaled scale of 5M+ English-speaking engineering talent",
+            "High recurring revenue share with Fortune 500 enterprise clients"
+          ],
+          "weaknesses": [
+            "Exposure to US/Europe enterprise IT budget cuts",
+            "High senior tech talent attrition during tech expansion cycles"
+          ],
+          "opportunities": [
+            "Generative AI migration, cloud transformation & cyber defense",
+            "India Semiconductor Mission fab & chip design incentives"
+          ],
+          "threats": [
+            "Automated AI code generation compressing billable hours",
+            "Protectionist visa policies & currency volatility"
+          ]
+        },
+        "dealTimeline": [
+          {
+            "date": "Q1 2023",
+            "company": "Infosys InSemi Silicon Acquisition",
+            "value": "$340M",
+            "buyer": "Infosys Tech"
+          },
+          {
+            "date": "Q3 2023",
+            "company": "Freshworks SaaS Buyback",
+            "value": "$500M",
+            "buyer": "Public Shareholder Buyback"
+          },
+          {
+            "date": "Q1 2024",
+            "company": "GenAI Enterprise Startup Deal",
+            "value": "$180M",
+            "buyer": "Tech Mahindra VC"
+          }
+        ],
+        "techRadar": {
+          "aiIntegration": "High",
+          "roboticsAutomation": "High",
+          "d2cOmnichannel": "High",
+          "platformEcosystem": "High"
+        },
+        "interviewAngles": [
+          "Market Sizing: Estimate the revenue impact of GenAI adoption on Indian IT services by 2028.",
+          "Profitability Case: How does a SaaS company optimize Customer Acquisition Cost (CAC) vs LTV?",
+          "M&A Due Diligence: Evaluate an acquisition target in cloud-native application modernization.",
+          "Operational Metric: Explain how Employee Attrition & Utilization Rate drive operating margins."
+        ],
+        "glossary": [
+          {
+            "term": "TCV",
+            "definition": "Total Contract Value — Total revenue from signed enterprise deals."
+          },
+          {
+            "term": "ARR",
+            "definition": "Annual Recurring Revenue — Key SaaS subscription metric."
+          },
+          {
+            "term": "Utilization",
+            "definition": "Percentage of billable employee time assigned to client projects."
+          },
+          {
+            "term": "FTE",
+            "definition": "Full-Time Equivalent — Standard measure of project staffing."
+          }
+        ]
       },
       {
         "id": "autonomous-robotics",
@@ -1399,8 +9828,19 @@ const PRESET_UPLOADS = [
         "description": "Robotics and smart factory automation adoption in Indian automotive and electronics assembly lines is accelerating post-PLI incentives.",
         "size": "$6.5 Billion market",
         "cagr": "~22% CAGR",
-        "players": ["Addverb Technologies", "Systemantic", "Hi-Tech Robotic Systemz", "TAL Manufacturing"],
-        "forces": { "newEntrants": "Medium", "buyerPower": "Medium", "supplierPower": "High", "substitutes": "Low", "rivalry": "Medium" },
+        "players": [
+          "Addverb Technologies",
+          "Systemantic",
+          "Hi-Tech Robotic Systemz",
+          "TAL Manufacturing"
+        ],
+        "forces": {
+          "newEntrants": "Medium",
+          "buyerPower": "Medium",
+          "supplierPower": "High",
+          "substitutes": "Low",
+          "rivalry": "Medium"
+        },
         "valueChain": {
           "inputs": "Servo Motors, Precision Actuators, Vision Sensors & Industrial Microcontrollers",
           "operations": "Arm Fabrication, Motion Control Programming, PLC Integration & Safety Auditing",
@@ -1410,7 +9850,212 @@ const PRESET_UPLOADS = [
           "bottleneck": "Imported High-Precision Actuator & Servo Motor Components"
         },
         "trend": "up",
-        "outlook": "Positive"
+        "outlook": "Positive",
+        "regulatoryTimeline": [
+          {
+            "year": "2017",
+            "title": "GST Implementation",
+            "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+          },
+          {
+            "year": "2020",
+            "title": "Atmanirbhar Bharat Push",
+            "detail": "Import substitution & localized supply chain mandates"
+          },
+          {
+            "year": "2022",
+            "title": "PLI Scheme Expansion",
+            "detail": "Sectoral manufacturing incentives for high-value exports"
+          },
+          {
+            "year": "2024+",
+            "title": "ESG & Sustainability Norms",
+            "detail": "Mandatory BRSR disclosures & green transition targets"
+          }
+        ],
+        "globalBenchmarking": {
+          "metricLabel": "Per Capita Consumption / Market Spend ($)",
+          "labels": [
+            "India",
+            "China",
+            "Brazil",
+            "USA",
+            "Global Avg"
+          ],
+          "values": [
+            42,
+            145,
+            95,
+            310,
+            120
+          ]
+        },
+        "costStructure": {
+          "labels": [
+            "Net Revenue",
+            "Raw Materials",
+            "Employee Cost",
+            "Marketing & Dist",
+            "EBITDA",
+            "D&A",
+            "PAT"
+          ],
+          "values": [
+            100,
+            52,
+            14,
+            14,
+            20,
+            5,
+            15
+          ]
+        },
+        "workingCapital": {
+          "inventoryDays": 36,
+          "receivableDays": 28,
+          "payableDays": 42,
+          "cashConversionCycle": 22
+        },
+        "creditProfile": {
+          "netDebtToEbitda": "1.4x",
+          "creditRating": "AA / Stable",
+          "costOfDebt": "7.8%",
+          "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+        },
+        "stockPerformance": {
+          "labels": [
+            "Q1 23",
+            "Q2 23",
+            "Q3 23",
+            "Q4 23",
+            "Q1 24",
+            "Q2 24"
+          ],
+          "sectorIndex": [
+            100,
+            108,
+            120,
+            130,
+            142,
+            158
+          ],
+          "benchmarkNifty": [
+            100,
+            105,
+            112,
+            116,
+            122,
+            130
+          ],
+          "return1Yr": "+29.5%",
+          "return3Yr": "+72.0%",
+          "volatilityBeta": "1.10x"
+        },
+        "customerSegmentation": {
+          "labels": [
+            "B2C Urban Consumers",
+            "B2C Rural Households",
+            "B2B Enterprise Clients"
+          ],
+          "values": [
+            45,
+            35,
+            20
+          ],
+          "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+        },
+        "demandSupplyGap": {
+          "labels": [
+            "2021",
+            "2022",
+            "2023",
+            "2024E",
+            "2025F"
+          ],
+          "installedCapacity": [
+            100,
+            112,
+            126,
+            142,
+            160
+          ],
+          "actualDemand": [
+            86,
+            98,
+            114,
+            130,
+            150
+          ],
+          "utilizationRate": "82.5% Factory Utilization"
+        },
+        "swot": {
+          "strengths": [
+            "Massive domestic demographic dividend & rising disposable income",
+            "Established distribution networks spanning urban & rural retail channels"
+          ],
+          "weaknesses": [
+            "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+            "Margin pressure in unorganized traditional trade segments"
+          ],
+          "opportunities": [
+            "Omnichannel digital commerce expansion & premium product adoption",
+            "Government PLI schemes driving export manufacturing competitiveness"
+          ],
+          "threats": [
+            "Hyperlocal quick-commerce disruption altering brand loyalty",
+            "Global supply chain disruptions & freight rate inflation"
+          ]
+        },
+        "dealTimeline": [
+          {
+            "date": "Q2 2023",
+            "company": "Brand Portfolio Acquisition",
+            "value": "$420M",
+            "buyer": "Consumer Conglomerate A"
+          },
+          {
+            "date": "Q4 2023",
+            "company": "D2C Strategic Stake Buyout",
+            "value": "$190M",
+            "buyer": "Private Equity Growth Fund"
+          },
+          {
+            "date": "Q1 2024",
+            "company": "Manufacturing Asset Deal",
+            "value": "$350M",
+            "buyer": "Global Industrial Group"
+          }
+        ],
+        "techRadar": {
+          "aiIntegration": "Medium",
+          "roboticsAutomation": "Medium",
+          "d2cOmnichannel": "High",
+          "platformEcosystem": "Medium"
+        },
+        "interviewAngles": [
+          "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+          "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+          "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+          "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+        ],
+        "glossary": [
+          {
+            "term": "D2C",
+            "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+          },
+          {
+            "term": "SKU",
+            "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+          },
+          {
+            "term": "TAM",
+            "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+          },
+          {
+            "term": "LTV/CAC",
+            "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+          }
+        ]
       },
       {
         "id": "quantum-tech",
@@ -1419,8 +10064,19 @@ const PRESET_UPLOADS = [
         "description": "National Quantum Mission backing deep tech startups building quantum cryptography, sensing, and hardware simulation for banking & defense.",
         "size": "$1.2 Billion by 2030",
         "cagr": "~35% CAGR",
-        "players": ["QNu Labs", "Boson Q Psi", "QuNu Technologies", "TCS Quantum Lab"],
-        "forces": { "newEntrants": "Low", "buyerPower": "Low", "supplierPower": "High", "substitutes": "Low", "rivalry": "Low" },
+        "players": [
+          "QNu Labs",
+          "Boson Q Psi",
+          "QuNu Technologies",
+          "TCS Quantum Lab"
+        ],
+        "forces": {
+          "newEntrants": "Low",
+          "buyerPower": "Low",
+          "supplierPower": "High",
+          "substitutes": "Low",
+          "rivalry": "Low"
+        },
         "valueChain": {
           "inputs": "Cryogenic Dilution Refrigerators, Single-Photon Sources & Quantum Optics",
           "operations": "Qubit Calibration, Quantum Key Distribution (QKD) & Quantum Software Algorithms",
@@ -1430,7 +10086,212 @@ const PRESET_UPLOADS = [
           "bottleneck": "Cryogenic Hardware Costs & Quantum Error Rate Tolerances"
         },
         "trend": "up",
-        "outlook": "Positive"
+        "outlook": "Positive",
+        "regulatoryTimeline": [
+          {
+            "year": "2020",
+            "title": "OSP Liberalization",
+            "detail": "Simplified IT/ITeS remote working & telecom regulations"
+          },
+          {
+            "year": "2021",
+            "title": "Semiconductor Mission",
+            "detail": "76,000 Cr PLI for silicon fab & chip packaging units"
+          },
+          {
+            "year": "2023",
+            "title": "DPDP Act Enactment",
+            "detail": "Digital Personal Data Protection framework compliance"
+          },
+          {
+            "year": "2024+",
+            "title": "IndiaAI Mission",
+            "detail": "₹10,372 Cr allocated for GPU supercomputing clusters"
+          }
+        ],
+        "globalBenchmarking": {
+          "metricLabel": "IT & Software Export Market Share (%)",
+          "labels": [
+            "India",
+            "USA",
+            "Ireland",
+            "China",
+            "Global Avg"
+          ],
+          "values": [
+            56,
+            18,
+            9,
+            7,
+            10
+          ]
+        },
+        "costStructure": {
+          "labels": [
+            "Total Revenue",
+            "Employee Cost",
+            "Subcontracting",
+            "Facility & Cloud",
+            "EBITDA",
+            "D&A",
+            "PAT"
+          ],
+          "values": [
+            100,
+            56,
+            12,
+            8,
+            24,
+            4,
+            18
+          ]
+        },
+        "workingCapital": {
+          "inventoryDays": 0,
+          "receivableDays": 68,
+          "payableDays": 24,
+          "cashConversionCycle": 44
+        },
+        "creditProfile": {
+          "netDebtToEbitda": "0.1x (Net Cash Positive)",
+          "creditRating": "AAA / Stable",
+          "costOfDebt": "6.2%",
+          "liquidityBuffer": "$8.5 Billion Net Cash"
+        },
+        "stockPerformance": {
+          "labels": [
+            "Q1 23",
+            "Q2 23",
+            "Q3 23",
+            "Q4 23",
+            "Q1 24",
+            "Q2 24"
+          ],
+          "sectorIndex": [
+            100,
+            104,
+            110,
+            116,
+            122,
+            134
+          ],
+          "benchmarkNifty": [
+            100,
+            105,
+            112,
+            116,
+            122,
+            130
+          ],
+          "return1Yr": "+18.2%",
+          "return3Yr": "+46.5%",
+          "volatilityBeta": "1.02x (Defensive Growth)"
+        },
+        "customerSegmentation": {
+          "labels": [
+            "BFSI (Banking & Finance)",
+            "Retail & Consumer",
+            "Healthcare & High-Tech"
+          ],
+          "values": [
+            40,
+            32,
+            28
+          ],
+          "incomeCohort": "North America (55%), Europe (30%), Rest of World (15%)"
+        },
+        "demandSupplyGap": {
+          "labels": [
+            "2021",
+            "2022",
+            "2023",
+            "2024E",
+            "2025F"
+          ],
+          "installedCapacity": [
+            100,
+            115,
+            132,
+            150,
+            172
+          ],
+          "actualDemand": [
+            96,
+            112,
+            128,
+            146,
+            168
+          ],
+          "utilizationRate": "84.5% Employee Utilization"
+        },
+        "swot": {
+          "strengths": [
+            "Unrivaled scale of 5M+ English-speaking engineering talent",
+            "High recurring revenue share with Fortune 500 enterprise clients"
+          ],
+          "weaknesses": [
+            "Exposure to US/Europe enterprise IT budget cuts",
+            "High senior tech talent attrition during tech expansion cycles"
+          ],
+          "opportunities": [
+            "Generative AI migration, cloud transformation & cyber defense",
+            "India Semiconductor Mission fab & chip design incentives"
+          ],
+          "threats": [
+            "Automated AI code generation compressing billable hours",
+            "Protectionist visa policies & currency volatility"
+          ]
+        },
+        "dealTimeline": [
+          {
+            "date": "Q1 2023",
+            "company": "Infosys InSemi Silicon Acquisition",
+            "value": "$340M",
+            "buyer": "Infosys Tech"
+          },
+          {
+            "date": "Q3 2023",
+            "company": "Freshworks SaaS Buyback",
+            "value": "$500M",
+            "buyer": "Public Shareholder Buyback"
+          },
+          {
+            "date": "Q1 2024",
+            "company": "GenAI Enterprise Startup Deal",
+            "value": "$180M",
+            "buyer": "Tech Mahindra VC"
+          }
+        ],
+        "techRadar": {
+          "aiIntegration": "High",
+          "roboticsAutomation": "High",
+          "d2cOmnichannel": "High",
+          "platformEcosystem": "High"
+        },
+        "interviewAngles": [
+          "Market Sizing: Estimate the revenue impact of GenAI adoption on Indian IT services by 2028.",
+          "Profitability Case: How does a SaaS company optimize Customer Acquisition Cost (CAC) vs LTV?",
+          "M&A Due Diligence: Evaluate an acquisition target in cloud-native application modernization.",
+          "Operational Metric: Explain how Employee Attrition & Utilization Rate drive operating margins."
+        ],
+        "glossary": [
+          {
+            "term": "TCV",
+            "definition": "Total Contract Value — Total revenue from signed enterprise deals."
+          },
+          {
+            "term": "ARR",
+            "definition": "Annual Recurring Revenue — Key SaaS subscription metric."
+          },
+          {
+            "term": "Utilization",
+            "definition": "Percentage of billable employee time assigned to client projects."
+          },
+          {
+            "term": "FTE",
+            "definition": "Full-Time Equivalent — Standard measure of project staffing."
+          }
+        ]
       }
     ]
   },
@@ -1444,8 +10305,20 @@ const PRESET_UPLOADS = [
         "description": "Lithium-ion cell manufacturing and grid-scale battery storage infrastructure expanding under ACC PLI scheme to support 24x7 renewables.",
         "size": "$18 Billion requirement by 2030",
         "cagr": "~38% CAGR",
-        "players": ["Ola Cell Technologies", "Exide Energy", "Amara Raja", "Reliance Energy Storage", "Lucas TVS"],
-        "forces": { "newEntrants": "Low", "buyerPower": "Medium", "supplierPower": "High", "substitutes": "Medium", "rivalry": "High" },
+        "players": [
+          "Ola Cell Technologies",
+          "Exide Energy",
+          "Amara Raja",
+          "Reliance Energy Storage",
+          "Lucas TVS"
+        ],
+        "forces": {
+          "newEntrants": "Low",
+          "buyerPower": "Medium",
+          "supplierPower": "High",
+          "substitutes": "Medium",
+          "rivalry": "High"
+        },
         "valueChain": {
           "inputs": "Lithium, Nickel, Cobalt, Cathode Active Materials (CAM) & Electrolytes",
           "operations": "Slurry Mixing, Electrode Coating, Cell Stacking & Battery Management System (BMS) Assembly",
@@ -1455,17 +10328,234 @@ const PRESET_UPLOADS = [
           "bottleneck": "Raw Mineral Lithium Refining & Cathode Material Import Reliance"
         },
         "trend": "up",
-        "outlook": "Positive"
+        "outlook": "Positive",
+        "regulatoryTimeline": [
+          {
+            "year": "2017",
+            "title": "GST Implementation",
+            "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+          },
+          {
+            "year": "2020",
+            "title": "Atmanirbhar Bharat Push",
+            "detail": "Import substitution & localized supply chain mandates"
+          },
+          {
+            "year": "2022",
+            "title": "PLI Scheme Expansion",
+            "detail": "Sectoral manufacturing incentives for high-value exports"
+          },
+          {
+            "year": "2024+",
+            "title": "ESG & Sustainability Norms",
+            "detail": "Mandatory BRSR disclosures & green transition targets"
+          }
+        ],
+        "globalBenchmarking": {
+          "metricLabel": "Per Capita Consumption / Market Spend ($)",
+          "labels": [
+            "India",
+            "China",
+            "Brazil",
+            "USA",
+            "Global Avg"
+          ],
+          "values": [
+            42,
+            145,
+            95,
+            310,
+            120
+          ]
+        },
+        "costStructure": {
+          "labels": [
+            "Net Revenue",
+            "Raw Materials",
+            "Employee Cost",
+            "Marketing & Dist",
+            "EBITDA",
+            "D&A",
+            "PAT"
+          ],
+          "values": [
+            100,
+            52,
+            14,
+            14,
+            20,
+            5,
+            15
+          ]
+        },
+        "workingCapital": {
+          "inventoryDays": 36,
+          "receivableDays": 28,
+          "payableDays": 42,
+          "cashConversionCycle": 22
+        },
+        "creditProfile": {
+          "netDebtToEbitda": "1.4x",
+          "creditRating": "AA / Stable",
+          "costOfDebt": "7.8%",
+          "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+        },
+        "stockPerformance": {
+          "labels": [
+            "Q1 23",
+            "Q2 23",
+            "Q3 23",
+            "Q4 23",
+            "Q1 24",
+            "Q2 24"
+          ],
+          "sectorIndex": [
+            100,
+            108,
+            120,
+            130,
+            142,
+            158
+          ],
+          "benchmarkNifty": [
+            100,
+            105,
+            112,
+            116,
+            122,
+            130
+          ],
+          "return1Yr": "+29.5%",
+          "return3Yr": "+72.0%",
+          "volatilityBeta": "1.10x"
+        },
+        "customerSegmentation": {
+          "labels": [
+            "B2C Urban Consumers",
+            "B2C Rural Households",
+            "B2B Enterprise Clients"
+          ],
+          "values": [
+            45,
+            35,
+            20
+          ],
+          "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+        },
+        "demandSupplyGap": {
+          "labels": [
+            "2021",
+            "2022",
+            "2023",
+            "2024E",
+            "2025F"
+          ],
+          "installedCapacity": [
+            100,
+            112,
+            126,
+            142,
+            160
+          ],
+          "actualDemand": [
+            86,
+            98,
+            114,
+            130,
+            150
+          ],
+          "utilizationRate": "82.5% Factory Utilization"
+        },
+        "swot": {
+          "strengths": [
+            "Massive domestic demographic dividend & rising disposable income",
+            "Established distribution networks spanning urban & rural retail channels"
+          ],
+          "weaknesses": [
+            "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+            "Margin pressure in unorganized traditional trade segments"
+          ],
+          "opportunities": [
+            "Omnichannel digital commerce expansion & premium product adoption",
+            "Government PLI schemes driving export manufacturing competitiveness"
+          ],
+          "threats": [
+            "Hyperlocal quick-commerce disruption altering brand loyalty",
+            "Global supply chain disruptions & freight rate inflation"
+          ]
+        },
+        "dealTimeline": [
+          {
+            "date": "Q2 2023",
+            "company": "Brand Portfolio Acquisition",
+            "value": "$420M",
+            "buyer": "Consumer Conglomerate A"
+          },
+          {
+            "date": "Q4 2023",
+            "company": "D2C Strategic Stake Buyout",
+            "value": "$190M",
+            "buyer": "Private Equity Growth Fund"
+          },
+          {
+            "date": "Q1 2024",
+            "company": "Manufacturing Asset Deal",
+            "value": "$350M",
+            "buyer": "Global Industrial Group"
+          }
+        ],
+        "techRadar": {
+          "aiIntegration": "Medium",
+          "roboticsAutomation": "Medium",
+          "d2cOmnichannel": "High",
+          "platformEcosystem": "Medium"
+        },
+        "interviewAngles": [
+          "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+          "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+          "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+          "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+        ],
+        "glossary": [
+          {
+            "term": "D2C",
+            "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+          },
+          {
+            "term": "SKU",
+            "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+          },
+          {
+            "term": "TAM",
+            "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+          },
+          {
+            "term": "LTV/CAC",
+            "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+          }
+        ]
       },
       {
         "id": "green-hydrogen",
         "name": "Green Hydrogen & Ammonia",
         "sector": "Energy",
         "description": "National Green Hydrogen Mission targeting 5 MMT annual production by 2030 to decarbonize steel, fertilizers, and heavy transport.",
-        size: "$8 Billion initial capital commit",
+        "size": "$8 Billion initial capital commit",
         "cagr": "~50% CAGR",
-        "players": ["L&T Electrolysers", "Adani New Industries", "RIL Green Hydrogen", "ACME Group", "Greenko"],
-        "forces": { "newEntrants": "Low", "buyerPower": "Low", "supplierPower": "High", "substitutes": "Low", "rivalry": "Low" },
+        "players": [
+          "L&T Electrolysers",
+          "Adani New Industries",
+          "RIL Green Hydrogen",
+          "ACME Group",
+          "Greenko"
+        ],
+        "forces": {
+          "newEntrants": "Low",
+          "buyerPower": "Low",
+          "supplierPower": "High",
+          "substitutes": "Low",
+          "rivalry": "Low"
+        },
         "valueChain": {
           "inputs": "Solar/Wind Renewable Power, De-mineralized Water & PEM/Alkaline Electrolysers",
           "operations": "Electrolysis Water Splitting, Hydrogen Compression, Liquefaction & Ammonia Synthesis",
@@ -1475,7 +10565,212 @@ const PRESET_UPLOADS = [
           "bottleneck": "High Electrolyser Capex & Storage/Pipeline Compression Safety Standards"
         },
         "trend": "up",
-        "outlook": "Positive"
+        "outlook": "Positive",
+        "regulatoryTimeline": [
+          {
+            "year": "2017",
+            "title": "GST Implementation",
+            "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+          },
+          {
+            "year": "2020",
+            "title": "Atmanirbhar Bharat Push",
+            "detail": "Import substitution & localized supply chain mandates"
+          },
+          {
+            "year": "2022",
+            "title": "PLI Scheme Expansion",
+            "detail": "Sectoral manufacturing incentives for high-value exports"
+          },
+          {
+            "year": "2024+",
+            "title": "ESG & Sustainability Norms",
+            "detail": "Mandatory BRSR disclosures & green transition targets"
+          }
+        ],
+        "globalBenchmarking": {
+          "metricLabel": "Per Capita Consumption / Market Spend ($)",
+          "labels": [
+            "India",
+            "China",
+            "Brazil",
+            "USA",
+            "Global Avg"
+          ],
+          "values": [
+            42,
+            145,
+            95,
+            310,
+            120
+          ]
+        },
+        "costStructure": {
+          "labels": [
+            "Net Revenue",
+            "Raw Materials",
+            "Employee Cost",
+            "Marketing & Dist",
+            "EBITDA",
+            "D&A",
+            "PAT"
+          ],
+          "values": [
+            100,
+            52,
+            14,
+            14,
+            20,
+            5,
+            15
+          ]
+        },
+        "workingCapital": {
+          "inventoryDays": 36,
+          "receivableDays": 28,
+          "payableDays": 42,
+          "cashConversionCycle": 22
+        },
+        "creditProfile": {
+          "netDebtToEbitda": "1.4x",
+          "creditRating": "AA / Stable",
+          "costOfDebt": "7.8%",
+          "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+        },
+        "stockPerformance": {
+          "labels": [
+            "Q1 23",
+            "Q2 23",
+            "Q3 23",
+            "Q4 23",
+            "Q1 24",
+            "Q2 24"
+          ],
+          "sectorIndex": [
+            100,
+            108,
+            120,
+            130,
+            142,
+            158
+          ],
+          "benchmarkNifty": [
+            100,
+            105,
+            112,
+            116,
+            122,
+            130
+          ],
+          "return1Yr": "+29.5%",
+          "return3Yr": "+72.0%",
+          "volatilityBeta": "1.10x"
+        },
+        "customerSegmentation": {
+          "labels": [
+            "B2C Urban Consumers",
+            "B2C Rural Households",
+            "B2B Enterprise Clients"
+          ],
+          "values": [
+            45,
+            35,
+            20
+          ],
+          "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+        },
+        "demandSupplyGap": {
+          "labels": [
+            "2021",
+            "2022",
+            "2023",
+            "2024E",
+            "2025F"
+          ],
+          "installedCapacity": [
+            100,
+            112,
+            126,
+            142,
+            160
+          ],
+          "actualDemand": [
+            86,
+            98,
+            114,
+            130,
+            150
+          ],
+          "utilizationRate": "82.5% Factory Utilization"
+        },
+        "swot": {
+          "strengths": [
+            "Massive domestic demographic dividend & rising disposable income",
+            "Established distribution networks spanning urban & rural retail channels"
+          ],
+          "weaknesses": [
+            "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+            "Margin pressure in unorganized traditional trade segments"
+          ],
+          "opportunities": [
+            "Omnichannel digital commerce expansion & premium product adoption",
+            "Government PLI schemes driving export manufacturing competitiveness"
+          ],
+          "threats": [
+            "Hyperlocal quick-commerce disruption altering brand loyalty",
+            "Global supply chain disruptions & freight rate inflation"
+          ]
+        },
+        "dealTimeline": [
+          {
+            "date": "Q2 2023",
+            "company": "Brand Portfolio Acquisition",
+            "value": "$420M",
+            "buyer": "Consumer Conglomerate A"
+          },
+          {
+            "date": "Q4 2023",
+            "company": "D2C Strategic Stake Buyout",
+            "value": "$190M",
+            "buyer": "Private Equity Growth Fund"
+          },
+          {
+            "date": "Q1 2024",
+            "company": "Manufacturing Asset Deal",
+            "value": "$350M",
+            "buyer": "Global Industrial Group"
+          }
+        ],
+        "techRadar": {
+          "aiIntegration": "Medium",
+          "roboticsAutomation": "Medium",
+          "d2cOmnichannel": "High",
+          "platformEcosystem": "Medium"
+        },
+        "interviewAngles": [
+          "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+          "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+          "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+          "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+        ],
+        "glossary": [
+          {
+            "term": "D2C",
+            "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+          },
+          {
+            "term": "SKU",
+            "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+          },
+          {
+            "term": "TAM",
+            "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+          },
+          {
+            "term": "LTV/CAC",
+            "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+          }
+        ]
       }
     ]
   },
@@ -1489,8 +10784,20 @@ const PRESET_UPLOADS = [
         "description": "Digital-first consumer brands scaling across beauty, personal care, apparel, and healthy foods, backed by omni-channel expansion.",
         "size": "$100 Billion market by 2027",
         "cagr": "~27% CAGR",
-        "players": ["Mamaearth", "Sugar Cosmetics", "Boat", "Licious", "Wakefit"],
-        "forces": { "newEntrants": "High", "buyerPower": "High", "supplierPower": "Low", "substitutes": "High", "rivalry": "High" },
+        "players": [
+          "Mamaearth",
+          "Sugar Cosmetics",
+          "Boat",
+          "Licious",
+          "Wakefit"
+        ],
+        "forces": {
+          "newEntrants": "High",
+          "buyerPower": "High",
+          "supplierPower": "Low",
+          "substitutes": "High",
+          "rivalry": "High"
+        },
         "valueChain": {
           "inputs": "Contract Formulation Manufacturers, Eco-Packaging & Performance Marketing Ads",
           "operations": "Product R&D, Brand Storytelling, E-commerce Order Management & Inventory Fulfillment",
@@ -1500,7 +10807,212 @@ const PRESET_UPLOADS = [
           "bottleneck": "Rising Performance Marketing Customer Acquisition Costs (CAC)"
         },
         "trend": "up",
-        "outlook": "Positive"
+        "outlook": "Positive",
+        "regulatoryTimeline": [
+          {
+            "year": "2017",
+            "title": "GST Implementation",
+            "detail": "Unified national tax regime eliminating interstate logistics bottlenecks"
+          },
+          {
+            "year": "2020",
+            "title": "Atmanirbhar Bharat Push",
+            "detail": "Import substitution & localized supply chain mandates"
+          },
+          {
+            "year": "2022",
+            "title": "PLI Scheme Expansion",
+            "detail": "Sectoral manufacturing incentives for high-value exports"
+          },
+          {
+            "year": "2024+",
+            "title": "ESG & Sustainability Norms",
+            "detail": "Mandatory BRSR disclosures & green transition targets"
+          }
+        ],
+        "globalBenchmarking": {
+          "metricLabel": "Per Capita Consumption / Market Spend ($)",
+          "labels": [
+            "India",
+            "China",
+            "Brazil",
+            "USA",
+            "Global Avg"
+          ],
+          "values": [
+            42,
+            145,
+            95,
+            310,
+            120
+          ]
+        },
+        "costStructure": {
+          "labels": [
+            "Net Revenue",
+            "Raw Materials",
+            "Employee Cost",
+            "Marketing & Dist",
+            "EBITDA",
+            "D&A",
+            "PAT"
+          ],
+          "values": [
+            100,
+            52,
+            14,
+            14,
+            20,
+            5,
+            15
+          ]
+        },
+        "workingCapital": {
+          "inventoryDays": 36,
+          "receivableDays": 28,
+          "payableDays": 42,
+          "cashConversionCycle": 22
+        },
+        "creditProfile": {
+          "netDebtToEbitda": "1.4x",
+          "creditRating": "AA / Stable",
+          "costOfDebt": "7.8%",
+          "liquidityBuffer": "Healthy Cash Conversion & Reserves"
+        },
+        "stockPerformance": {
+          "labels": [
+            "Q1 23",
+            "Q2 23",
+            "Q3 23",
+            "Q4 23",
+            "Q1 24",
+            "Q2 24"
+          ],
+          "sectorIndex": [
+            100,
+            108,
+            120,
+            130,
+            142,
+            158
+          ],
+          "benchmarkNifty": [
+            100,
+            105,
+            112,
+            116,
+            122,
+            130
+          ],
+          "return1Yr": "+29.5%",
+          "return3Yr": "+72.0%",
+          "volatilityBeta": "1.10x"
+        },
+        "customerSegmentation": {
+          "labels": [
+            "B2C Urban Consumers",
+            "B2C Rural Households",
+            "B2B Enterprise Clients"
+          ],
+          "values": [
+            45,
+            35,
+            20
+          ],
+          "incomeCohort": "Tier-1 Metros (45%), Tier-2/3 Cities (35%), Rural Markets (20%)"
+        },
+        "demandSupplyGap": {
+          "labels": [
+            "2021",
+            "2022",
+            "2023",
+            "2024E",
+            "2025F"
+          ],
+          "installedCapacity": [
+            100,
+            112,
+            126,
+            142,
+            160
+          ],
+          "actualDemand": [
+            86,
+            98,
+            114,
+            130,
+            150
+          ],
+          "utilizationRate": "82.5% Factory Utilization"
+        },
+        "swot": {
+          "strengths": [
+            "Massive domestic demographic dividend & rising disposable income",
+            "Established distribution networks spanning urban & rural retail channels"
+          ],
+          "weaknesses": [
+            "Sensitivity to raw material price volatility (agricultural/chemical inputs)",
+            "Margin pressure in unorganized traditional trade segments"
+          ],
+          "opportunities": [
+            "Omnichannel digital commerce expansion & premium product adoption",
+            "Government PLI schemes driving export manufacturing competitiveness"
+          ],
+          "threats": [
+            "Hyperlocal quick-commerce disruption altering brand loyalty",
+            "Global supply chain disruptions & freight rate inflation"
+          ]
+        },
+        "dealTimeline": [
+          {
+            "date": "Q2 2023",
+            "company": "Brand Portfolio Acquisition",
+            "value": "$420M",
+            "buyer": "Consumer Conglomerate A"
+          },
+          {
+            "date": "Q4 2023",
+            "company": "D2C Strategic Stake Buyout",
+            "value": "$190M",
+            "buyer": "Private Equity Growth Fund"
+          },
+          {
+            "date": "Q1 2024",
+            "company": "Manufacturing Asset Deal",
+            "value": "$350M",
+            "buyer": "Global Industrial Group"
+          }
+        ],
+        "techRadar": {
+          "aiIntegration": "Medium",
+          "roboticsAutomation": "Medium",
+          "d2cOmnichannel": "High",
+          "platformEcosystem": "Medium"
+        },
+        "interviewAngles": [
+          "Market Sizing: Estimate the total addressable market (TAM) for premium D2C products in India.",
+          "Profitability Case: How can a consumer company optimize trade discounts vs direct channel margins?",
+          "M&A Evaluation: What metrics would you assess when acquiring an online-first D2C brand?",
+          "Supply Chain: Calculate the cost trade-off between centralized warehousing vs dark stores."
+        ],
+        "glossary": [
+          {
+            "term": "D2C",
+            "definition": "Direct-to-Consumer channel bypassing traditional distributors."
+          },
+          {
+            "term": "SKU",
+            "definition": "Stock Keeping Unit — Individual distinct product item identifier."
+          },
+          {
+            "term": "TAM",
+            "definition": "Total Addressable Market — Overall revenue opportunity for a product."
+          },
+          {
+            "term": "LTV/CAC",
+            "definition": "Ratio of Customer Lifetime Value to Customer Acquisition Cost."
+          }
+        ]
       }
     ]
   }

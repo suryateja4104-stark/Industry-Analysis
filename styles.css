@@ -1714,11 +1714,369 @@ canvas { display: block; }
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
+  transition: opacity var(--transition), transform var(--transition);
 }
-.btn-danger:hover { opacity: 0.9; }
+.btn-danger:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ================================================
+   13 SECTOR DASHBOARD COMPONENTS STYLING
+   =============================================== */
+
+/* Section Boxed Header with Citation */
+.boxed-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--surface-low);
+  border: 1px solid var(--surface-stroke-strong);
+  border-radius: var(--r-md);
+  margin-bottom: 12px;
+}
+
+.boxed-section-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-headline);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.priority-tag {
+  padding: 2px 6px;
+  background: rgba(2, 132, 199, 0.15);
+  border: 1px solid rgba(2, 132, 199, 0.3);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.source-citation {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--outline);
+  letter-spacing: 0.04em;
+}
+
+/* Modular Toggle Controls */
+.modal-module-toggle-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  background: var(--surface-low);
+  border: 1px solid var(--surface-stroke);
+  border-radius: var(--r-lg);
+  margin-bottom: 16px;
+}
+
+.module-toggle-chip {
+  padding: 5px 12px;
+  background: var(--surface);
+  border: 1px solid var(--surface-stroke);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--on-surface-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.module-toggle-chip.active {
+  background: var(--cyan-dim);
+  border-color: rgba(2, 132, 199, 0.4);
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+/* 1. Regulatory Timeline */
+.timeline-horizontal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  position: relative;
+}
+
+.timeline-step {
+  background: var(--surface-low);
+  border: 1px solid var(--surface-stroke);
+  border-radius: var(--r-md);
+  padding: 12px;
+  position: relative;
+}
+
+.timeline-year {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cyan);
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-family: var(--font-headline);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: 4px;
+}
+
+.timeline-detail {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--on-surface-muted);
+  line-height: 1.3;
+}
+
+/* 4. Working Capital Cycle 3-Box Flow */
+.wc-cycle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 1.2fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.wc-box {
+  background: var(--surface-low);
+  border: 1px solid var(--surface-stroke);
+  border-radius: var(--r-md);
+  padding: 12px;
+  text-align: center;
+}
+
+.wc-box-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--outline);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.wc-box-value {
+  font-family: var(--font-headline);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.wc-net-box {
+  background: #e0f2fe;
+  border: 1.5px solid rgba(2, 132, 199, 0.35);
+  border-radius: var(--r-md);
+  padding: 12px;
+  text-align: center;
+}
+
+.wc-net-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #0369a1;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.wc-net-value {
+  font-family: var(--font-headline);
+  font-size: 18px;
+  font-weight: 700;
+  color: #0369a1;
+}
+
+/* 5. Credit Profile Table/Grid */
+.credit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.credit-card {
+  background: var(--surface-low);
+  border: 1px solid var(--surface-stroke);
+  border-radius: var(--r-md);
+  padding: 12px;
+}
+
+.credit-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--outline);
+  margin-bottom: 4px;
+}
+
+.credit-val {
+  font-family: var(--font-headline);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+/* 9. SWOT 2x2 Matrix */
+.swot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.swot-box {
+  border-radius: var(--r-md);
+  padding: 14px;
+}
+
+.swot-strengths { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.swot-weaknesses { background: #fff7ed; border: 1px solid #fed7aa; }
+.swot-opportunities { background: #f0f9ff; border: 1px solid #bae6fd; }
+.swot-threats { background: #fef2f2; border: 1px solid #fecaca; }
+
+.swot-title {
+  font-family: var(--font-headline);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.swot-strengths .swot-title { color: #15803d; }
+.swot-weaknesses .swot-title { color: #c2410c; }
+.swot-opportunities .swot-title { color: #0369a1; }
+.swot-threats .swot-title { color: #b91c1c; }
+
+.swot-list {
+  padding-left: 16px;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--on-surface);
+  line-height: 1.4;
+}
+
+/* 10. Deal Timeline Strip */
+.deal-timeline-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.deal-card {
+  background: var(--surface-low);
+  border: 1px solid var(--surface-stroke);
+  border-radius: var(--r-md);
+  padding: 12px;
+}
+
+.deal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.deal-date {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.deal-val {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #059669;
+}
+
+.deal-company {
+  font-family: var(--font-headline);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.deal-buyer {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--outline);
+}
+
+/* 11. Tech Disruption Radar Row */
+.tech-radar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.tech-radar-card {
+  background: var(--surface-low);
+  border: 1px solid var(--surface-stroke);
+  border-radius: var(--r-md);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tech-name {
+  font-family: var(--font-headline);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+/* 12. Common Interview Angles Callout Box */
+.interview-angles-box {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #0284c7;
+  border-radius: var(--r-md);
+  padding: 14px 16px;
+}
+
+.interview-angle-item {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--on-surface);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.interview-angle-item:last-child { margin-bottom: 0; }
+
+/* 13. Compact Sector Glossary */
+.glossary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.glossary-item {
+  background: var(--surface-low);
+  border: 1px solid var(--surface-stroke);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+}
+
+.glossary-term {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cyan);
+  margin-bottom: 2px;
+}
+
+.glossary-def {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--on-surface-muted);
+  line-height: 1.3;
+}
 
 /* ================================================
    SCROLLBAR
