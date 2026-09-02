@@ -3,10 +3,15 @@
 /* ================================================
    STATE & PERSISTENCE
    ================================================ */
-const STORAGE_KEY_INDUSTRIES = 'industry_tracker_industries_v6';
-const STORAGE_KEY_UPLOADS = 'industry_tracker_uploads_v6';
+const STORAGE_KEY_INDUSTRIES = 'industry_tracker_industries_v2026_27';
+const STORAGE_KEY_UPLOADS = 'industry_tracker_uploads_v2026_27';
 
 function loadInitialIndustries() {
+  // Clear legacy cache from older versions so the new 2026-27 dataset loads immediately
+  ['industry_tracker_industries_v6', 'industry_tracker_industries_v5', 'industry_tracker_industries_v4', 'industry_tracker_industries_v3', 'industry_tracker_uploads_v6', 'industry_tracker_uploads_v5'].forEach(k => {
+    try { localStorage.removeItem(k); } catch (e) {}
+  });
+
   const saved = localStorage.getItem(STORAGE_KEY_INDUSTRIES);
   if (saved) {
     try {
@@ -27,17 +32,20 @@ function loadInitialUploads() {
   return [...DEFAULT_UPLOAD_HISTORY];
 }
 
-// Redefine sector colors with a premium consulting slate/teal/navy palette
+// Redefine sector colors with a premium consulting palette for all 12 sectors
 const PREMIUM_SECTOR_COLORS = {
-  "Financial Services": "#1e3a8a",          // Premium Navy
+  "Consumer & Digital": "#e11d48",          // Rose
+  "Healthcare": "#0284c7",                  // Sky Blue
+  "Consumer & Hospitality": "#d97706",      // Amber
+  "Technology": "#6366f1",                  // Indigo
+  "Telecommunications": "#7c3aed",          // Purple
+  "Transportation & Logistics": "#0284c7",  // Blue
+  "Financial Services": "#1e3a8a",          // Navy
   "Automotive": "#0f766e",                  // Muted Teal
-  "Transportation & Logistics": "#5b21b6",  // Royal Violet
-  "Technology": "#065f46",                  // Deep Emerald
-  "Healthcare": "#9a3412",                  // Muted Terracotta
-  "Infrastructure": "#881337",              // Muted Burgundy
-  "Manufacturing": "#831843",              // Deep Rose
-  "Consumer": "#c2410c",                    // Muted Orange
+  "Manufacturing & Materials": "#64748b",   // Slate Gray
+  "Consumer": "#ea580c",                    // Warm Orange
   "Energy": "#3f6212",                      // Muted Moss Green
+  "Infrastructure & Real Estate": "#b45309",// Warm Amber
   "Government & Defense": "#312e81",        // Indigo Ink
   "Agriculture": "#115e59"                  // Pine Green
 };

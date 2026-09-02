@@ -488,10 +488,21 @@ function buildQuickNav(currentId) {
 }
 
 // ── Previous / Next Navigation ───────────────────────────────────
+function findCurrentIndustry(queryId) {
+  if (!queryId) return INDUSTRIES[0];
+  const num = parseInt(queryId);
+  if (!isNaN(num)) {
+    const byNum = INDUSTRIES.find(i => i.id === num);
+    if (byNum) return byNum;
+  }
+  const bySlug = INDUSTRIES.find(i => i.slug === queryId || (i.name && i.name.toLowerCase() === queryId.toLowerCase()));
+  return bySlug || INDUSTRIES[0];
+}
+
 function navigateIndustry(direction) {
   const params = new URLSearchParams(window.location.search);
-  const currentId = parseInt(params.get('id')) || 3;
-  const idx = INDUSTRIES.findIndex(i => i.id === currentId);
+  const current = findCurrentIndustry(params.get('id'));
+  const idx = INDUSTRIES.findIndex(i => i.id === current.id);
   const newIdx = idx + direction;
   if (newIdx >= 0 && newIdx < INDUSTRIES.length) {
     window.location.href = `industry.html?id=${INDUSTRIES[newIdx].id}`;
@@ -523,8 +534,7 @@ function updateNavButtons(currentId) {
 // ── Init ──────────────────────────────────────────────────────────
 (function init() {
   const params = new URLSearchParams(window.location.search);
-  const id = parseInt(params.get('id')) || 3; // Default: Automobile
-  const industry = INDUSTRIES.find(i => i.id === id) || INDUSTRIES[2];
+  const industry = findCurrentIndustry(params.get('id'));
 
   renderIndustry(industry);
   buildQuickNav(industry.id);
