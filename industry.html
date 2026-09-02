@@ -228,19 +228,20 @@
     </div>
 
     <!-- Tab Navigation -->
-    <div class="flex gap-sm mb-lg overflow-x-auto pb-1">
-      <button class="tab-btn active rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant" onclick="setTab('overview')">Overview</button>
-      <button class="tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant" onclick="setTab('forces')">Porter's Forces</button>
-      <button class="tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant" onclick="setTab('drivers')">Drivers & Challenges</button>
-      <button class="tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant" onclick="setTab('market')">Market Context</button>
-      <button class="tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant" onclick="setTab('players')">Key Players</button>
+    <div class="flex gap-sm mb-lg overflow-x-auto pb-1" id="sectionTabs">
+      <button class="tab-btn active rounded-lg px-4 py-2 text-xs font-mono font-bold border border-primary bg-primary text-white shadow-sm transition-all" data-tab="all" onclick="setTab('all')">All Sections</button>
+      <button class="tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant bg-surface-container-low hover:bg-surface-container-high transition-all" data-tab="overview" onclick="setTab('overview')">Overview</button>
+      <button class="tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant bg-surface-container-low hover:bg-surface-container-high transition-all" data-tab="forces" onclick="setTab('forces')">Porter's Forces</button>
+      <button class="tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant bg-surface-container-low hover:bg-surface-container-high transition-all" data-tab="drivers" onclick="setTab('drivers')">Drivers & Challenges</button>
+      <button class="tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant bg-surface-container-low hover:bg-surface-container-high transition-all" data-tab="market" onclick="setTab('market')">Market Context</button>
+      <button class="tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant bg-surface-container-low hover:bg-surface-container-high transition-all" data-tab="players" onclick="setTab('players')">Key Players</button>
     </div>
 
     <!-- Dashboard Grid -->
-    <div class="grid grid-cols-12 gap-gutter">
+    <div class="grid grid-cols-12 gap-gutter" id="dashboardGrid">
 
-      <!-- ── Left Column (8 cols) ── -->
-      <div class="col-span-12 lg:col-span-8 space-y-gutter">
+      <!-- ── Left Column ── -->
+      <div class="col-span-12 lg:col-span-8 space-y-gutter transition-all duration-300" id="mainColumn">
 
         <!-- Overview Panel -->
         <section id="tab-overview" class="glass-card p-lg rounded-2xl relative overflow-hidden section-appear">
@@ -319,22 +320,22 @@
 
       </div><!-- end left col -->
 
-      <!-- ── Right Pillar (4 cols) — Porter's Five Forces ── -->
-      <div class="col-span-12 lg:col-span-4">
-        <section id="tab-forces" class="glass-card p-lg rounded-2xl h-full flex flex-col section-appear sticky top-24">
+      <!-- ── Right Pillar — Porter's Five Forces ── -->
+      <div class="col-span-12 lg:col-span-4 transition-all duration-300" id="forcesColumn">
+        <section id="tab-forces" class="glass-card p-lg rounded-2xl flex flex-col section-appear sticky top-24">
           <div class="flex items-center gap-sm mb-xs">
             <span class="material-symbols-outlined text-primary text-[20px]">security</span>
             <h3 class="font-headline font-bold text-[18px]">Porter's Five Forces</h3>
           </div>
-          <p class="font-mono text-[9px] text-on-surface-variant uppercase tracking-widest mb-md">Competitive intensity analysis</p>
+          <p class="font-mono text-[9px] text-on-surface-variant uppercase tracking-widest mb-2">Competitive intensity analysis</p>
 
-          <!-- Radar Chart SVG -->
-          <div class="relative w-full aspect-square mb-md flex items-center justify-center">
-            <svg id="radarSvg" class="w-full h-full" viewBox="0 0 200 200"></svg>
+          <!-- Radar Chart Pentagon -->
+          <div class="relative w-full flex items-center justify-center py-1">
+            <svg id="radarSvg" class="w-full max-w-[380px] h-auto" viewBox="0 0 400 300"></svg>
           </div>
 
-          <!-- Force Intensity List -->
-          <div class="space-y-sm mt-auto" id="forceList"></div>
+          <!-- Force Intensity List — Directly below the pentagon -->
+          <div class="space-y-2 mt-3 pt-3 border-t border-outline-variant" id="forceList"></div>
         </section>
       </div>
 
@@ -368,34 +369,77 @@
 <script src="js/chart.js"></script>
 <script>
 // ── Tab system ──────────────────────────────────────────────────
-let activeTab = 'overview';
+let activeTab = 'all';
 
 function setTab(tab) {
   activeTab = tab;
   document.querySelectorAll('.tab-btn').forEach(b => {
-    b.classList.remove('active');
-    b.classList.add('text-on-surface-variant');
-    b.classList.remove('text-white');
+    if (b.getAttribute('data-tab') === tab) {
+      b.className = 'tab-btn active rounded-lg px-4 py-2 text-xs font-mono font-bold border border-primary bg-primary text-white shadow-sm transition-all';
+    } else {
+      b.className = 'tab-btn rounded-lg px-4 py-2 text-xs font-mono font-semibold border border-outline-variant text-on-surface-variant bg-surface-container-low hover:bg-surface-container-high transition-all';
+    }
   });
-  const clicked = [...document.querySelectorAll('.tab-btn')]
-    .find(b => b.getAttribute('onclick') === `setTab('${tab}')`);
-  if (clicked) {
-    clicked.classList.add('active');
-    clicked.classList.remove('text-on-surface-variant');
+
+  const overviewSec = document.getElementById('tab-overview');
+  const driversSec = document.getElementById('tab-drivers');
+  const marketSec = document.getElementById('tab-market');
+  const playersSec = document.getElementById('tab-players');
+  const forcesCol = document.getElementById('forcesColumn');
+  const mainCol = document.getElementById('mainColumn');
+
+  if (!overviewSec || !driversSec || !marketSec || !playersSec || !forcesCol || !mainCol) return;
+
+  // Reset displays
+  overviewSec.classList.add('hidden');
+  driversSec.classList.add('hidden');
+  marketSec.classList.add('hidden');
+  playersSec.classList.add('hidden');
+  forcesCol.classList.remove('hidden');
+
+  if (tab === 'all') {
+    mainCol.className = 'col-span-12 lg:col-span-8 space-y-gutter transition-all duration-300';
+    forcesCol.className = 'col-span-12 lg:col-span-4 block transition-all duration-300';
+    overviewSec.classList.remove('hidden');
+    driversSec.classList.remove('hidden');
+    marketSec.classList.remove('hidden');
+    playersSec.classList.remove('hidden');
+  } else if (tab === 'overview') {
+    mainCol.className = 'col-span-12 lg:col-span-8 space-y-gutter transition-all duration-300';
+    forcesCol.className = 'col-span-12 lg:col-span-4 block transition-all duration-300';
+    overviewSec.classList.remove('hidden');
+  } else if (tab === 'forces') {
+    mainCol.className = 'col-span-12 lg:col-span-5 space-y-gutter transition-all duration-300';
+    forcesCol.className = 'col-span-12 lg:col-span-7 block transition-all duration-300';
+    overviewSec.classList.remove('hidden');
+    forcesCol.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else if (tab === 'drivers') {
+    mainCol.className = 'col-span-12 space-y-gutter transition-all duration-300';
+    forcesCol.className = 'col-span-12 hidden';
+    driversSec.classList.remove('hidden');
+  } else if (tab === 'market') {
+    mainCol.className = 'col-span-12 space-y-gutter transition-all duration-300';
+    forcesCol.className = 'col-span-12 hidden';
+    marketSec.classList.remove('hidden');
+  } else if (tab === 'players') {
+    mainCol.className = 'col-span-12 space-y-gutter transition-all duration-300';
+    forcesCol.className = 'col-span-12 hidden';
+    playersSec.classList.remove('hidden');
   }
 }
 
 // ── Porter Force Badge ───────────────────────────────────────────
 function forceBadgeClass(label) {
-  const clean = label.replace(' ', '-');
+  const clean = (label || '').toUpperCase().replace(/\s+/g, '-');
   return `force-badge-${clean}`;
 }
 
 // ── Render Industry Data ─────────────────────────────────────────
 function renderIndustry(ind) {
   // Meta
-  document.title = `${ind.name} | AutoIntel Pro`;
-  document.getElementById('pageTitle').textContent = `${ind.name} | AutoIntel Pro`;
+  document.title = `${ind.name} | Industry Tracker — Sector Intelligence`;
+  const pageTitleEl = document.getElementById('pageTitle');
+  if (pageTitleEl) pageTitleEl.textContent = `${ind.name} | Industry Tracker`;
   document.getElementById('headerTitle').textContent = `${ind.name} — Sector Intelligence`;
   document.getElementById('industryName').textContent = ind.name;
   document.getElementById('sectorBadge').textContent = ind.sector;
@@ -443,7 +487,7 @@ function renderIndustry(ind) {
     </span>
   `).join('');
 
-  // Porter's Five Forces list
+  // Porter's Five Forces list (Directly below pentagon)
   const forceList = document.getElementById('forceList');
   const forces = [
     { label: 'New Entrants',   key: 'newEntrants' },
@@ -453,12 +497,19 @@ function renderIndustry(ind) {
     { label: 'Rivalry',        key: 'rivalry' },
   ];
   forceList.innerHTML = forces.map(f => {
-    const label = ind.porterLabels[f.key];
+    const label = ind.porterLabels[f.key] || 'Medium';
+    const val = ind.porterForces[f.key] || 2;
     const badgeClass = forceBadgeClass(label);
     return `
-      <div class="flex justify-between items-center p-sm rounded-lg bg-surface-container-low border border-outline-variant hover:bg-surface-container-high transition-colors">
-        <span class="text-sm text-on-surface font-body">${f.label}</span>
-        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded border ${badgeClass}">${label}</span>
+      <div class="flex justify-between items-center px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant hover:bg-surface-container-high transition-colors">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+          <span class="text-sm font-semibold text-on-surface font-body">${f.label}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-[10px] font-mono text-on-surface-variant font-semibold">${val}/4</span>
+          <span class="text-[10px] font-bold font-mono px-3 py-0.5 rounded border tracking-wider ${badgeClass}">${label.toUpperCase()}</span>
+        </div>
       </div>
     `;
   }).join('');

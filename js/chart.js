@@ -10,12 +10,16 @@ const RadarChart = {
    */
   render(svg, forces) {
     svg.innerHTML = '';
-    const cx = 100, cy = 100, maxR = 76;
+    
+    // Spacious viewBox (400x300) guarantees no label clipping with ample margins on all 4 sides
+    svg.setAttribute('viewBox', '0 0 400 300');
+    
+    const cx = 200, cy = 150, maxR = 95;
     const levels = 4;
 
     // Pentagon angle offsets (top = New Entrants, clockwise)
     const angles = [
-      -Math.PI / 2,                          // top    — New Entrants
+      -Math.PI / 2,                          // top — New Entrants
       -Math.PI / 2 + (2 * Math.PI * 1 / 5), // top-right — Buyer Power
       -Math.PI / 2 + (2 * Math.PI * 2 / 5), // bottom-right — Supplier Power
       -Math.PI / 2 + (2 * Math.PI * 3 / 5), // bottom-left — Substitutes
@@ -23,11 +27,11 @@ const RadarChart = {
     ];
 
     const forceValues = [
-      forces.newEntrants,
-      forces.buyerPower,
-      forces.supplierPower,
-      forces.substitutes,
-      forces.rivalry,
+      forces.newEntrants || 2,
+      forces.buyerPower || 2,
+      forces.supplierPower || 2,
+      forces.substitutes || 2,
+      forces.rivalry || 2,
     ];
 
     // ── Grid Rings ──────────────────────────────────────────────
@@ -38,11 +42,12 @@ const RadarChart = {
         y: cy + r * Math.sin(a),
       }));
       const polygon = this._createSVGEl('polygon', {
-        points: pts.map(p => `${p.x},${p.y}`).join(' '),
-        fill: 'none',
-        stroke: '#c3c6d6',
-        'stroke-width': '1',
-        opacity: '0.6',
+        points: pts.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' '),
+        fill: l === levels ? '#f8fafc' : 'none',
+        stroke: '#cbd5e1',
+        'stroke-width': l === levels ? '1.5' : '1',
+        'stroke-dasharray': l < levels ? '3 3' : 'none',
+        opacity: '0.85',
       });
       svg.appendChild(polygon);
     }
@@ -53,9 +58,9 @@ const RadarChart = {
         x1: cx, y1: cy,
         x2: cx + maxR * Math.cos(a),
         y2: cy + maxR * Math.sin(a),
-        stroke: '#c3c6d6',
-        'stroke-width': '1',
-        opacity: '0.5',
+        stroke: '#cbd5e1',
+        'stroke-width': '1.2',
+        opacity: '0.8',
       });
       svg.appendChild(line);
     });
@@ -70,10 +75,10 @@ const RadarChart = {
     });
 
     const dataPolygon = this._createSVGEl('polygon', {
-      points: dataPts.map(p => `${p.x},${p.y}`).join(' '),
-      fill: 'rgba(0, 71, 187, 0.12)',
-      stroke: '#0047bb',
-      'stroke-width': '2',
+      points: dataPts.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' '),
+      fill: 'rgba(2, 132, 199, 0.18)',
+      stroke: '#0284c7',
+      'stroke-width': '2.5',
       'stroke-linejoin': 'round',
     });
     svg.appendChild(dataPolygon);
@@ -81,31 +86,38 @@ const RadarChart = {
     // ── Data Points ─────────────────────────────────────────────
     dataPts.forEach(p => {
       const dot = this._createSVGEl('circle', {
-        cx: p.x, cy: p.y, r: '4',
-        fill: '#0047bb',
+        cx: p.x.toFixed(1), cy: p.y.toFixed(1), r: '5.5',
+        fill: '#0284c7',
         stroke: '#ffffff',
-        'stroke-width': '1.5',
+        'stroke-width': '2',
       });
       svg.appendChild(dot);
     });
 
-    // ── Axis Labels ─────────────────────────────────────────────
-    const labels = ['New Entrants', 'Buyer Power', 'Supplier Power', 'Substitutes', 'Rivalry'];
-    const labelR = maxR + 14;
+    // ── Axis Labels (High contrast, bold, perfectly padded) ──────
+    const labelConfigs = [
+      { text: 'New Entrants',   anchor: 'middle', dx: 0,   dy: -18 },
+      { text: 'Buyer Power',    anchor: 'start',  dx: 14,  dy: 2 },
+      { text: 'Supplier Power', anchor: 'start',  dx: 12,  dy: 16 },
+      { text: 'Substitutes',    anchor: 'end',    dx: -12, dy: 16 },
+      { text: 'Rivalry',        anchor: 'end',    dx: -14, dy: 2 },
+    ];
 
-    labels.forEach((label, i) => {
-      const lx = cx + labelR * Math.cos(angles[i]);
-      const ly = cy + labelR * Math.sin(angles[i]);
+    labelConfigs.forEach((cfg, i) => {
+      const edgeX = cx + maxR * Math.cos(angles[i]);
+      const edgeY = cy + maxR * Math.sin(angles[i]);
+      
       const text = this._createSVGEl('text', {
-        x: lx, y: ly,
-        'text-anchor': 'middle',
-        'dominant-baseline': 'middle',
-        fill: '#434653',
-        'font-size': '8',
-        'font-family': 'JetBrains Mono, monospace',
-        'font-weight': '500',
+        x: (edgeX + cfg.dx).toFixed(1),
+        y: (edgeY + cfg.dy).toFixed(1),
+        'text-anchor': cfg.anchor,
+        'dominant-baseline': 'central',
+        fill: '#0f172a',
+        'font-size': '13',
+        'font-family': 'Inter, system-ui, -apple-system, sans-serif',
+        'font-weight': '700',
       });
-      text.textContent = label;
+      text.textContent = cfg.text;
       svg.appendChild(text);
     });
   },
