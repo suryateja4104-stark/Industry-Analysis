@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title id="pageTitle">Industry Intelligence | AutoIntel Pro</title>
+  <title id="pageTitle">Industry Tracker — Sector Intelligence</title>
   <meta name="description" content="Deep-dive industry analysis with Porter's Five Forces, growth drivers, challenges, and market context."/>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="assets/logo-transparent.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <script id="tailwind-config">
@@ -124,11 +127,13 @@
 <!-- ── Side Navigation ───────────────────────────────────────── -->
 <aside class="h-screen w-64 fixed left-0 top-0 flex flex-col py-lg px-md bg-surface-container-lowest border-r border-outline-variant z-50">
   <div class="mb-xl">
-    <div class="flex items-center gap-2 mb-1">
-      <div class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-sm">I</div>
-      <h1 class="font-display text-[18px] leading-tight font-extrabold text-primary tracking-tight uppercase">Industry Tracker</h1>
+    <div class="flex items-center gap-2.5 mb-1">
+      <div class="w-9 h-9 rounded-lg bg-surface-container-low border border-outline-variant flex items-center justify-center p-1 shadow-xs flex-shrink-0">
+        <img src="assets/logo-transparent.png" alt="Industry Tracker Logo" class="w-full h-full object-contain" />
+      </div>
+      <h1 class="font-display text-[17px] leading-tight font-extrabold text-primary tracking-tight uppercase">Industry Tracker</h1>
     </div>
-    <p class="font-mono text-[9px] text-on-surface-variant opacity-70 uppercase tracking-widest pl-10">Deep Dive Intelligence</p>
+    <p class="font-mono text-[9px] text-on-surface-variant opacity-70 uppercase tracking-widest pl-11">Deep Dive Intelligence</p>
   </div>
 
   <nav class="flex-1 space-y-1 overflow-y-auto">
@@ -184,7 +189,9 @@
         <input type="text" id="marketSearchInput" placeholder="Search 22 industries..." class="bg-surface-container-low border border-outline-variant rounded-full pl-8 pr-4 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 w-64"/>
         <div id="searchResultsDropdown" class="absolute right-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-outline-variant hidden z-50 max-h-80 overflow-y-auto py-2"></div>
       </div>
-      <a href="index.html" class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-sm font-bold" title="Industry Tracker">I</a>
+      <a href="index.html" class="w-8 h-8 rounded-full bg-white border border-outline-variant flex items-center justify-center p-1 shadow-xs hover:border-primary transition-all" title="Industry Tracker">
+        <img src="assets/logo-transparent.png" alt="Logo" class="w-full h-full object-contain" />
+      </a>
     </div>
   </header>
 
