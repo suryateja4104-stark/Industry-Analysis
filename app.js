@@ -3,12 +3,12 @@
 /* ================================================
    STATE & PERSISTENCE
    ================================================ */
-const STORAGE_KEY_INDUSTRIES = 'industry_tracker_industries_v2026_27';
-const STORAGE_KEY_UPLOADS = 'industry_tracker_uploads_v2026_27';
+const STORAGE_KEY_INDUSTRIES = 'industry_tracker_industries_v2026_27_pdf';
+const STORAGE_KEY_UPLOADS = 'industry_tracker_uploads_v2026_27_pdf';
 
 function loadInitialIndustries() {
   // Clear legacy cache from older versions so the new 2026-27 dataset loads immediately
-  ['industry_tracker_industries_v6', 'industry_tracker_industries_v5', 'industry_tracker_industries_v4', 'industry_tracker_industries_v3', 'industry_tracker_uploads_v6', 'industry_tracker_uploads_v5'].forEach(k => {
+  ['industry_tracker_industries_v2026_27', 'industry_tracker_uploads_v2026_27', 'industry_tracker_industries_v6', 'industry_tracker_industries_v5', 'industry_tracker_industries_v4', 'industry_tracker_industries_v3', 'industry_tracker_uploads_v6', 'industry_tracker_uploads_v5'].forEach(k => {
     try { localStorage.removeItem(k); } catch (e) {}
   });
 
@@ -1631,7 +1631,11 @@ function renderHeatmapTable() {
         <td>${makeBadge(ind.forces.supplierPower)}</td>
         <td>${makeBadge(ind.forces.substitutes)}</td>
         <td>${makeBadge(ind.forces.rivalry)}</td>
-        <td class="doc-source-cell">${ind.uploadedDoc || 'Default'}</td>
+        <td class="doc-source-cell">
+          <a href="${encodeURI(ind.sourceFile || ('Individual Industry Decks/' + ind.uploadedDoc))}" target="_blank" class="doc-pdf-link" title="Open Source PDF Deck" style="color:var(--primary);text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+            <span>📄</span> <span style="text-decoration:underline;">${ind.uploadedDoc || 'Default'}</span> <span style="font-size:10px;">↗</span>
+          </a>
+        </td>
       </tr>
     `;
   }).join('');
@@ -1729,7 +1733,11 @@ function renderIndustryGrid() {
           </div>
         </div>
         <div class="card-footer">
-          <span class="card-doc-source" title="${ind.uploadedDoc || 'Default'}">📄 ${ind.uploadedDoc || 'Default'}</span>
+          <span class="card-doc-source" title="${ind.uploadedDoc || 'Default'}">
+            <a href="${encodeURI(ind.sourceFile || ('Individual Industry Decks/' + ind.uploadedDoc))}" target="_blank" class="card-pdf-link" title="Open Source PDF Deck: ${ind.uploadedDoc || 'Default'}" onclick="event.stopPropagation();" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:3px;">
+              <span>📄</span> <span style="text-decoration:underline;">${ind.uploadedDoc || 'Default'}</span> <span style="font-size:9px;">↗</span>
+            </a>
+          </span>
           <div class="card-actions">
             <button class="card-analyze-btn" data-id="${ind.id}">Analyze &amp; Charts →</button>
           </div>
@@ -1804,7 +1812,12 @@ function openModal(id) {
     <div class="deck-module-card span-full" data-module-cat="market" data-summary="true">
       <div class="modal-section-title">Ingested Report Overview</div>
       <p class="modal-desc" style="margin-bottom:8px;">${ind.description}</p>
-      <div style="font-family:var(--font-mono);font-size:11px;color:var(--outline);">📄 Ingested Document: <strong>${ind.uploadedDoc || 'Default Industry Primer'}</strong></div>
+      <div style="font-family:var(--font-mono);font-size:12px;color:var(--outline);display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap;">
+        <span>📄 Ingested Document Source:</span>
+        <a href="${encodeURI(ind.sourceFile || ('Individual Industry Decks/' + ind.uploadedDoc))}" target="_blank" style="color:var(--primary);text-decoration:underline;font-weight:600;display:inline-flex;align-items:center;gap:4px;" title="Open original PDF deck in a new tab">
+          ${ind.uploadedDoc || 'Default Industry Primer'} <span style="font-size:11px;">↗</span>
+        </a>
+      </div>
     </div>
 
     <!-- Read-only Financial Metrics (Full Width) -->

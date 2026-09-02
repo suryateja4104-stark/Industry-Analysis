@@ -273,7 +273,18 @@
               <div class="w-10 h-1 bg-primary rounded-full"></div>
             </div>
           </div>
-          <p id="overviewText" class="text-on-surface-variant text-[16px] leading-relaxed relative"></p>
+          <p id="overviewText" class="text-on-surface-variant text-[16px] leading-relaxed relative mb-4"></p>
+          <div class="relative pt-3 border-t border-outline-variant flex items-center justify-between">
+            <span class="text-xs font-mono text-on-surface-variant flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[15px]">folder_open</span>
+              Source File:
+            </span>
+            <a id="sourceDeckLink" href="#" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all font-semibold" title="Open source PDF file">
+              <span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+              <span id="sourceDeckName">Source PDF Deck</span>
+              <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+            </a>
+          </div>
         </section>
 
         <!-- Drivers & Challenges Grid -->
@@ -412,6 +423,12 @@ function renderIndustry(ind) {
 
   // Overview
   document.getElementById('overviewText').textContent = ind.description;
+  const sourceLink = document.getElementById('sourceDeckLink');
+  const sourceName = document.getElementById('sourceDeckName');
+  if (sourceLink && ind.sourceFile) {
+    sourceLink.href = encodeURI(ind.sourceFile);
+    if (sourceName) sourceName.textContent = ind.sourceDoc || ind.sourceFile.split('/').pop();
+  }
 
   // Drivers
   const driversList = document.getElementById('driversList');

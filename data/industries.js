@@ -1,6 +1,6 @@
 // AutoIntel Pro — Industry Data
 // Porter's Five Forces scores: 1 = Low, 2 = Medium, 3 = High, 4 = Very High
-// Repopulated from IndustryDecks 2026-27.json (22 industries)
+// Repopulated from IndustryDecks 2026-27.json & Individual Industry Decks (22 industries)
 
 const INDUSTRIES = [
   {
@@ -13,6 +13,8 @@ const INDUSTRIES = [
     "cagr": "12% CAGR",
     "cagrValue": 12,
     "description": "The food delivery industry in India is a dominant duopoly (Zomato >60%, Swiggy ~40%) handling over 95% of restaurant deliveries. In Q1 FY26, consolidated revenue surged 182% YoY to \u20b920,211 Cr with PAT jumping to \u20b992 Cr. The sector is rapidly expanding into quick commerce with dark store networks operating across 130+ cities, shifting strategic focus toward profitability, contribution margins, and 10-minute grocery fulfillment.",
+    "sourceFile": "Individual Industry Decks/Food Delivery_industry.pdf",
+    "sourceDoc": "Food Delivery_industry.pdf",
     "majorPlayers": [
       "Zomato",
       "Swiggy",
@@ -62,6 +64,8 @@ const INDUSTRIES = [
     "cagr": "10.6% CAGR",
     "cagrValue": 10.6,
     "description": "India's broad healthcare sector reached US$ 372 billion in 2023 with hospitals accounting for ~US$ 135 billion in FY26, projected to touch US$ 202 billion by 2030 (10.6% CAGR). Organised private hospitals represent a \u20b978,500 Cr revenue pool with CRISIL forecasting a 5th consecutive year of double-digit growth (14-15%) in FY27.",
+    "sourceFile": "Individual Industry Decks/Healthcare_industry.pdf",
+    "sourceDoc": "Healthcare_industry.pdf",
     "majorPlayers": [
       "Apollo Hospitals",
       "Max Healthcare",
@@ -111,6 +115,8 @@ const INDUSTRIES = [
     "cagr": "6.8% CAGR (Global) / 13% CAGR (India)",
     "cagrValue": 13,
     "description": "The global hotels market stands at US$ 1.37 Trillion in 2026 heading to US$ 1.89 Trillion by 2031. In India, the hospitality sector is experiencing an unprecedented structural upcycle with record Average Room Rates (ARR) and Revenue Per Available Room (RevPAR) driven by corporate travel, luxury domestic leisure, weddings, and international MICE conferences.",
+    "sourceFile": "Individual Industry Decks/Hotels & Hospitality_industry.pdf",
+    "sourceDoc": "Hotels & Hospitality_industry.pdf",
     "majorPlayers": [
       "IHCL (Taj)",
       "EIH (Oberoi)",
@@ -160,6 +166,8 @@ const INDUSTRIES = [
     "cagr": "6.1% CAGR (Long-term 11%)",
     "cagrValue": 6.1,
     "description": "India's IT industry is the cornerstone of its modern export economy, reaching US$ 315 billion in FY26 (+6.1% YoY) with IT exports touching US$ 246 billion. The sector is on track to cross US$ 500 billion by 2030, bolstered by 1,600+ Global Capability Centres (GCCs), enterprise cloud migrations, and rapid deployment of Generative AI engineering solutions.",
+    "sourceFile": "Individual Industry Decks/IT_industry.pdf",
+    "sourceDoc": "IT_industry.pdf",
     "majorPlayers": [
       "TCS",
       "Infosys",
@@ -209,6 +217,8 @@ const INDUSTRIES = [
     "cagr": "10.0% CAGR",
     "cagrValue": 10.0,
     "description": "The Indian pharmaceutical market stood at US$ 57.6 billion in 2025 and is estimated at US$ 60.3 billion in FY26, compounding at 10% CAGR toward US$ 130 billion by 2030. Known as the pharmacy of the world, India supplies 20% of global generics by volume, backed by 500+ API manufacturers and the highest count of USFDA-approved plants outside the United States.",
+    "sourceFile": "Individual Industry Decks/Pharmaceuticals_industry.pdf",
+    "sourceDoc": "Pharmaceuticals_industry.pdf",
     "majorPlayers": [
       "Sun Pharma",
       "Dr. Reddy's",
@@ -258,6 +268,8 @@ const INDUSTRIES = [
     "cagr": "8.1% AGR YoY",
     "cagrValue": 8.1,
     "description": "India's telecom sector is one of the world's largest digital lifelines, generating \u20b91.02 lakh crore in quarterly gross revenue (Q3 Dec-2025) with Adjusted Gross Revenue (AGR) rising 8.1% YoY to \u20b984,270 Cr. The market serves 1,306 million telephone subscribers and 1,029 million broadband connections at 91.7% teledensity, with private operators handling 92.2% of market share.",
+    "sourceFile": "Individual Industry Decks/Telecom_industry.pdf",
+    "sourceDoc": "Telecom_industry.pdf",
     "majorPlayers": [
       "Reliance Jio",
       "Bharti Airtel",
@@ -306,6 +318,8 @@ const INDUSTRIES = [
     "cagr": "27.7% CAGR",
     "cagrValue": 27.7,
     "description": "The global Artificial Intelligence market was valued at US$ 244 billion in 2025 and is projected to expand to US$ 827 billion by 2030, compounding at 27.7% CAGR. Global VC investment into AI topped US$ 202 billion in 2025 with total AI infrastructure capex exceeding US$ 325 billion, driven by hyperscalers buildouts and enterprise GenAI agent deployment.",
+    "sourceFile": "Individual Industry Decks/AI_industry.pdf",
+    "sourceDoc": "AI_industry.pdf",
     "majorPlayers": [
       "NVIDIA",
       "Microsoft",
@@ -355,6 +369,8 @@ const INDUSTRIES = [
     "cagr": "12.0% CAGR",
     "cagrValue": 12.0,
     "description": "India's aviation market is valued at ~US$ 14.78 billion in 2025 and is projected to reach US$ 26\u201329 billion by FY2030-31 (12% CAGR). India is the world's 3rd largest domestic aviation market behind the US and China, with annual domestic passenger volume reaching 164 million travelers and commercial fleets expanding from 700+ to 1,500+ aircraft by 2030.",
+    "sourceFile": "Individual Industry Decks/Airlines_industry.pdf",
+    "sourceDoc": "Airlines_industry.pdf",
     "majorPlayers": [
       "IndiGo",
       "Air India Group",
@@ -403,6 +419,8 @@ const INDUSTRIES = [
     "cagr": "15.0% CAGR",
     "cagrValue": 15.0,
     "description": "The Indian Asset Management (Mutual Fund) industry has witnessed an unprecedented financialization wave, with Assets Under Management (AUM) expanding from \u20b924.48 lakh crore in FY19 to \u20b973.73 lakh crore in FY26 (15% CAGR). The sector is propelled by monthly SIP inflows exceeding \u20b923,000 crore, 180+ million investor folios, and an equity AUM proportion exceeding 56%.",
+    "sourceFile": "Individual Industry Decks/Asset Management_industry.pdf",
+    "sourceDoc": "Asset Management_industry.pdf",
     "majorPlayers": [
       "SBI MF",
       "ICICI Pru AMC",
@@ -452,6 +470,8 @@ const INDUSTRIES = [
     "cagr": "5.5% CAGR (Volume) / 11% (Value)",
     "cagrValue": 5.5,
     "description": "India is the 3rd largest automobile market globally, generating US$ 213.74 billion in projected revenue by FY2027E with total domestic sales of 25.6 million vehicles in FY24 rising toward 28+ million in FY26. The sector is undergoing a structural premiumisation wave (SUVs account for >52% of passenger vehicle sales) alongside an accelerating electric vehicle transition.",
+    "sourceFile": "Individual Industry Decks/Automobile_industry.pdf",
+    "sourceDoc": "Automobile_industry.pdf",
     "majorPlayers": [
       "Maruti Suzuki",
       "Hyundai India",
@@ -500,6 +520,8 @@ const INDUSTRIES = [
     "cagr": "14.0% Credit Growth",
     "cagrValue": 14.0,
     "description": "India's banking system oversees assets exceeding US$ 3.36 Trillion (\u20b9206 lakh crore), split between public sector banks (US$ 2,006 Bn) and private banks (US$ 1,355 Bn). The sector is experiencing its strongest health in over a decade with Gross NPAs dropping to 2.6-2.8%, sustained double-digit credit expansion (13-15% YoY), and digital payment leadership via UPI processing 20.4 billion monthly transactions worth \u20b926.84 lakh crore.",
+    "sourceFile": "Individual Industry Decks/Banking_industry.pdf",
+    "sourceDoc": "Banking_industry.pdf",
     "majorPlayers": [
       "HDFC Bank",
       "SBI",
@@ -549,6 +571,8 @@ const INDUSTRIES = [
     "cagr": "8.6% YoY",
     "cagrValue": 8.6,
     "description": "India is the 2nd largest cement producer globally after China, accounting for over 8% of global installed capacity. Cement production reached 491.4 MT in FY26 (+8.6% YoY) against total installed capacity of 700 MTPA. The industry is adding 150-160 MT capacity between FY25 and FY28, underpinned by massive central infrastructure outlays and housing schemes.",
+    "sourceFile": "Individual Industry Decks/Cement_industry.pdf",
+    "sourceDoc": "Cement_industry.pdf",
     "majorPlayers": [
       "UltraTech Cement",
       "Ambuja & ACC",
@@ -597,6 +621,8 @@ const INDUSTRIES = [
     "cagr": "12.0% CAGR",
     "cagrValue": 12.0,
     "description": "India is projected to become the world's 4th largest consumer durables market by FY27, with the total sector revenue crossing \u20b91.5 lakh crore. The room air-conditioner (RAC) segment alone was valued at nearly US$ 5 billion in FY25 and is projected to reach \u20b950,000 crore by FY29 (12% CAGR), accelerated by prolonged summer heatwaves, rising middle-class disposable incomes, and the September 2025 GST rationalization from 28% to 18%.",
+    "sourceFile": "Individual Industry Decks/Consumer Durables_industry.pdf",
+    "sourceDoc": "Consumer Durables_industry.pdf",
     "majorPlayers": [
       "Havells",
       "Voltas",
@@ -646,6 +672,8 @@ const INDUSTRIES = [
     "cagr": "11.2% CAGR",
     "cagrValue": 11.2,
     "description": "The Indian diagnostic labs market was valued at US$ 11.0 billion in CY2025 and is projected to expand to US$ 28.5 billion by 2034, compounding at an 11.2% CAGR. Although diagnostic services represent less than 10% of India's total healthcare spending, they guide over 70% of clinical treatment decisions. With unorganised labs controlling ~80% of the market, organized national chains are capitalizing on massive consolidation headroom.",
+    "sourceFile": "Individual Industry Decks/Diagnostics_industry.pdf",
+    "sourceDoc": "Diagnostics_industry.pdf",
     "majorPlayers": [
       "Dr Lal PathLabs",
       "Metropolis",
@@ -694,6 +722,8 @@ const INDUSTRIES = [
     "cagr": "21.0% CAGR",
     "cagrValue": 21.0,
     "description": "India's e-retail Gross Merchandise Value (GMV) reached US$ 65\u201366 billion in CY2025, growing 19\u201321% YoY and accelerating to 23\u201325% in early 2026. Total e-commerce including travel and digital services stands at US$ 125 billion, heading to US$ 345 billion by 2030. Despite rapid scale, e-commerce represents only ~1.6% of GDP and 6.5% of total retail (compared to 14% of GDP in China), highlighting immense long-term runway.",
+    "sourceFile": "Individual Industry Decks/eCommerce_industry.pdf",
+    "sourceDoc": "eCommerce_industry.pdf",
     "majorPlayers": [
       "Flipkart",
       "Amazon India",
@@ -743,6 +773,8 @@ const INDUSTRIES = [
     "cagr": "19.44% CAGR",
     "cagrValue": 19.44,
     "description": "The Indian Electric Vehicle market stood at US$ 54.4 billion in 2025 and is projected to reach US$ 65.0 billion in FY2026, growing at a 19.44% CAGR (2025-29P). Electric two-wheelers represent ~92% of total EV sales volume, while passenger electric cars and electric commercial buses are the fastest-growing segments. The sector is supported by multi-billion-dollar lithium-ion cell gigafactories and government incentives under PM E-DRIVE.",
+    "sourceFile": "Individual Industry Decks/EV_industry.pdf",
+    "sourceDoc": "EV_industry.pdf",
     "majorPlayers": [
       "Tata Motors",
       "Ola Electric",
@@ -791,6 +823,8 @@ const INDUSTRIES = [
     "cagr": "16.3% CAGR",
     "cagrValue": 16.3,
     "description": "The Indian Fast-Moving Consumer Goods (FMCG) market reached US$ 287.91 billion in 2025 and is estimated at US$ 335.63 billion in 2026, projected to expand to US$ 725.26 billion by 2031 at a 16.3% CAGR (expected to double by 2032). Food & Beverage constitutes ~50% of the industry, followed by Personal Care (30%) and Home Care (20%), powered by 9 million+ retail touchpoints and rising rural disposable incomes.",
+    "sourceFile": "Individual Industry Decks/FMCG_industry.pdf",
+    "sourceDoc": "FMCG_industry.pdf",
     "majorPlayers": [
       "Hindustan Unilever",
       "ITC",
@@ -840,6 +874,8 @@ const INDUSTRIES = [
     "cagr": "15.7% Life / 9.3% Non-Life",
     "cagrValue": 15.7,
     "description": "India's insurance industry registered \u20b97.05 lakh crore in total premium income in FY25 (US$ 82.5 Bn). Overall insurance penetration stands at 3.7% of GDP (life 2.7%, non-life 1.0%), compared to a global benchmark near 7.0%, with premium density at US$ 97 per capita. In FY26, life new business premiums grew 15.7% to \u20b94.60 lakh crore, buoyed by the historic September 2025 GST exemption on individual life and health policies.",
+    "sourceFile": "Individual Industry Decks/Insurance_industry.pdf",
+    "sourceDoc": "Insurance_industry.pdf",
     "majorPlayers": [
       "LIC",
       "HDFC Life",
@@ -889,6 +925,8 @@ const INDUSTRIES = [
     "cagr": "4.2% Refining Expansion",
     "cagrValue": 4.2,
     "description": "India is the world's 4th largest crude refiner and 3rd largest oil consumer, with domestic refining capacity reaching 258.12 MMTPA in FY25 (up from 251 MMTPA in FY24). Petroleum product exports reached 65.08 million tonnes in FY25 and 56.94 million tonnes in 11M FY26. The sector is led by state refiners (IOCL, BPCL, HPCL) and Reliance Industries' Jamnagar mega-complex (world's largest single-site refinery).",
+    "sourceFile": "Individual Industry Decks/Oil & Gas_industry.pdf",
+    "sourceDoc": "Oil & Gas_industry.pdf",
     "majorPlayers": [
       "Indian Oil (IOCL)",
       "Reliance Industries",
@@ -938,6 +976,8 @@ const INDUSTRIES = [
     "cagr": "19.5% CAGR",
     "cagrValue": 19.5,
     "description": "India's real estate sector is projected to reach US$ 650 billion in 2025F, US$ 1 Trillion by 2030, and US$ 5.8 Trillion by 2047, contributing 13% of national GDP. The industry is the second-largest employer after agriculture. Propelled by RERA formalisation, urbanisation, and corporate developer consolidation, residential pre-sales in top-7 cities surpassed 450,000 units while Grade-A office absorption exceeded 55 million sq.ft.",
+    "sourceFile": "Individual Industry Decks/Real Estate_industry.pdf",
+    "sourceDoc": "Real Estate_industry.pdf",
     "majorPlayers": [
       "DLF Ltd",
       "Macrotech (Lodha)",
@@ -986,6 +1026,8 @@ const INDUSTRIES = [
     "cagr": "17.55% CAGR (Global $976 Bn)",
     "cagrValue": 17.55,
     "description": "India's SaaS (Software as a Service) ecosystem has expanded ~4x in five years, growing from ~$3.5 billion to over $13 billion in annual recurring revenue (ARR), on track to reach $35 billion ARR by FY2027E. Backed by 1,600+ funded SaaS ventures and 27+ unicorns, the sector is experiencing a valuation reset toward disciplined capital efficiency (Rule of 40) and embedded GenAI capabilities.",
+    "sourceFile": "Individual Industry Decks/SaaS_industry.pdf",
+    "sourceDoc": "SaaS_industry.pdf",
     "majorPlayers": [
       "Freshworks",
       "Zoho",
@@ -1035,6 +1077,8 @@ const INDUSTRIES = [
     "cagr": "7.2% CAGR",
     "cagrValue": 7.2,
     "description": "India is the 2nd largest crude steel producer in the world after China. In FY26 (Apr-Feb), crude steel output reached 153.6 MT, finished steel production touched 146.8 MT, and domestic consumption reached 147.7 MT. Total installed capacity reached 218.29 MTPA in FY26 (up from 200.33 MT in FY25), powered by central infrastructure projects, automotive demand, and industrial capex.",
+    "sourceFile": "Individual Industry Decks/Steel_industry.pdf",
+    "sourceDoc": "Steel_industry.pdf",
     "majorPlayers": [
       "Tata Steel",
       "JSW Steel",

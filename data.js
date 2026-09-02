@@ -1,5 +1,5 @@
 // data.js — Industry intelligence data & default datasets for Industry Tracker
-// Repopulated from authentic 2026-27 Sector Intelligence Primers (IndustryDecks 2026-27.json)
+// Repopulated from authentic 2026-27 Sector Intelligence Primers (Individual Industry Decks)
 
 const DEFAULT_INDUSTRIES = [
   {
@@ -58,7 +58,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Food Delivery_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Merchant Restaurant Partnerships, Dark Store Leases, Packaged Goods Sourcing & Rider Onboarding",
@@ -315,7 +315,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Dark Store",
         "definition": "A micro-fulfillment facility located in dense residential catchments dedicated exclusively to packing online delivery orders."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Food Delivery_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Food Delivery_industry.pdf",
+    "sourceDoc": "Food Delivery_industry.pdf"
   },
   {
     "id": "healthcare-hospitals",
@@ -373,7 +376,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Healthcare_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Specialized Surgeons, Nursing Staff, Medical Devices, Surgical Consumables & APIs",
@@ -630,7 +633,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "MVT",
         "definition": "Medical Value Travel \u2014 international patient visits seeking specialized surgeries, generating 2x-3x higher ARPOB than domestic patients."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Healthcare_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Healthcare_industry.pdf",
+    "sourceDoc": "Healthcare_industry.pdf"
   },
   {
     "id": "hotels-hospitality",
@@ -688,7 +694,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Hotels & Hospitality_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Prime Real Estate, Architectural Design, Hospitality Talent & Culinary Sourcing",
@@ -945,7 +951,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Asset-Light Model",
         "definition": "A strategy where the operator manages properties owned by third-party real estate developers in exchange for 8-12% fee of gross operating profit."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Hotels & Hospitality_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Hotels & Hospitality_industry.pdf",
+    "sourceDoc": "Hotels & Hospitality_industry.pdf"
   },
   {
     "id": "it-industry",
@@ -1004,7 +1013,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "IT_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Engineering Talent Pipeline, Cloud Hyperscaler Partnerships (AWS/Azure/GCP) & R&D Labs",
@@ -1263,7 +1272,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Attrition Rate",
         "definition": "The percentage of employees leaving the firm annually; typically ranges between 12% and 18% in Indian IT."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/IT_industry.pdf",
+    "sourcePath": "Individual Industry Decks/IT_industry.pdf",
+    "sourceDoc": "IT_industry.pdf"
   },
   {
     "id": "pharmaceuticals",
@@ -1322,7 +1334,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Pharmaceuticals_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Key Starting Materials (KSMs), Active Pharmaceutical Ingredients (APIs) & Excipients",
@@ -1581,7 +1593,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Form 483",
         "definition": "A formal notice issued by the USFDA at the conclusion of an inspection listing non-compliance observations with Good Manufacturing Practices."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Pharmaceuticals_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Pharmaceuticals_industry.pdf",
+    "sourceDoc": "Pharmaceuticals_industry.pdf"
   },
   {
     "id": "telecom",
@@ -1638,7 +1653,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Telecom_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "5G/6G Spectrum Licenses, Telecom Grade Optical Fiber, Active Radios & Tower Real Estate",
@@ -1895,7 +1910,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "FWA",
         "definition": "Fixed Wireless Access \u2014 high-speed home wireless broadband delivered using 5G radio spectrum without requiring physical fiber drops."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Telecom_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Telecom_industry.pdf",
+    "sourceDoc": "Telecom_industry.pdf"
   },
   {
     "id": "artificial-intelligence",
@@ -1954,7 +1972,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "AI_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "AI Semiconductor Accelerators (NVIDIA GPUs/TPUs), Datacenter Power & Clean Water Cooling",
@@ -2213,7 +2231,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Agentic AI",
         "definition": "Autonomous AI systems capable of executing multi-step complex workflows, using external tools and browsing, with minimal human intervention."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/AI_industry.pdf",
+    "sourcePath": "Individual Industry Decks/AI_industry.pdf",
+    "sourceDoc": "AI_industry.pdf"
   },
   {
     "id": "aviation",
@@ -2269,7 +2290,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Airlines_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Aircraft Leasing (GECAS, Avolon), Aviation Turbine Fuel (ATF), Flight Crews & Airport Landing Slots",
@@ -2526,7 +2547,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Passenger Load Factor (PLF)",
         "definition": "The percentage of available passenger seating capacity filled with revenue-paying travelers."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Airlines_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Airlines_industry.pdf",
+    "sourceDoc": "Airlines_industry.pdf"
   },
   {
     "id": "asset-management",
@@ -2585,7 +2609,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Asset Management_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Investor Savings Capital, Custody Services, Market Research Feeds & Core Banking APIs",
@@ -2842,7 +2866,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "TER",
         "definition": "Total Expense Ratio \u2014 the annual percentage of fund assets charged by the AMC to cover management fees, distribution, and operational expenses."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Asset Management_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Asset Management_industry.pdf",
+    "sourceDoc": "Asset Management_industry.pdf"
   },
   {
     "id": "automobile",
@@ -2900,7 +2927,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Stable",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Automobile_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Automotive Steel, Aluminum, Battery Cells, Microcontrollers, Wiring Harnesses & Rubber Tires",
@@ -3157,7 +3184,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Bharat NCAP",
         "definition": "New Car Assessment Program \u2014 India's independent automotive safety rating system grading vehicles from 1 to 5 stars on crash protection."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Automobile_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Automobile_industry.pdf",
+    "sourceDoc": "Automobile_industry.pdf"
   },
   {
     "id": "banking",
@@ -3216,7 +3246,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Banking_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "CASA Deposits, Fixed Term Deposits, Wholesale Refinance & Central Bank Liquidity",
@@ -3473,7 +3503,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "CRAR",
         "definition": "Capital to Risk-Weighted Assets Ratio \u2014 the regulatory measure of a bank's capital strength against potential loan write-offs."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Banking_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Banking_industry.pdf",
+    "sourceDoc": "Banking_industry.pdf"
   },
   {
     "id": "cement",
@@ -3531,7 +3564,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Cement_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Limestone Quarry Mining, Clinker Kiln Fuel (Petcoke/Coal), Gypsum & Fly Ash Sourcing",
@@ -3788,7 +3821,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Lead Distance",
         "definition": "The average distance over which cement is transported from plant to end customer; typically kept under 300-350 km to preserve margins."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Cement_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Cement_industry.pdf",
+    "sourceDoc": "Cement_industry.pdf"
   },
   {
     "id": "consumer-durables",
@@ -3847,7 +3883,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Consumer Durables_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Inverter Compressors, Copper Tubes, Aluminum Coils, Polycarbonate Plastics & Microcontroller PCBs",
@@ -4104,7 +4140,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Inverter Technology",
         "definition": "Variable-speed compressor technology that adjusts cooling capacity continuously, saving 30-40% electricity compared to fixed-speed units."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Consumer Durables_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Consumer Durables_industry.pdf",
+    "sourceDoc": "Consumer Durables_industry.pdf"
   },
   {
     "id": "diagnostics",
@@ -4161,7 +4200,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Diagnostics_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Diagnostic Reagents, Automated Immunoassay Analyzers, Phlebotomy Consumables & Pathologist Talent",
@@ -4418,7 +4457,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Reagent Rental",
         "definition": "An equipment financing agreement where analyzer OEMs provide automated machines for free in exchange for multi-year proprietary chemical reagent purchase commitments."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Diagnostics_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Diagnostics_industry.pdf",
+    "sourceDoc": "Diagnostics_industry.pdf"
   },
   {
     "id": "ecommerce",
@@ -4478,7 +4520,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "eCommerce_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Merchant Onboarding, Marketplace Catalog Curation, Packaging Materials & Fulfillment Center Real Estate",
@@ -4735,7 +4777,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Take-Rate",
         "definition": "The percentage commission and service fee that a marketplace platform retains from each gross merchandise transaction."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/eCommerce_industry.pdf",
+    "sourcePath": "Individual Industry Decks/eCommerce_industry.pdf",
+    "sourceDoc": "eCommerce_industry.pdf"
   },
   {
     "id": "electric-vehicles",
@@ -4793,7 +4838,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "EV_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Cathode/Anode Active Materials, Battery Management Systems (BMS), Electric Motors & Power Electronics (SiC Inverters)",
@@ -5050,7 +5095,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "TCO",
         "definition": "Total Cost of Ownership \u2014 the comprehensive assessment of purchase price plus lifetime operating, fuel/electricity, and maintenance costs."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/EV_industry.pdf",
+    "sourcePath": "Individual Industry Decks/EV_industry.pdf",
+    "sourceDoc": "EV_industry.pdf"
   },
   {
     "id": "fmcg",
@@ -5110,7 +5158,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "FMCG_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Agricultural Farm Produce (Wheat, Milk, Oilseeds), Specialty Chemicals (LAB, Palm Fatty Acids) & Packaging Films",
@@ -5367,7 +5415,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Grammage / Shrinkflation",
         "definition": "The practice of reducing the quantity or weight of a product while keeping its sticker price unchanged to preserve unit economics during inflation."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/FMCG_industry.pdf",
+    "sourcePath": "Individual Industry Decks/FMCG_industry.pdf",
+    "sourceDoc": "FMCG_industry.pdf"
   },
   {
     "id": "insurance",
@@ -5426,7 +5477,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Insurance_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Actuarial Mortality/Morbidity Data, Capital Solvency Reserves & Reinsurance Treaties",
@@ -5685,7 +5736,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Solvency Ratio",
         "definition": "The ratio of an insurer's available capital to its regulatory required capital; Indian insurers must maintain at least 1.5x (150%)."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Insurance_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Insurance_industry.pdf",
+    "sourceDoc": "Insurance_industry.pdf"
   },
   {
     "id": "oil-and-gas",
@@ -5744,7 +5798,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "stable",
     "outlook": "Stable",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Oil & Gas_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Imported Heavy & Sour Crude Oil (88% import dependency), Natural Gas & Offshore Exploration Blocks",
@@ -6003,7 +6057,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Crack Spread",
         "definition": "The pricing differential between a barrel of crude oil and the refined petroleum products (gasoline, diesel) extracted from it."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Oil & Gas_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Oil & Gas_industry.pdf",
+    "sourceDoc": "Oil & Gas_industry.pdf"
   },
   {
     "id": "real-estate",
@@ -6062,7 +6119,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Real Estate_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Clear-Title Land Sourcing, Joint Development Agreements (JDAs), Architectural Master Planning & Municipal Approvals",
@@ -6319,7 +6376,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Months of Inventory",
         "definition": "The number of months it would take to sell all currently unsold homes in a market at the current pace of sales; under 12-15 months indicates a strong seller's market."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Real Estate_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Real Estate_industry.pdf",
+    "sourceDoc": "Real Estate_industry.pdf"
   },
   {
     "id": "saas",
@@ -6380,7 +6440,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "SaaS_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Full-Stack Software Engineers, Cloud Infrastructure (AWS/Azure/GCP) & Foundation AI Model APIs",
@@ -6637,7 +6697,10 @@ const DEFAULT_INDUSTRIES = [
         "term": "Rule of 40",
         "definition": "A benchmark principle stating that a software company's combined annual revenue growth rate and profit margin should exceed 40%."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/SaaS_industry.pdf",
+    "sourcePath": "Individual Industry Decks/SaaS_industry.pdf",
+    "sourceDoc": "SaaS_industry.pdf"
   },
   {
     "id": "steel",
@@ -6695,7 +6758,7 @@ const DEFAULT_INDUSTRIES = [
     },
     "trend": "up",
     "outlook": "Positive",
-    "uploadedDoc": "IndustryDecks 2026-27.json",
+    "uploadedDoc": "Steel_industry.pdf",
     "uploadedDate": "2026-08-01",
     "valueChain": {
       "inputs": "Iron Ore Fines/Lumps, Imported Metallurgical Coking Coal (Australia), Limestone & Dolomite",
@@ -6952,18 +7015,242 @@ const DEFAULT_INDUSTRIES = [
         "term": "CBAM",
         "definition": "Carbon Border Adjustment Mechanism \u2014 EU tariff on carbon-intensive imports (steel, cement, aluminum) based on embedded carbon emissions during production."
       }
-    ]
+    ],
+    "sourceFile": "Individual Industry Decks/Steel_industry.pdf",
+    "sourcePath": "Individual Industry Decks/Steel_industry.pdf",
+    "sourceDoc": "Steel_industry.pdf"
   }
 ];
 
 const DEFAULT_UPLOAD_HISTORY = [
   {
-    "id": "upload_2026_27_deck",
+    "id": "master_deck_2026_27",
     "fileName": "IndustryDecks 2026-27.json",
+    "filePath": "IndustryDecks 2026-27.json",
     "industryName": "All 22 Sector Intelligence Primers",
     "date": "2026-08-01",
     "status": "Processed",
     "dataPoints": 4840,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_food-delivery",
+    "fileName": "Food Delivery_industry.pdf",
+    "filePath": "Individual Industry Decks/Food Delivery_industry.pdf",
+    "industryName": "Food Delivery",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_healthcare-hospitals",
+    "fileName": "Healthcare_industry.pdf",
+    "filePath": "Individual Industry Decks/Healthcare_industry.pdf",
+    "industryName": "Healthcare & Hospitals",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_hotels-hospitality",
+    "fileName": "Hotels & Hospitality_industry.pdf",
+    "filePath": "Individual Industry Decks/Hotels & Hospitality_industry.pdf",
+    "industryName": "Hotels & Hospitality",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_it-industry",
+    "fileName": "IT_industry.pdf",
+    "filePath": "Individual Industry Decks/IT_industry.pdf",
+    "industryName": "Information Technology (IT)",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_pharmaceuticals",
+    "fileName": "Pharmaceuticals_industry.pdf",
+    "filePath": "Individual Industry Decks/Pharmaceuticals_industry.pdf",
+    "industryName": "Pharmaceuticals",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_telecom",
+    "fileName": "Telecom_industry.pdf",
+    "filePath": "Individual Industry Decks/Telecom_industry.pdf",
+    "industryName": "Telecommunications",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_artificial-intelligence",
+    "fileName": "AI_industry.pdf",
+    "filePath": "Individual Industry Decks/AI_industry.pdf",
+    "industryName": "Artificial Intelligence (AI)",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_aviation",
+    "fileName": "Airlines_industry.pdf",
+    "filePath": "Individual Industry Decks/Airlines_industry.pdf",
+    "industryName": "Airlines & Aviation",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_asset-management",
+    "fileName": "Asset Management_industry.pdf",
+    "filePath": "Individual Industry Decks/Asset Management_industry.pdf",
+    "industryName": "Asset Management",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_automobile",
+    "fileName": "Automobile_industry.pdf",
+    "filePath": "Individual Industry Decks/Automobile_industry.pdf",
+    "industryName": "Automobile",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_banking",
+    "fileName": "Banking_industry.pdf",
+    "filePath": "Individual Industry Decks/Banking_industry.pdf",
+    "industryName": "Banking",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_cement",
+    "fileName": "Cement_industry.pdf",
+    "filePath": "Individual Industry Decks/Cement_industry.pdf",
+    "industryName": "Cement & Building Materials",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_consumer-durables",
+    "fileName": "Consumer Durables_industry.pdf",
+    "filePath": "Individual Industry Decks/Consumer Durables_industry.pdf",
+    "industryName": "Consumer Durables",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_diagnostics",
+    "fileName": "Diagnostics_industry.pdf",
+    "filePath": "Individual Industry Decks/Diagnostics_industry.pdf",
+    "industryName": "Diagnostics",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_ecommerce",
+    "fileName": "eCommerce_industry.pdf",
+    "filePath": "Individual Industry Decks/eCommerce_industry.pdf",
+    "industryName": "E-Commerce",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_electric-vehicles",
+    "fileName": "EV_industry.pdf",
+    "filePath": "Individual Industry Decks/EV_industry.pdf",
+    "industryName": "Electric Vehicles (EV)",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_fmcg",
+    "fileName": "FMCG_industry.pdf",
+    "filePath": "Individual Industry Decks/FMCG_industry.pdf",
+    "industryName": "FMCG (Fast-Moving Consumer Goods)",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_insurance",
+    "fileName": "Insurance_industry.pdf",
+    "filePath": "Individual Industry Decks/Insurance_industry.pdf",
+    "industryName": "Insurance",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_oil-and-gas",
+    "fileName": "Oil & Gas_industry.pdf",
+    "filePath": "Individual Industry Decks/Oil & Gas_industry.pdf",
+    "industryName": "Oil & Gas",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_real-estate",
+    "fileName": "Real Estate_industry.pdf",
+    "filePath": "Individual Industry Decks/Real Estate_industry.pdf",
+    "industryName": "Real Estate",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_saas",
+    "fileName": "SaaS_industry.pdf",
+    "filePath": "Individual Industry Decks/SaaS_industry.pdf",
+    "industryName": "Cloud & SaaS",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
+    "isBaseline": true
+  },
+  {
+    "id": "deck_steel",
+    "fileName": "Steel_industry.pdf",
+    "filePath": "Individual Industry Decks/Steel_industry.pdf",
+    "industryName": "Steel & Metals",
+    "date": "2026-08-01",
+    "status": "Processed",
+    "dataPoints": 220,
     "isBaseline": true
   }
 ];
@@ -6976,6 +7263,182 @@ const PRESET_UPLOADS = [
     "date": "2026-08-01",
     "fileName": "IndustryDecks 2026-27.json",
     "badge": "Full Ingestion"
+  },
+  {
+    "title": "Food Delivery \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Food Delivery.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Food Delivery_industry.pdf",
+    "badge": "Consumer & Digital"
+  },
+  {
+    "title": "Healthcare & Hospitals \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Healthcare & Hospitals.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Healthcare_industry.pdf",
+    "badge": "Healthcare"
+  },
+  {
+    "title": "Hotels & Hospitality \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Hotels & Hospitality.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Hotels & Hospitality_industry.pdf",
+    "badge": "Consumer & Hospitality"
+  },
+  {
+    "title": "Information Technology (IT) \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Information Technology (IT).",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "IT_industry.pdf",
+    "badge": "Technology"
+  },
+  {
+    "title": "Pharmaceuticals \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Pharmaceuticals.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Pharmaceuticals_industry.pdf",
+    "badge": "Healthcare"
+  },
+  {
+    "title": "Telecommunications \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Telecommunications.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Telecom_industry.pdf",
+    "badge": "Telecommunications"
+  },
+  {
+    "title": "Artificial Intelligence (AI) \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Artificial Intelligence (AI).",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "AI_industry.pdf",
+    "badge": "Technology"
+  },
+  {
+    "title": "Airlines & Aviation \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Airlines & Aviation.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Airlines_industry.pdf",
+    "badge": "Transportation & Logistics"
+  },
+  {
+    "title": "Asset Management \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Asset Management.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Asset Management_industry.pdf",
+    "badge": "Financial Services"
+  },
+  {
+    "title": "Automobile \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Automobile.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Automobile_industry.pdf",
+    "badge": "Automotive"
+  },
+  {
+    "title": "Banking \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Banking.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Banking_industry.pdf",
+    "badge": "Financial Services"
+  },
+  {
+    "title": "Cement & Building Materials \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Cement & Building Materials.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Cement_industry.pdf",
+    "badge": "Manufacturing & Materials"
+  },
+  {
+    "title": "Consumer Durables \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Consumer Durables.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Consumer Durables_industry.pdf",
+    "badge": "Consumer"
+  },
+  {
+    "title": "Diagnostics \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Diagnostics.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Diagnostics_industry.pdf",
+    "badge": "Healthcare"
+  },
+  {
+    "title": "E-Commerce \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for E-Commerce.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "eCommerce_industry.pdf",
+    "badge": "Consumer & Digital"
+  },
+  {
+    "title": "Electric Vehicles (EV) \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Electric Vehicles (EV).",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "EV_industry.pdf",
+    "badge": "Automotive"
+  },
+  {
+    "title": "FMCG (Fast-Moving Consumer Goods) \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for FMCG (Fast-Moving Consumer Goods).",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "FMCG_industry.pdf",
+    "badge": "Consumer"
+  },
+  {
+    "title": "Insurance \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Insurance.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Insurance_industry.pdf",
+    "badge": "Financial Services"
+  },
+  {
+    "title": "Oil & Gas \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Oil & Gas.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Oil & Gas_industry.pdf",
+    "badge": "Energy"
+  },
+  {
+    "title": "Real Estate \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Real Estate.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Real Estate_industry.pdf",
+    "badge": "Infrastructure & Real Estate"
+  },
+  {
+    "title": "Cloud & SaaS \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Cloud & SaaS.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "SaaS_industry.pdf",
+    "badge": "Technology"
+  },
+  {
+    "title": "Steel & Metals \u2014 Sector Intelligence Deck",
+    "desc": "Executive briefing deck and competitive dynamics primer for Steel & Metals.",
+    "size": "PDF Report",
+    "date": "2026-08-01",
+    "fileName": "Steel_industry.pdf",
+    "badge": "Manufacturing & Materials"
   }
 ];
 
