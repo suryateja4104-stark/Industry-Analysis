@@ -639,28 +639,92 @@ canvas { display: block; }
 
 .table-wrapper {
   overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 var(--surface-low);
+  border-radius: 0 0 var(--r-xl) var(--r-xl);
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: var(--surface-low);
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  border: 2px solid var(--surface-low);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .forces-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .forces-table thead th {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--outline);
   text-align: left;
-  padding: 12px 20px;
+  padding: 12px 14px;
   background: var(--surface-low);
   border-bottom: 1px solid var(--surface-stroke);
   white-space: nowrap;
 }
 
+/* Centered compact force columns */
+.forces-table thead th:nth-child(2),
+.forces-table thead th:nth-child(3),
+.forces-table thead th:nth-child(4),
+.forces-table thead th:nth-child(5),
+.forces-table thead th:nth-child(6),
+.forces-table tbody td:nth-child(2),
+.forces-table tbody td:nth-child(3),
+.forces-table tbody td:nth-child(4),
+.forces-table tbody td:nth-child(5),
+.forces-table tbody td:nth-child(6) {
+  text-align: center;
+  padding: 10px 8px;
+  width: 96px;
+}
+
+/* Sticky first column (Industry) */
+.forces-table thead th:first-child,
+.forces-table tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  background: #ffffff;
+  border-right: 1px solid var(--surface-stroke);
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.forces-table thead th:first-child {
+  z-index: 11;
+  background: var(--surface-low);
+}
+
+.forces-table tbody tr.row-new td:first-child {
+  background: #f0f9ff;
+}
+
+.forces-table tbody tr:hover td:first-child {
+  background: var(--surface-high);
+}
+
 .forces-table tbody tr {
-  border-bottom: 1px solid var(--surface-stroke);
   transition: background var(--transition);
 }
 
@@ -668,42 +732,79 @@ canvas { display: block; }
   background: rgba(2, 132, 199, 0.04);
 }
 
-.forces-table tbody tr:last-child { border-bottom: none; }
 .forces-table tbody tr:hover { background: var(--surface-high); }
 
 .forces-table tbody td {
-  padding: 14px 20px;
+  padding: 11px 14px;
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--on-surface);
   white-space: nowrap;
+  border-bottom: 1px solid var(--surface-stroke);
+}
+
+.forces-table tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .forces-table .industry-cell {
   font-weight: 600;
   color: var(--on-surface);
   cursor: pointer;
+  min-width: 190px;
+}
+
+.forces-table .industry-cell-inner {
   display: flex;
   align-items: center;
   gap: 8px;
 }
+
 .forces-table .industry-cell:hover { color: var(--cyan); }
 
 .doc-source-cell {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--on-surface-muted);
+  min-width: 160px;
+  padding: 10px 14px;
+}
+
+.doc-pdf-link {
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: rgba(2, 132, 199, 0.06);
+  border: 1px solid rgba(2, 132, 199, 0.15);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.doc-pdf-link:hover {
+  background: rgba(2, 132, 199, 0.14);
+  border-color: rgba(2, 132, 199, 0.3);
+  text-decoration: underline;
 }
 
 .force-badge {
   display: inline-flex;
   align-items: center;
-  padding: 3px 10px;
+  justify-content: center;
+  min-width: 62px;
+  padding: 3px 8px;
   border-radius: var(--r-pill);
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .badge-low {

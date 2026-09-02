@@ -1623,8 +1623,10 @@ function renderHeatmapTable() {
     return `
       <tr class="${isNew ? 'row-new' : ''}">
         <td class="industry-cell" data-id="${ind.id}">
-          <span>${ind.name}</span>
-          ${isNew ? `<span class="new-tag-badge">NEW</span>` : ''}
+          <div class="industry-cell-inner">
+            <span>${ind.name}</span>
+            ${isNew ? `<span class="new-tag-badge">NEW</span>` : ''}
+          </div>
         </td>
         <td>${makeBadge(ind.forces.newEntrants)}</td>
         <td>${makeBadge(ind.forces.buyerPower)}</td>
@@ -1632,8 +1634,10 @@ function renderHeatmapTable() {
         <td>${makeBadge(ind.forces.substitutes)}</td>
         <td>${makeBadge(ind.forces.rivalry)}</td>
         <td class="doc-source-cell">
-          <a href="${encodeURI(ind.sourceFile || ('Individual Industry Decks/' + ind.uploadedDoc))}" target="_blank" class="doc-pdf-link" title="Open Source PDF Deck" style="color:var(--primary);text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
-            <span>📄</span> <span style="text-decoration:underline;">${ind.uploadedDoc || 'Default'}</span> <span style="font-size:10px;">↗</span>
+          <a href="${encodeURI(ind.sourceFile || ('Individual Industry Decks/' + ind.uploadedDoc))}" target="_blank" class="doc-pdf-link" title="Open Source PDF: ${ind.uploadedDoc || 'Default'}">
+            <span>📄</span>
+            <span style="overflow:hidden;text-overflow:ellipsis;">${ind.uploadedDoc || 'Default'}</span>
+            <span style="font-size:10px;flex-shrink:0;">↗</span>
           </a>
         </td>
       </tr>
