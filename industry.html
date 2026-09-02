@@ -124,8 +124,11 @@
 <!-- ── Side Navigation ───────────────────────────────────────── -->
 <aside class="h-screen w-64 fixed left-0 top-0 flex flex-col py-lg px-md bg-surface-container-lowest border-r border-outline-variant z-50">
   <div class="mb-xl">
-    <h1 class="font-display text-[22px] leading-tight font-extrabold text-primary tracking-tighter uppercase mb-1">AutoIntel Pro</h1>
-    <p class="font-mono text-[10px] text-on-surface-variant opacity-70 uppercase tracking-widest">Industry Intelligence</p>
+    <div class="flex items-center gap-2 mb-1">
+      <div class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-sm">I</div>
+      <h1 class="font-display text-[18px] leading-tight font-extrabold text-primary tracking-tight uppercase">Industry Tracker</h1>
+    </div>
+    <p class="font-mono text-[9px] text-on-surface-variant opacity-70 uppercase tracking-widest pl-10">Deep Dive Intelligence</p>
   </div>
 
   <nav class="flex-1 space-y-1 overflow-y-auto">
@@ -137,47 +140,27 @@
       <span class="material-symbols-outlined text-[20px]">insights</span>
       <span class="text-sm font-semibold">Intelligence</span>
     </a>
-    <a class="flex items-center gap-sm px-sm py-2 rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
-      <span class="material-symbols-outlined text-[20px]">trending_up</span>
-      <span class="text-sm">Market Trends</span>
+    <a class="flex items-center gap-sm px-sm py-2 rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="index.html#compare">
+      <span class="material-symbols-outlined text-[20px]">compare_arrows</span>
+      <span class="text-sm">Compare</span>
     </a>
-    <a class="flex items-center gap-sm px-sm py-2 rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
-      <span class="material-symbols-outlined text-[20px]">groups</span>
-      <span class="text-sm">Competitors</span>
-    </a>
-    <a class="flex items-center gap-sm px-sm py-2 rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
-      <span class="material-symbols-outlined text-[20px]">folder_shared</span>
-      <span class="text-sm">Portfolio</span>
-    </a>
-    <a class="flex items-center gap-sm px-sm py-2 rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
-      <span class="material-symbols-outlined text-[20px]">warning</span>
-      <span class="text-sm">Risk Factors</span>
-    </a>
-    <a class="flex items-center gap-sm px-sm py-2 rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="#">
-      <span class="material-symbols-outlined text-[20px]">settings</span>
-      <span class="text-sm">Settings</span>
+    <a class="flex items-center gap-sm px-sm py-2 rounded-lg transition-colors text-on-surface-variant hover:bg-surface-container-high" href="index.html">
+      <span class="material-symbols-outlined text-[20px]">dashboard</span>
+      <span class="text-sm">Overview</span>
     </a>
 
     <!-- Industry Quick Nav -->
     <div class="pt-md border-t border-outline-variant mt-md">
-      <p class="font-mono text-[9px] text-on-surface-variant opacity-60 uppercase tracking-widest mb-2 px-sm">Industries</p>
-      <div id="industryQuickNav" class="space-y-0.5"></div>
+      <p class="font-mono text-[9px] text-on-surface-variant opacity-60 uppercase tracking-widest mb-2 px-sm">Industries (22)</p>
+      <div id="industryQuickNav" class="space-y-0.5 max-h-72 overflow-y-auto pr-1"></div>
     </div>
   </nav>
 
   <div class="mt-auto space-y-sm pt-md border-t border-outline-variant flex-shrink-0">
-    <button class="w-full bg-primary text-on-primary font-semibold text-sm py-2 rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
-      <span class="material-symbols-outlined text-[16px]">download</span>
-      Download Report
-    </button>
-    <div class="space-y-1">
-      <a class="flex items-center gap-sm px-sm py-1 text-on-surface-variant text-sm hover:text-primary transition-colors" href="#">
-        <span class="material-symbols-outlined text-[16px]">help</span><span>Support</span>
-      </a>
-      <a class="flex items-center gap-sm px-sm py-1 text-on-surface-variant text-sm hover:text-critical-red transition-colors" href="#">
-        <span class="material-symbols-outlined text-[16px]">logout</span><span>Logout</span>
-      </a>
-    </div>
+    <a href="index.html" class="w-full bg-primary text-on-primary font-semibold text-sm py-2 rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+      Return to Explorer
+    </a>
   </div>
 </aside>
 
@@ -190,19 +173,18 @@
       <span class="font-headline font-bold text-[16px] text-on-surface" id="headerTitle">Sector Intelligence</span>
     </div>
     <div class="flex items-center gap-md">
-      <nav class="flex gap-md hidden md:flex">
-        <a class="font-mono text-[11px] text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="#">Global Markets</a>
-        <a class="font-mono text-[11px] text-primary border-b border-primary pb-0.5 uppercase tracking-wider" href="#">Supply Chain</a>
-        <a class="font-mono text-[11px] text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="#">EV Transition</a>
+      <nav class="flex gap-md hidden md:flex items-center">
+        <a class="font-mono text-[11px] text-primary font-semibold uppercase tracking-wider flex items-center gap-1" href="index.html">
+          <span class="material-symbols-outlined text-[14px]">arrow_back</span> Explorer Dashboard
+        </a>
       </nav>
       <div class="h-5 w-px bg-outline-variant"></div>
       <div class="relative hidden lg:block">
         <span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-[16px]">search</span>
-        <input type="text" placeholder="Search markets..." class="bg-surface-container-low border border-outline-variant rounded-full pl-8 pr-4 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 w-52"/>
+        <input type="text" id="marketSearchInput" placeholder="Search 22 industries..." class="bg-surface-container-low border border-outline-variant rounded-full pl-8 pr-4 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 w-64"/>
+        <div id="searchResultsDropdown" class="absolute right-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-outline-variant hidden z-50 max-h-80 overflow-y-auto py-2"></div>
       </div>
-      <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-1">notifications</button>
-      <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-1">help_outline</button>
-      <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-sm font-bold">A</div>
+      <a href="index.html" class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-sm font-bold" title="Industry Tracker">I</a>
     </div>
   </header>
 
@@ -548,6 +530,60 @@ function updateNavButtons(currentId) {
   }
 }
 
+// ── Search & Filter ─────────────────────────────────────────────
+function initSearch() {
+  const searchInput = document.getElementById('marketSearchInput');
+  const dropdown = document.getElementById('searchResultsDropdown');
+  if (!searchInput || !dropdown) return;
+
+  searchInput.addEventListener('input', (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    if (!q) {
+      dropdown.classList.add('hidden');
+      dropdown.innerHTML = '';
+      return;
+    }
+    const matches = INDUSTRIES.filter(ind => 
+      ind.name.toLowerCase().includes(q) || 
+      ind.sector.toLowerCase().includes(q) ||
+      (ind.majorPlayers && ind.majorPlayers.some(p => p.toLowerCase().includes(q)))
+    );
+    if (matches.length === 0) {
+      dropdown.innerHTML = `<div class="px-4 py-3 text-xs text-on-surface-variant font-mono">No matching industries for "${q}"</div>`;
+    } else {
+      dropdown.innerHTML = matches.map(ind => `
+        <a href="industry.html?id=${ind.id}" class="flex items-center justify-between px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-high transition-colors border-b border-outline-variant last:border-b-0">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[16px]" style="color:${ind.color}">${ind.icon}</span>
+            <span class="font-medium">${ind.name}</span>
+          </div>
+          <span class="text-[9px] font-mono uppercase tracking-wider bg-primary/10 text-primary px-2 py-0.5 rounded font-bold">${ind.sector}</span>
+        </a>
+      `).join('');
+    }
+    dropdown.classList.remove('hidden');
+  });
+
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const q = searchInput.value.trim().toLowerCase();
+      const match = INDUSTRIES.find(ind => 
+        ind.name.toLowerCase().includes(q) || 
+        ind.sector.toLowerCase().includes(q)
+      );
+      if (match) {
+        window.location.href = `industry.html?id=${match.id}`;
+      }
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add('hidden');
+    }
+  });
+}
+
 // ── Init ──────────────────────────────────────────────────────────
 (function init() {
   const params = new URLSearchParams(window.location.search);
@@ -556,6 +592,7 @@ function updateNavButtons(currentId) {
   renderIndustry(industry);
   buildQuickNav(industry.id);
   updateNavButtons(industry.id);
+  initSearch();
 })();
 </script>
 </body>
