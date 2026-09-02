@@ -1443,6 +1443,10 @@ function refreshCurrentPage() {
 
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', e => {
+    if (item.dataset.page === 'intelligence') {
+      // Let standard link navigation to industry.html proceed
+      return;
+    }
     e.preventDefault();
     navigateTo(item.dataset.page);
   });
