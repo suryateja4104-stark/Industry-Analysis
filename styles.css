@@ -110,23 +110,29 @@ canvas { display: block; }
 }
 
 .sidebar-logo {
-  width: 38px;
-  height: 38px;
-  background: #ffffff;
-  border: 1px solid var(--surface-stroke);
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  padding: 3px;
-  box-shadow: 0 1px 4px rgba(15, 30, 53, 0.08);
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  background: #ffffff !important;
+  border: 1px solid var(--surface-stroke) !important;
+  border-radius: var(--r-md) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  padding: 4px !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(15, 30, 53, 0.08) !important;
 }
 
 .sidebar-logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: auto !important;
+  height: auto !important;
+  max-width: 26px !important;
+  max-height: 26px !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
 .sidebar-brand {
